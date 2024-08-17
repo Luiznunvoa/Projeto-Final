@@ -30,6 +30,7 @@
 
 :root {
   /* Principal */
+  --principal: #0066CC;
   --Principal_900: #00247D;
   --Principal_800: #0043B8;
   --Principal_700: #0049E4;
@@ -41,6 +42,7 @@
   --Principal_100: #DBEBFF;
 
   /* Complementar */
+  --Complementar : #0BB0E3;
   --Complementar_900: #003055;
   --Complementar_800: #005E80;
   --Complementar_700: #008BAA;
@@ -105,10 +107,12 @@
 }
 
 body {
-  font-family: "Roboto-medium";
-  font-size: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+   display: flex;
+   flex-direction: column; /* Organiza os elementos de cima para baixo */
+   align-items: center; /* Centraliza os elementos horizontalmente */
+   justify-content: flex-start; /* Alinha os elementos ao topo */
+   height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+   margin: 0; /* Remove margens padrão */
+   font-family: "Roboto-medium", sans-serif;
+   font-size: 1.25rem;
 }
-
