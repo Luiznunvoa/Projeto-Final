@@ -7,7 +7,6 @@
    flex-direction: column;
    background-image: url("./assets/Fundo.png");
    background-repeat: no-repeat;
-   background-attachment: fixed;
    background-size: cover;
    background-position: 60% 80%;
 }
@@ -22,6 +21,7 @@
    font-family: "Nunito Sans", system-ui;
    letter-spacing: 0.2rem;
    font-size: 3rem;
+   font-weight: 600;
 }
 
 .top p {
@@ -29,5 +29,5 @@
    margin-top: 3%;
    font-size: 1.5rem;
    letter-spacing: 0.1rem;
-   font-weight: 500;
+   font-weight: 400;
 }
