@@ -9,3 +9,5 @@ const checkUserExists = require('../middlewares/checkUserExistsMiddleware')
 
 //Criar usuário
 userRoutes.post('/', checkUserExists, (req ,res)=> userController.createUser(req, res))
+
+module.exports = userRoutes

@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 
-const router = require('./routes/index')
-const createDatabase = require('../scripts/')
+const router = require('./routes/index.js')
+const createDatabase = require('../scripts/createDatabase.js')
 
 app.use(express.json())
 
