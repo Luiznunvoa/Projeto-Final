@@ -12,6 +12,14 @@ export function App() {
           <p>Reserve Seu Assento e Viva a Magia do Cinema!</p>
         </section>
       </section>
+      <section className={styles.mid}>
+        <div className={styles.back}>
+          oi
+
+        </div>
+
+
+      </section>
       <Footer />
     </main>
   )

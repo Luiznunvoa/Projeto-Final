@@ -97,6 +97,10 @@
   --Neutro_100: #E8E8E8;
   --Neutro_50: #F5F5F5;
   --Neutro_0: #FFFFFF;
+
+  /* Neutro */
+
+  --fundo: #1E1E1E;
 }
 
 * {
@@ -122,6 +126,7 @@ main {
   box-sizing: border-box;
   height: 178.063rem;
   width: 120rem;
+  background-color: var(--fundo);
 }
 
 @media only screen and (max-width: 1680px) {

@@ -29,5 +29,19 @@
    margin-top: 3%;
    font-size: 1.5rem;
    letter-spacing: 0.1rem;
-   font-weight: 400;
+   font-weight: 600;
+}
+
+.mid {
+   height: 63.5%;
+   width: 100%;
+}
+
+.back {
+   height: 100%;
+   width: 100%;
+   background-image: url("./assets/Vector.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   opacity: 20%;
 }
