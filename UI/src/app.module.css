@@ -1,0 +1,33 @@
+.top {
+   height: 12%;
+   width: 100%;
+   display: flex;
+   background-color: var(--Neutro_900);
+   color: var(--Neutro_0);
+   flex-direction: column;
+   background-image: url("./assets/Fundo.png");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   background-position: 60% 80%;
+}
+
+.top section {
+   margin-left: 5%;
+   width: 60%;
+}
+
+.top h1 {
+   margin-top: 3%;
+   font-family: "Nunito Sans", system-ui;
+   letter-spacing: 0.2rem;
+   font-size: 3rem;
+}
+
+.top p {
+   font-family: "Roboto", sans-serif;
+   margin-top: 3%;
+   font-size: 1.5rem;
+   letter-spacing: 0.1rem;
+   font-weight: 500;
+}
