@@ -123,3 +123,59 @@ main {
   height: 178.063rem;
   width: 120rem;
 }
+
+@media only screen and (max-width: 1680px) {
+  main {
+    height: 155.75rem;
+    width: 105rem;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  main {
+    height: 148.33rem;
+    width: 100rem;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  main {
+    height: 133.563rem;
+    width: 90rem;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  main {
+    height: 126.08rem;
+    width: 85.375rem;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  main {
+    height: 118.75rem;
+    width: 80rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  main {
+    height: 95rem;
+    width: 70rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    height: 71.25rem;
+    width: 55rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  main {
+    height: 47.5rem;
+    width: 35rem;
+  }
+}
