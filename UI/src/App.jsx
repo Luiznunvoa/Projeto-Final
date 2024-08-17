@@ -14,7 +14,7 @@ export function App() {
       </section>
       <section className={styles.mid}>
         <div className={styles.back}>
-          oi
+          
 
         </div>
 
