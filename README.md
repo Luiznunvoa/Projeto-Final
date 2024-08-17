@@ -14,10 +14,13 @@ Este é o projeto final desenvolvido para o processo seletivo da Empresa Júnior
   <code>git clone https://github.com/Luiznunvoa/Projeto-CINEMA</code><br>
   <code>npm run dev</code>
 ## Back-End
-1. Certifique-se que o seu Windows tem a seguinte permissão:<br>
+1. Certifique-se que você tem o yarn instalado, caso não, utilize:<br>
+   <code>npm install --global yarn</code>
+   - <p>Copie e cole no CMD</p>
+2. Certifique-se que o seu Windows tem a seguinte permissão:<br>
    <code>Set-ExecutionPolicy RemoteSigned</code>
    - <p>Copie e cole no Windows Power Shell</p>
-1. Certifique-se que o seu Windows tem a seguinte permissão:<br>
+3. Certifique-se que o seu Windows tem a seguinte permissão:<br>
    <code>yarn dev</code>
    - <p>Copie e cole no CMD com a pasta do repositório selecionada</p>
 
