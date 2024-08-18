@@ -31,7 +31,20 @@ async function listUsers(req, res) {
      }
 }
 
+//Pegar usuário específico
+async function getUser(req, res) {
+     try {
+          const { user } = req     
+          return res.status(201).json(user)
+
+     } catch (error) {
+          return res.status(500).json({ error: 'Erro ao buscar usuário!'})
+     }
+}
+
+
 module.exports = {
      createUser,
      listUsers,
+     getUser
 }
