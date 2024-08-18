@@ -7,7 +7,6 @@ async function createUser(req, res) {
      try {
           const { name, lastName, cpf, birthday, username, email, senha} = req.body
           const user = await User.create({
-               id,
                name,
                lastName,
                cpf,

@@ -1,6 +1,5 @@
 const sequelize = require("../../config/database.js")
 const { DataTypes } = require("sequelize")
-const { v4: uuidv4 } = require('uuid')
 
 const Movie = sequelize.define("Movie", {
     title: {
