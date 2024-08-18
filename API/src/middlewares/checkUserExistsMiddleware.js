@@ -14,6 +14,7 @@ async function checkUserExists(req, res, next) {
 
           return next()
      } catch (error) {
+          console.error('Erro ao checar se o usuário existe:', error)
           return res.status(500).json({ error: 'Erro ao checar se o usuário existe!'})
      }
 }

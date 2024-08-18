@@ -17,6 +17,7 @@ async function createUser(req, res) {
           })
           return res.status(201).json(user.toJSON())
      } catch (error) {
+          console.error('Erro criando usuário:', error)
           return res.status(500).json({ error: 'Erro ao criar o usuário'})
      }
 }
