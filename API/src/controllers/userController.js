@@ -42,9 +42,23 @@ async function getUser(req, res) {
      }
 }
 
+//Deletar usuário
+async function deleteUser(req, res) {
+     try {
+          const { user } = req
+          await user.destroy()
+
+          return res.status(204).send()
+     } catch (error) {
+          console.error('Erro ao deletar usuário:', error)
+          return res.status(500).json({ error: 'Erro ao deletar usuário!'}) 
+     }
+}
+
 
 module.exports = {
      createUser,
      listUsers,
-     getUser
+     getUser,
+     deleteUser
 }
