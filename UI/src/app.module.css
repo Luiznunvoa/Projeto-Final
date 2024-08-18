@@ -62,10 +62,14 @@
    z-index: -1; 
 }
 
-.test {
-   background-color: white;
-   height: 100px;
-   width: 100px;
-   position: relative; 
-   z-index: 1; 
+.carrousel {
+   height: 38.5%;
+   margin-top: 5%;
+   width: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-content: flex-start;
 }

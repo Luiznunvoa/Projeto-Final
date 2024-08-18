@@ -1,0 +1,19 @@
+.combo {
+   margin-left: 5%;
+   height: 100%;
+   width: 90%;
+   background-image: url("../assets/Ticket.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.desc {
+   background-color: var( --CallToAction_300);
+   height: 84%;
+   width: 84%;
+   border-radius: 0.25rem;
+}
