@@ -7,6 +7,7 @@ async function createUser(req, res) {
      try {
           const { name, lastName, cpf, birthday, username, email, senha} = req.body
           const user = await User.create({
+               id,
                name,
                lastName,
                cpf,
@@ -31,26 +32,7 @@ async function listUsers(req, res) {
      }
 }
 
-//Pegar usuário específico
-async function getUser(req, res) {
-     try {
-          const { username } = req.params
-          const user = await User.findOne({
-               where: {
-                    username
-               }
-          })
-          if (user) {
-               return res.status(500).json(user)
-          }
-          return res.status(404).json({ error: 'Esse usuário não existe!'})
-     } catch (error) {
-          return res.status(500).json({ error: 'Erro ao listar usuário específico!'})
-     }
-}
-
 module.exports = {
      createUser,
      listUsers,
-     getUser
 }

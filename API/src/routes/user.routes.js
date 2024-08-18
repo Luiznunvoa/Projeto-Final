@@ -13,7 +13,4 @@ userRoutes.post('/', checkUserExists, (req ,res)=> userController.createUser(req
 //Listar usuários
 userRoutes.get('/', (req, res) => userController.listUsers(req, res))
 
-//Pegar usuário específico
-userRoutes.get('/:username', (req, res) => userController.getUser(req, res))
-
 module.exports = userRoutes

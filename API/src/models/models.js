@@ -70,11 +70,6 @@ const Seat = sequelize.define("Seat", {
 })
 
 const User = sequelize.define("User", {
-    id: {
-        type: DataTypes.UUIDV4,
-          defaultValue: () => uuidv4(),
-          primaryKey: true
-    },
     name: {
         type: DataTypes.STRING,
         allowNull: false
