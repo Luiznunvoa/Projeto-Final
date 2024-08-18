@@ -14,6 +14,8 @@ export function App() {
       </section>
       <section className={styles.mid}>
         <div className={styles.back}>
+          <div className={styles.test}>
+          </div>
           
 
         </div>

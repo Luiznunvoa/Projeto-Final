@@ -40,8 +40,32 @@
 .back {
    height: 100%;
    width: 100%;
+   position: relative; 
+   z-index: 0;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: center;
+}
+
+.back::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
    background-image: url("./assets/Vector.svg");
    background-repeat: no-repeat;
    background-size: cover;
-   opacity: 20%;
+   opacity: 0.2; 
+   z-index: -1; 
+}
+
+.test {
+   background-color: white;
+   height: 100px;
+   width: 100px;
+   position: relative; 
+   z-index: 1; 
 }
