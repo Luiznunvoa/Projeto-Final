@@ -46,11 +46,33 @@
   --Complementar_200: #93EBFD;
   --Complementar_100: #C6F6FF;
 
-   /* Sombra */
-   --Sombra: #00264D;
-   --Sombra_900: #2B3955;
-   --Sombra_800: #394B70;
-   --Sombra_700: #4A5E89;
+  /* Sombra */
+  --Sombra: #00264D;
+  --Sombra_900: #2B3955;
+  --Sombra_800: #394B70;
+  --Sombra_700: #4A5E89;
+
+  /* Sombra 2 */
+  --Sombra2_source: #004C99;
+  --Sombra2_900: #1A386A;
+  --Sombra2_800: #224A8B;
+  --Sombra2_700: #305DA3;
+
+  /* Call to Action */
+  --CallToAction_source: #CC8000;
+  --CallToAction_500: #BF7600;
+  --CallToAction_400: #D48C29;
+  --CallToAction_300: #E6A352;
+
+  /* Cancel */
+  --Cancel_source: #CC2014;
+  --Cancel_700: #B9180F;
+  --Cancel_600: #DB2F1E;
+
+  /* Confirm */
+  --Confirm_source: #00CC54;
+  --Confirm_600: #008912;
+  --Confirm_400: #03B349;
 
    --Sombra2: #004C99;
    --Sombra2_900: #1A386A;
@@ -102,6 +124,9 @@
   --Neutro_100: #E8E8E8;
   --Neutro_50: #F5F5F5;
   --Neutro_0: #FFFFFF;
+
+  /* Fundo */
+  --fundo: #1E1E1E;
 }
 
 * {
@@ -127,6 +152,29 @@ main {
   box-sizing: border-box;
   height: 178.063rem;
   width: 120rem;
+  overflow: hidden;
+  background-color: var(--fundo);
+}
+
+@media only screen and (max-width: 2560px) {
+  main {
+    height: 188.5rem;
+    width: 130rem;
+  }
+}
+
+@media only screen and (max-width: 2048px) {
+  main {
+    height: 189.21rem;
+    width: 127.5rem;
+  }
+}
+
+@media only screen and (max-width: 1920px) {
+  main {
+    height: 178rem;
+    width: 119rem;
+  }
 }
 
 @media only screen and (max-width: 1680px) {
