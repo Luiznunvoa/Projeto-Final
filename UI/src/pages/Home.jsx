@@ -2,6 +2,7 @@ import {Header} from "../components/Header.jsx"
 import {Footer} from "../components/Footer.jsx"
 import {Combos} from "../components/Combos.jsx"
 import {Movie} from "../components/Movie.jsx"
+import { Link } from "react-router-dom";
 import styles from './home.module.css'
 import '../global.css'
 
@@ -35,9 +36,10 @@ export function Home() {
              <Movie  imagem= "/src/assets/Capa4.svg" nome="Oppenheimer"/>
              <Movie  imagem= "/src/assets/Capa5.svg" nome="Elementos"/>
            </section>
-           <h1 className={styles.vermais}>Ver Mais</h1>
+           <Link to="Movies">
+               <h1 className={styles.vermais}>Ver Mais</h1>
+           </Link>
            </div>
- 
  
          </section>
          <Footer />
