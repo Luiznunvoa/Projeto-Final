@@ -7,6 +7,7 @@ const sectionRoutes = require('./section.routes')
 
 const router = Router()
 
+router.use("/movies", movieRoutes)
 router.use('/users', userRoutes)
 
 module.exports = router
