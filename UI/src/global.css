@@ -140,95 +140,12 @@ body {
    flex-direction: column; 
    align-items: center; 
    justify-content: flex-start;
-   height: 100vh; 
    margin: 0; 
    font-size: 1.25rem;
 
 }
 
 main {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  height: 178.063rem;
-  width: 120rem;
   overflow: hidden;
   background-color: var(--fundo);
-}
-
-@media only screen and (max-width: 2560px) {
-  main {
-    height: 188.5rem;
-    width: 130rem;
-  }
-}
-
-@media only screen and (max-width: 2048px) {
-  main {
-    height: 189.21rem;
-    width: 127.5rem;
-  }
-}
-
-@media only screen and (max-width: 1920px) {
-  main {
-    height: 178rem;
-    width: 119rem;
-  }
-}
-
-@media only screen and (max-width: 1680px) {
-  main {
-    height: 155.75rem;
-    width: 105rem;
-  }
-}
-
-@media only screen and (max-width: 1600px) {
-  main {
-    height: 148.33rem;
-    width: 100rem;
-  }
-}
-
-@media only screen and (max-width: 1440px) {
-  main {
-    height: 133.563rem;
-    width: 90rem;
-  }
-}
-
-@media only screen and (max-width: 1366px) {
-  main {
-    height: 126.08rem;
-    width: 85.375rem;
-  }
-}
-
-@media only screen and (max-width: 1280px) {
-  main {
-    height: 118.75rem;
-    width: 80rem;
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  main {
-    height: 95rem;
-    width: 70rem;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  main {
-    height: 71.25rem;
-    width: 55rem;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  main {
-    height: 47.5rem;
-    width: 35rem;
-  }
 }
