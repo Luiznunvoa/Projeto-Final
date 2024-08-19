@@ -1,11 +1,11 @@
 
 .home {
-  height: 178.063rem;
-  width: 120rem;
+  height: 142.6rem;
+  width: 119rem;
 }
 
 .top {
-   height: 12%;
+   height: 16.5%;
    width: 100%;
    display: flex;
    background-color: var(--Neutro_900);
@@ -39,7 +39,7 @@
 }
 
 .mid {
-   height: 63.5%;
+   height: 83.4%;
    width: 100%;
 }
 
@@ -99,82 +99,3 @@
    cursor: pointer;
 
 }
-
-
-
-@media only screen and (max-width: 2560px) {
-   .home {
-     height: 237.44rem;
-     width: 159rem;
-   }
- }
- 
- @media only screen and (max-width: 2048px) {
-   .home {
-     height: 189.21rem;
-     width: 126.5rem;
-   }
- }
- 
- @media only screen and (max-width: 1920px) {
-   .home {
-     height: 178rem;
-     width: 120rem;
-   }
- }
- 
- @media only screen and (max-width: 1680px) {
-   .home {
-     height: 155.82rem;
-     width: 104rem;
-   }
- }
- 
- @media only screen and (max-width: 1600px) {
-   .home {
-     height: 148.33rem;
-     width: 100rem;
-   }
- }
- 
- @media only screen and (max-width: 1440px) {
-   .home {
-     height: 133.563rem;
-     width: 90rem;
-   }
- }
- 
- @media only screen and (max-width: 1366px) {
-   .home {
-     height: 126.08rem;
-     width: 85.375rem;
-   }
- }
- 
- @media only screen and (max-width: 1280px) {
-   .home {
-     height: 118.75rem;
-     width: 80rem;
-   }
- }
- 
- @media only screen and (max-width: 1024px) {
-   .home {
-     height: 93.9rem;
-     width: 63rem;
-   }
- }
- 
- @media only screen and (max-width: 768px) {
-   .home {
-     height: 71.232em;
-     width: 47rem;
-   }
- }
- 
- @media only screen and (max-width: 480px) {
-   .home {
-     height: 47.5rem;
-     width: 35rem;
-   }
- }

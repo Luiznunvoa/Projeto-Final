@@ -146,6 +146,5 @@ body {
 }
 
 main {
-  overflow: hidden;
   background-color: var(--fundo);
 }
