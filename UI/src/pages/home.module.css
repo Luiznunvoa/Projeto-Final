@@ -1,0 +1,179 @@
+.top {
+   height: 12%;
+   width: 100%;
+   display: flex;
+   background-color: var(--Neutro_900);
+   color: var(--Neutro_0);
+   flex-direction: column;
+   background-image: url("../assets/Fundo.png");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: 60% 80%;
+}
+
+.top section {
+   margin-left: 5%;
+   width: 60%;
+}
+
+.top h1 {
+   margin-top: 3%;
+   font-family: "Nunito Sans", system-ui;
+   letter-spacing: 0.2rem;
+   font-size: 3rem;
+   font-weight: 600;
+}
+
+.top p {
+   font-family: "Roboto", sans-serif;
+   margin-top: 3%;
+   font-size: 1.5rem;
+   letter-spacing: 0.1rem;
+   font-weight: 600;
+}
+
+.mid {
+   height: 63.5%;
+   width: 100%;
+}
+
+.back {
+   height: 100%;
+   width: 100%;
+   position: relative; 
+   z-index: 0;
+   display: flex;
+   flex-wrap: nowrap;
+   flex-direction: column;
+}
+
+.back::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-image: url("../assets/Vector.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   opacity: 0.2; 
+   z-index: -1; 
+}
+
+.title{
+   margin-top: 3%;
+   margin-left: 5%;
+   font-family: "Nunito Sans", system-ui;
+   color: var(--Neutro_0);
+   letter-spacing: 0.2rem;
+   font-size: 4rem;
+   font-weight: 700;
+}
+
+.movies {
+   height: 36%;
+   width: 100%;
+   margin-top: 5%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+}
+
+.vermais {
+   margin-left: 90%;
+   margin-top: -4%;
+   font-family: "Nunito Sans", system-ui;
+   color: var(--Neutro_0);
+   letter-spacing: 0.2rem;
+   font-size: 2rem;
+   text-decoration: underline;
+   font-weight: 700;
+   cursor: pointer;
+
+}
+
+main {
+   height: 178.063rem;
+   width: 120rem;
+}
+
+
+
+@media only screen and (max-width: 2560px) {
+   main {
+     height: 237.44rem;
+     width: 159rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 2048px) {
+   main {
+     height: 189.21rem;
+     width: 126.5rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 1920px) {
+   main {
+     height: 178rem;
+     width: 119rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 1680px) {
+   main {
+     height: 155.82rem;
+     width: 104rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 1600px) {
+   main {
+     height: 148.33rem;
+     width: 100rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 1440px) {
+   main {
+     height: 133.563rem;
+     width: 90rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 1366px) {
+   main {
+     height: 126.08rem;
+     width: 85.375rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 1280px) {
+   main {
+     height: 118.75rem;
+     width: 80rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 1024px) {
+   main {
+     height: 93.9rem;
+     width: 63rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 768px) {
+   main {
+     height: 71.232em;
+     width: 47rem;
+   }
+ }
+ 
+ @media only screen and (max-width: 480px) {
+   main {
+     height: 47.5rem;
+     width: 35rem;
+   }
+ }
