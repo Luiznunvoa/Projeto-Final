@@ -147,6 +147,7 @@ main {
   box-sizing: border-box;
   height: 178.063rem;
   width: 120rem;
+  overflow: hidden;
   background-color: var(--fundo);
 }
 
@@ -159,8 +160,15 @@ main {
 
 @media only screen and (max-width: 2048px) {
   main {
-    height: 167.5rem;
-    width: 115rem;
+    height: 189.21rem;
+    width: 127.5rem;
+  }
+}
+
+@media only screen and (max-width: 1920px) {
+  main {
+    height: 178rem;
+    width: 119rem;
   }
 }
 
