@@ -1,3 +1,9 @@
+
+.home {
+  height: 178.063rem;
+  width: 120rem;
+}
+
 .top {
    height: 12%;
    width: 100%;
@@ -94,85 +100,80 @@
 
 }
 
-main {
-   height: 178.063rem;
-   width: 120rem;
-}
-
 
 
 @media only screen and (max-width: 2560px) {
-   main {
+   .home {
      height: 237.44rem;
      width: 159rem;
    }
  }
  
  @media only screen and (max-width: 2048px) {
-   main {
+   .home {
      height: 189.21rem;
      width: 126.5rem;
    }
  }
  
  @media only screen and (max-width: 1920px) {
-   main {
+   .home {
      height: 178rem;
-     width: 119rem;
+     width: 120rem;
    }
  }
  
  @media only screen and (max-width: 1680px) {
-   main {
+   .home {
      height: 155.82rem;
      width: 104rem;
    }
  }
  
  @media only screen and (max-width: 1600px) {
-   main {
+   .home {
      height: 148.33rem;
      width: 100rem;
    }
  }
  
  @media only screen and (max-width: 1440px) {
-   main {
+   .home {
      height: 133.563rem;
      width: 90rem;
    }
  }
  
  @media only screen and (max-width: 1366px) {
-   main {
+   .home {
      height: 126.08rem;
      width: 85.375rem;
    }
  }
  
  @media only screen and (max-width: 1280px) {
-   main {
+   .home {
      height: 118.75rem;
      width: 80rem;
    }
  }
  
  @media only screen and (max-width: 1024px) {
-   main {
+   .home {
      height: 93.9rem;
      width: 63rem;
    }
  }
  
  @media only screen and (max-width: 768px) {
-   main {
+   .home {
      height: 71.232em;
      width: 47rem;
    }
  }
  
  @media only screen and (max-width: 480px) {
-   main {
+   .home {
      height: 47.5rem;
      width: 35rem;
    }

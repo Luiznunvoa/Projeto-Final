@@ -9,7 +9,7 @@ import '../global.css'
 export function Home() {
    return (
      <>
-       <main>
+       <main className={styles.home}>
          <Header />
          <section className={styles.top}>
            <section>
