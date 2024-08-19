@@ -1,3 +1,15 @@
+.carrousel {
+   height: 38.5%;
+   margin-top: 5%;
+   margin-left: 5%;
+   width: 300%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-content: flex-start;
+}
+
 .combo {
    height: 100%;
    width: 30%;
