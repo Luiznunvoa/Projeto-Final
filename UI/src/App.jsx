@@ -33,8 +33,8 @@ export function App() {
           <Movie  imagem= "/src/assets/Capa3.svg" nome="Missão Impossível"/>
           <Movie  imagem= "/src/assets/Capa4.svg" nome="Oppenheimer"/>
           <Movie  imagem= "/src/assets/Capa5.svg" nome="Elementos"/>
-
          </section>
+         <h1 className={styles.vermais}>Ver Mais</h1>
         </div>
 
 

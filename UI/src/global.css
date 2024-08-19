@@ -150,6 +150,20 @@ main {
   background-color: var(--fundo);
 }
 
+@media only screen and (max-width: 2560px) {
+  main {
+    height: 188.5rem;
+    width: 130rem;
+  }
+}
+
+@media only screen and (max-width: 2048px) {
+  main {
+    height: 167.5rem;
+    width: 115rem;
+  }
+}
+
 @media only screen and (max-width: 1680px) {
   main {
     height: 155.75rem;
