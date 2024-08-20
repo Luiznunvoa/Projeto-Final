@@ -27,6 +27,7 @@ async function createSeats(req, res){
     }
 }
 
+//Retorna todos os assentos
 async function getAllSeats(req, res){
     try{
         const seat = await Seat.findAll();
@@ -39,6 +40,7 @@ async function getAllSeats(req, res){
     }
 }
 
+//Retorna assentos por ID
 async function getSeatsById(req, res){
     try{
         const { id } = req.params;
@@ -47,24 +49,52 @@ async function getSeatsById(req, res){
         if (seat) {
             return res.status(200).json(seat); 
         } else {
-            return res.status(404).json({ message: "Não achou Assento com esse Id" }); 
+            return res.status(429).json({ message: "Não achou Assento com esse Id" }); 
         }
 
     }catch(error){
         return res.status(400).json({error: "Não foi possivel acessar"});
     }
 }
+//Retorna assentos por posição
+async function getSeatsByPosition(req, res){
+    try{
+        const { number, row } = req.body;
+
+        
+        if (!number || !row) {
+            return res.status(400).json({ message: "Número e linha são necessários" });
+        }
+
+
+        const seat = await Seat.findOne({
+            where: {
+                number: number,
+                row: row
+            }
+        });
+
+        return res.status(200).json(seat);
+        
+    }catch(error){
+        return res.status(400).json({error: "Não foi possivel acessar"});
+    }
+}
 
 async function alterSeatStatus(req, res){
-    try{
-        const { seat } = req;
-        const { user_name} = req.body;
+    try {
+        const { ocupierCPF, ocupierName } = req.body;
+        const { seat } = req; 
 
-        const updatedRows = await seat.update({ user_name});
-        return res.status(200).json(updatedRows);
+        const updatedSeat = await seat.update({
+            ocupierCPF: ocupierCPF,
+            ocupierName: ocupierName
+        });
 
-    }catch(error){
-        return res.status(400).json({error: "Não foi possivel alterar"});
+        return res.status(200).json(updatedSeat);
+
+    } catch (error) {
+        return res.status(500).json({ error: "Não foi possível alterar o assento" });
     }
 }
 
@@ -74,4 +104,5 @@ module.exports = {
     getAllSeats,
     getSeatsById,
     alterSeatStatus,
+    getSeatsByPosition,
 }
