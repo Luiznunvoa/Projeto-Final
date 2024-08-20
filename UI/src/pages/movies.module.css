@@ -107,8 +107,9 @@
 .list {
    height: 86.65%;
    width: 73.19%;
+   margin-top: 5%;
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
-   justify-content: flex-start;
+   justify-content: space-between;
 }
