@@ -1,22 +1,29 @@
 const { Seat } = require('../models/models');
-/**/ 
+
+//Criando todos os assentos, falta receber a sessão e atualizar os preços
 async function createSeats(req, res){
-    try{
-        const { number, row, price, ocupierCPF, ocupierName} = req.body
-
-        const seat = await Seat.create({
-            number,
-            row,
-            price,
-            ocupierCPF,
-            ocupierName
-        });
-
-        return res.status(201).json(seat.toJSON());
+    try {
+        const alfabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
         
+        const seatsToCreate = [];
+
+        for (const letter of alfabet) {
+            for (let number = 1; number <= 18; number++) {
+                seatsToCreate.push({
+                    number,
+                    row: letter,
+                    price: 0,
+                    ocupierCPF: null,
+                    ocupierName: null 
+                });
+            }
+        }
+
+        await Seat.bulkCreate(seatsToCreate);
+        return res.status(201).json({ message: "Assentos criados com sucesso" });
+
     }catch(error){
         return res.status(400).json({error: "Não foi possivel acessar"});
-
     }
 }
 
