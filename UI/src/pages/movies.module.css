@@ -113,3 +113,51 @@
    flex-wrap: wrap;
    justify-content: space-between;
 }
+
+.pages {
+   height: 1.621%;
+   width: 35.83%;
+   margin-top: 8%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.arrowL {
+   background-color: var(--Sombra2_source);
+   height: 100%;
+   width: 13.2%;
+   border-radius: 50%;
+}
+
+.arrowL div{
+   background-color: var(--Sombra2_source);
+   background-image: url("../assets/pagearrow.svg");
+   background-repeat: no-repeat;
+   background-position: 0% 50%;
+   background-size: 50%;
+   height: 100%;
+   width: 60%;
+   border-radius: 1rem;
+   margin-left: 40%;
+}
+.arrowR {
+   background-color: var(--Sombra2_source);
+   height: 100%;
+   width: 13.2%;
+   border-radius: 50%;
+}
+
+.arrowR div{
+   background-color: var(--Sombra2_source);
+   background-image: url("../assets/direita.svg");
+   background-repeat: no-repeat;
+   background-position: 90% 50%;
+   background-size: 50%;
+   height: 100%;
+   width: 60%;
+   border-radius: 1rem;
+   margin-right: 40%;
+}
