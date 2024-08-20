@@ -1,13 +1,13 @@
-const Router = require("express");
+const express = require('express')
 
-const userRoutes = require('./user.routes');
-const movieRoutes = require('./movie.routes');
-const seatRoutes = require('./seat.routes');
-const sectionRoutes = require('./section.routes');
+const userRoutes = require('./user.routes')
+const movieRoutes = require('./movie.routes')
+const seatRoutes = require('./seat.routes')
+const sessionRoutes = require('./session.routes')
 
-const router = Router();
+const router = express.Router()
 
-router.use('/users', userRoutes);
-router.use('/seats', seatRoutes);
+router.use('/users', userRoutes)
+router.use('/sessions', sessionRoutes);
 
-module.exports = router;
+module.exports = router
