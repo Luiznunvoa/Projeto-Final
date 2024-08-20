@@ -19,7 +19,7 @@ export function Home() {
               <section className={styles.top}>
                   <section>
                       <h1>Transformando Filmes em Experiências Personalizadas</h1>
-                      <p>Reserve Seu Assento e Viva a Magia do Cinema!</p>
+                      <h2>Reserve Seu Assento e Viva a Magia do Cinema!</h2>
                   </section>
               </section>
               <section className={styles.mid}>
@@ -28,7 +28,7 @@ export function Home() {
                           nome1="Pipoca (P)" nome2="Pipoca (G)" nome3="Duo Pipoca (M) + Refri" 
                           preco1="11,99" preco2="11,99" preco3="11,99" 
                           imagem1={pipocaImage} imagem2={pipocaImage} imagem3={promoImage}
-                          desc1="Nada diz 'cinema' como o aroma inconfundível de pipoca estourando..."
+                          desc1="Nada diz 'cinema' como o aroma inconfundível de pipoca estourando. E quando se trata de uma porção de pipoca pequena, a magia se torna ainda mais irresistível. Imagine uma explosão de sabores em miniatura, onde cada grão é um pedacinho de felicidade."
                           desc2="No reino da experiência cinematográfica, uma rainha reina supremamente..."
                           desc3="O 'Duo Pipoca + Refri' é mais do que um lanche; é uma tradição que traz..."
                           seta1='1' seta2='2' seta3='1'

@@ -1,21 +1,8 @@
-.carrousel {
+.combo {
    height: 36.5%;
    margin-top: 5%;
    width: 89.1%;
-   margin-left: 5%;
    background-image: url("../assets/Ticket.svg");
-   background-repeat: no-repeat;
-   background-size: cover;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
-   align-items: center;
-   justify-content: center;
-}
-
-.combo {
-   height: 100%;
-   width: 100%;
    background-repeat: no-repeat;
    background-size: cover;
    display: flex;
@@ -52,17 +39,12 @@
 }
 
 .desc section h1{
-   font-family: "Nunito Sans", system-ui;
-   font-weight: 650;
-   font-size: 3rem;
+   color: black;
 }
 
-.desc section p{
-   font-family: "Roboto", sans-serif;
-   font-weight: 300;
-   font-size: 1.5rem;
-   letter-spacing: 0.15rem;
-   margin-top: 3%;
+.desc section h2{
+   margin-top: 5%;
+   color: black;
 }
 
 .arrow1 {

@@ -148,3 +148,19 @@ body {
 main {
   background-color: var(--fundo);
 }
+
+h1 {
+  font-family: "Nunito Sans", system-ui;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  color: var(--Neutro_0);
+  font-weight: 600;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  color: var(--Neutro_0);
+  font-weight: 500;
+}

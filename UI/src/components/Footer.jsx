@@ -9,9 +9,9 @@ export function Footer(){
          <footer>
             <section>
                <h1>Endereço</h1>
-               <p>Av. Milton Tavares de Souza, s/n - Sala 115 B - Boa Viagem, Niterói - RJ CEP: 24210-315</p>
+               <h2>Av. Milton Tavares de Souza, s/n - Sala 115 B - Boa Viagem, Niterói - RJ CEP: 24210-315</h2>
                <h1>Fale Conosco</h1>
-               <p>contato@injunior.com.br</p>
+               <h2>contato@injunior.com.br</h2>
                <section>
                   <img src={IG} alt='Instagram'></img>
                   <img src={FB} alt='Facebook'></img>

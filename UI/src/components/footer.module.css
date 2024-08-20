@@ -21,16 +21,14 @@ footer section {
 }
 
 footer h1 {
+   font-size: 2rem;
    margin-top: 10%;
-   font-family: "Roboto", sans-serif;
 }
 
-footer p {
+footer h2 {
    margin-top: 10%;
-   font-family: "Roboto", sans-serif;
    font-size: 1rem;
    font-weight: 200;
-   letter-spacing: 0.2rem;
 }
 
 footer section section {
@@ -39,7 +37,7 @@ footer section section {
    flex-direction: row;
    flex-wrap: nowrap;
    align-items: center;
-   height: 10%;
+   height: 8%;
    width: 100%;
 }
 

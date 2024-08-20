@@ -13,12 +13,9 @@
    cursor: pointer;
 }
 
-.movie p{
-   color: var(--Neutro_0);
-   font-family: "Roboto", sans-serif;
+.movie h2{
    font-weight: 550;
    letter-spacing: 0.15rem;
-   font-size: 1.5rem;
 }
 
 .movie div {
