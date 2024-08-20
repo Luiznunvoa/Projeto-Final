@@ -1,0 +1,115 @@
+.checkout {
+   height: 71.167rem;
+   width: 119rem;
+}
+
+.mid {
+   height: 100%;
+   width: 100%;
+   position: relative;
+   z-index: 0;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;  
+   justify-content: space-between;
+}
+
+.mid::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-image: url("../assets/Vector.svg");
+   background-position: center;
+   opacity: 0.2; 
+   z-index: -1; 
+}
+
+.map {
+   height: 81.96%;
+   width: 62.5%;
+   background-color: #141414;
+   margin-right: 7%;
+}
+
+.mapheader {
+   width: 100%;
+   height: 7.14%;
+   background-image: url("../assets/Tela.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+
+
+
+
+/************************************** CHOSEN SEATS ****************************************/
+.chosenSeats {
+   width: 23.275%;
+   height: 91.33%;
+   background: var(--Principal_900);
+   background: linear-gradient(180deg, var(--Principal_900) 30%, var(--Neutro_200) 30%);
+   display: flex;
+   flex-flow: wrap column;
+   align-items: center;
+   justify-content: center;
+}
+
+.chosenSeatsTop {
+   width: 75%;
+   height: 25%;
+   display: flex;
+   flex-wrap: wrap;
+   align-content: flex-end;
+   justify-content: center;
+}
+
+.imageURL {
+   height: 100%;
+   width: 44.6%;
+}
+
+.title {
+   font-family: "Nunito Sans", system-ui;
+   font-optical-sizing: auto;
+   font-weight: 800;
+   font-style: normal;
+   font-variation-settings:
+     "wdth" 100,
+     "YTLC" 500;
+   color: var(--Neutro_100);
+}
+
+.chosenSeatsTop > div {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-content: center;
+}
+
+.chosenSeatsTop > div > div {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   justify-content: space-around;
+}
+
+.chosenSeatsTop > div > div > p {
+   width: 40%;
+   background-color: var(--CallToAction_400);
+   color: var(--Neutro_900);
+   text-align: center;
+   border: solid 1px var(--CallToAction_400);
+   border-radius: 5%;
+}
+
+.chosenSeatsBottom {
+   height: 60%;
+   width: 100%;
+}
