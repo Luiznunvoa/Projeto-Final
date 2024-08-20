@@ -54,8 +54,7 @@
    height: 100%;
    width: 100%;
    background-image: url("../assets/Vector.svg");
-   background-repeat: no-repeat;
-   background-size: cover;
+   background-position: center;
    opacity: 0.2; 
    z-index: -1; 
 }
