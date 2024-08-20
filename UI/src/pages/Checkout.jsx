@@ -11,10 +11,10 @@ export function Checkout() {
                     <div className={styles.chosenSeatsTop}>
                         <img className={styles.imageURL}></img>
                         <div>
-                            <p className={styles.title}>Besouro Azul</p>
+                            <h1 className={styles.title}>Besouro Azul</h1>
                             <div>
-                                <p className={styles.type}>2D</p>
-                                <p className={styles.time}>15:20</p>
+                                <h2 className={styles.type}>2D</h2>
+                                <h2 className={styles.time}>15:20</h2>
                             </div>
                         </div>
                     </div>
