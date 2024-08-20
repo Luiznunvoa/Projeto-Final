@@ -41,7 +41,7 @@ export function Home() {
                         <Movie imagem={capa4Image} nome="Oppenheimer"/>
                         <Movie imagem={capa5Image} nome="Elementos"/>
                       </section>
-                      <h1 className={styles.vermais}>Ver Mais</h1>
+                      <h1 className={styles.vermais}><Link to='/Movies'>Ver Mais</Link></h1>
                   </div>
               </section>
             </main>

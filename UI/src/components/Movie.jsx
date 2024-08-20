@@ -1,4 +1,5 @@
 import styles from './movie.module.css'
+import { Link } from "react-router-dom";
 
 export function Movie(props){
    return(
@@ -7,7 +8,7 @@ export function Movie(props){
          <img src={props.imagem}></img>
          <h2>{props.nome}</h2>
          <div>
-            SESSÔES DISPOÍVEIS
+            <Link to='/Checkout'>SESSÔES DISPOÍVEIS</Link>
          </div>
 
       </section>
