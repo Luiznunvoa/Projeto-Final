@@ -11,7 +11,7 @@ Este é o projeto final desenvolvido para o processo seletivo da Empresa Júnior
 1. Certifique-se de que você tem o node instalado
 2. Abra o Git bash na pasta que deseja abrir o projeto
 3. Use os seguintes comandos:<br>
-  <code>git clone https://github.com/Luiznunvoa/Projeto-CINEMA</code><br>
+  <code>cd UI</code><br>
   <code>npm run dev</code>
 ## Back-End
 1. Certifique-se que você tem o yarn instalado, caso não, utilize:<br>
@@ -20,7 +20,8 @@ Este é o projeto final desenvolvido para o processo seletivo da Empresa Júnior
 2. Certifique-se que o seu Windows tem a seguinte permissão:<br>
    <code>Set-ExecutionPolicy RemoteSigned</code>
    - <p>Copie e cole no Windows Power Shell</p>
-3. Certifique-se que o seu Windows tem a seguinte permissão:<br>
+3. Utilize o seguinte código:<br>
+    <code>cd API</code><br>
    <code>yarn dev</code>
    - <p>Copie e cole no CMD com a pasta do repositório selecionada</p>
 
