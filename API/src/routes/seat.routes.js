@@ -1,23 +1,24 @@
-const express = require('express')
-const seatRoutes = express.Router()
+const express = require('express');
+const seatRoutes = express.Router();
 
-//Incluindo Middlewares
-const findSeat = require('../middlewares/findSeatMiddleware');
+//Importar Middlewares
+const findSeatByid = require('../middlewares/findSeatMiddleware');
 
-//Incluindo Controladores
-const seatController = require('../controllers/seatController')
+//Importando Controllers
+const seatControllers = require('../controllers/seatController');
 
-//post
-seatRoutes.post('/seat',(req, res) =>{seatController.createSeat(req,res)})
 
-//get
-seatRoutes.post('/seat',(req, res) =>{seatController.returnSeats(req,res)})
+//Criar assento
+seatRoutes.post('/', (req, res)=>{seatControllers.createSeats(req,res)})
 
-//patch
-seatRoutes.post('/seat',(req, res) =>{seatController.altSeat(req,res)})
+//Recuperar todos os assentos
+seatRoutes.get('/', (req, res)=>{seatControllers.getAllSeats(req,res)})
 
-//delete
-seatRoutes.post('/seat',(req, res) =>{seatController.deleteSeat(req,res)})
+//Recuperar assento por id
+seatRoutes.get('/:id', (req, res)=>{seatControllers.getSeatsById(req,res)})
+
+//Alterar status do assento
+seatRoutes.patch('/:id', findSeatByid, (req, res)=>{seatControllers.alterSeatStatus(req,res)})
 
 
 module.exports = seatRoutes;
