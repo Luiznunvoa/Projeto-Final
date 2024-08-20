@@ -1,3 +1,4 @@
+import { Dropdown } from "../components/Dropdown.jsx";
 import { Link } from "react-router-dom";
 import styles from './movies.module.css';
 import '../global.css';
@@ -8,32 +9,20 @@ export function Movies() {
          <main className={styles.movies}>
             <section className={styles.search}>
                <div className={styles.searchbar}>
-                  <input type="text" placeholder="Pesquisar filmes">                  
-                  </input>
-                  <div></div>
+                  <input type="text" placeholder="Pesquisar filmes" />                  
+                  <div />
                </div>
             <section className={styles.dropdowns}>
-               <div className={styles.dropdown}>
-                  <div className={styles.strip}>
-                  </div>
-                  <h1>Gênero</h1>
-                  <div className={styles.drop}>
-                  </div>
-               </div>
-               <div className={styles.dropdown}>
-                  <div className={styles.strip}>
-                  </div>
-                  <h1>Classificação</h1>
-                  <div className={styles.drop}>
-                  </div>
-               </div>
+               <Dropdown tipo='Gênero' />
+               <Dropdown tipo='Classificação' />
             </section>
 
             </section>
             <section className={styles.mid}>
-               <div className={styles.back}>
+               <h1 className={styles.title}>Filmes</h1>
+               <section className={styles.list}>
 
-               </div>
+               </section>
 
             </section>
             
