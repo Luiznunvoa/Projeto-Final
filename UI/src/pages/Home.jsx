@@ -21,15 +21,15 @@ const comboData = [
     },
     {
         nome: "Pipoca (G)",
-        preco: "11,99",
+        preco: "13,99",
         imagem: pipocaImage,
-        desc: "No reino da experiência cinematográfica, uma rainha reina supremamente...",
+        desc: "No reino da experiência cinematográfica, uma rainha reina supremamente: a pipoca grande, uma verdadeira protagonista em cada tela de prata. Ela transcende o mero lanche e se transforma em uma jornada culinária que rivaliza com as tramas mais emocionantes.",
     },
     {
         nome: "Duo Pipoca (M) + Refri",
-        preco: "11,99",
+        preco: "16,99",
         imagem: promoImage,
-        desc: "O 'Duo Pipoca + Refri' é mais do que um lanche; é uma tradição que traz...",
+        desc: "O 'Duo Pipoca + Refri' é mais do que um lanche; é uma tradição que traz à tona as melhores lembranças de ir ao cinema. Compartilhado entre amigos, dividido com a família ou desfrutado em momentos de autocuidado, este combo é um símbolo da felicidade encontrada nos momentos mais simples.",
     }
 ];
 
