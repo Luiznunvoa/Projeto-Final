@@ -1,8 +1,15 @@
-const { Seat } = require('../models/models');
+const { Seat } = require('../models/models.js');
+const { Session } = require("../models/models.js")
 
 //Criando todos os assentos, falta receber a sessão e atualizar os preços
 async function createSeats(req, res){
     try {
+        const { SessionId } = req.body
+        const session = await Session.findByPk(SessionId);
+        if (!session) {
+            return res.status(404).json({ error: "Sessão não encontrada." });
+        }
+
         const alfabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
         
         const seatsToCreate = [];
@@ -14,7 +21,8 @@ async function createSeats(req, res){
                     row: letter,
                     price: 0,
                     ocupierCPF: null,
-                    ocupierName: null 
+                    ocupierName: null,
+                    SessionId: SessionId
                 });
             }
         }
@@ -23,7 +31,7 @@ async function createSeats(req, res){
         return res.status(201).json({ message: "Assentos criados com sucesso" });
 
     }catch(error){
-        return res.status(400).json({error: "Não foi possivel acessar"});
+        return res.status(500).json({error: "Não foi possivel acessar"});
     }
 }
 
@@ -59,18 +67,19 @@ async function getSeatsById(req, res){
 //Retorna assentos por posição
 async function getSeatsByPosition(req, res){
     try{
-        const { number, row } = req.body;
+        const { number, row, SessionId } = req.body;
 
         
-        if (!number || !row) {
-            return res.status(400).json({ message: "Número e linha são necessários" });
+        if (!number || !row || !SessionId) {
+            return res.status(400).json({ message: "Número, linha e id da sessão são necessários" });
         }
 
 
         const seat = await Seat.findOne({
             where: {
                 number: number,
-                row: row
+                row: row,
+                SessionId: SessionId
             }
         });
 

@@ -2,16 +2,17 @@ const { Seat } = require('../models/models');
 
 async function findSeatByPosition(req, res, next){
     try {
-        const { number, row } = req.body;
+        const { number, row, SessionId } = req.body;
 
-        if (!number || !row) {
+        if (!number || !row || !SessionId) {
             return res.status(400).json({ message: "Número e linha são necessários" });
         }
 
         const seat = await Seat.findOne({
             where: {
                 number: number,
-                row: row
+                row: row,
+                SessionId: SessionId
             }
         });
 
