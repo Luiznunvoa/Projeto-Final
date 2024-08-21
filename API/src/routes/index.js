@@ -9,7 +9,6 @@ const router = Router();
 
 router.use('/users', userRoutes);
 router.use('/seats', seatRoutes);
-router.use("/movies", movieRoutes)
-router.use('/users', userRoutes)
+router.use("/movies", movieRoutes);
 
 module.exports = router;
