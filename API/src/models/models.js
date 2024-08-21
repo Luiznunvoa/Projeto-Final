@@ -102,8 +102,10 @@ const User = sequelize.define("User", {
 Movie.hasMany(Section, {onDelete: "CASCADE", foreignKey: "title"})
 Section.belongsTo(Movie)
 
+/*
 Section.hasMany(Seat, {onDelete: "CASCADE", foreignKey: "time"})
 Seat.belongsTo(Section)
+*/
 
 module.exports = {
     Movie,
