@@ -1,6 +1,8 @@
 import { Combos } from "../components/Combos.jsx";
 import { Movie } from "../components/Movie.jsx";
 import { Link } from "react-router-dom";
+import { useState } from "react"
+import styles from './sessions.module.css';
 
 import '../global.css';
 
@@ -13,10 +15,29 @@ import capa4Image from '../assets/Capa4.svg';
 import capa5Image from '../assets/Capa5.svg';
 
 export function Sessions() {
+
+    //Componente banner: 
+    //imagem={capa1Image}, nome='BESOURO AZUL' genero='Ação/Aventura' diretor='Angel Manuel Soto' desc='Quando um escaravelho alienígena se funde com seu corpo, Jaime ganha uma armadura tecnológica que lhe concede superpoderes incríveis.'
+    //Dentro de banner precisa ter dropdown
+    //Componente sessões 
+    //Lista de objetos onde cada objeto tem um tipo e sessoes 
+
     return (
         <>
             <main>
-                <h1>Oi</h1>
+                <div className={styles.info}></div>
+                <div className={styles.horarios}>
+                    <div className={styles.tipoDeSessao}>
+                        <div className={styles.buttons}>
+                            <button>2D</button>
+                            <button>3D</button>
+                            <button>IMAX</button>
+                        </div>
+                    </div>
+                    <h1>Sessao</h1>
+                    <h1>Sessao</h1>
+                    <h1>Sessao</h1>
+                </div>
             </main>
         </>
     );
