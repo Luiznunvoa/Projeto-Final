@@ -31,9 +31,9 @@ export function Login() {
                   </h2>
                </Link>
                <hr/>
-               <div className={styles.register}>
+               <Link to='/SignUp'  className={styles.register}>
                   <h2>CADASTRE-SE</h2>
-               </div>
+               </Link>
             </div>
          </section>
 
