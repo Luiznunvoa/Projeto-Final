@@ -41,7 +41,7 @@ export function Sessions() {
 
     return (
         <>
-            <main>
+            <main className={styles.fundo}>
                 <div className={styles.info}>
                     <Banner
                         imagem={capa1Image}
