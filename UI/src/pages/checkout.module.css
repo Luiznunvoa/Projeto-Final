@@ -182,16 +182,49 @@
 }
 
 
-.confirmation.visible {
-   visibility: visible;
-}
-
 .midVisible:after {
    visibility: visible;
 }
 
+.confirmation {
+   visibility: hidden;
+}
 
+.confirmation.visible {
+   visibility: visible;
+}
 
+.confirmation.confirmed {
+   background-color: var(--Confirm_400);
+   color: white;
+   text-align: center;
+}
+
+.confirmation.confirmed h1 {
+   font-size: 24px;
+}
+
+.confirmation.confirmed section {
+   display: none;
+}
+
+.cancel, .accept {
+   cursor: pointer;
+}
+
+.confirmation .cancel {
+   text-decoration: none;
+   color: white;
+   cursor: pointer;
+}
+
+.confirmation.confirmed .cancel {
+   font-size: 18px;
+   margin-top: 20px;
+   display: inline-block;
+   color: white;
+   text-decoration: underline;
+}
 /************************************** CHOSEN SEATS ****************************************/
 .chosenSeats {
    width: 23.275%;

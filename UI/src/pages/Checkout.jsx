@@ -1,6 +1,7 @@
 import styles from './checkout.module.css';
 import React, { useState } from 'react';
 import { Seats } from "../components/Seats.jsx";
+import { Link } from "react-router-dom";
 import '../global.css';
 
 import capa1Image from '../assets/Capa1.png';
@@ -8,6 +9,7 @@ import seatIcon from "../assets/seatIcon.svg";
 
 export function Checkout() {
     const [isVisible, setIsVisible] = useState(false);
+    const [isConfirmed, setIsConfirmed] = useState(false);
 
     const handleConfirmClick = () => {
         setIsVisible(true);
@@ -18,8 +20,9 @@ export function Checkout() {
     };
 
     const handleAcceptClick = () => {
-        setIsVisible(false);
+        setIsConfirmed(true);
     };
+
 
     return (
         <>
@@ -61,17 +64,26 @@ export function Checkout() {
                         <h2>Comprado</h2>
                     </section>
                 </div>
-                <div className={`${styles.confirmation} ${isVisible ? styles.visible : ''}`}>
-                    <h1>Confirmação de Reserva!</h1>
-                    <h2>Tem certeza de que deseja confirmar a reserva?</h2>
-                    <section>
-                        <div className={styles.cancel} onClick={handleCancelClick}>
-                            <h1>CANCELAR</h1>
-                        </div>
-                        <div className={styles.accept} onClick={handleAcceptClick}>
-                            <h1>CONFIRMAR</h1>
-                        </div>
-                    </section>
+                <div className={`${styles.confirmation} ${isVisible ? styles.visible : ''} ${isConfirmed ? styles.confirmed : ''}`}>
+                    {isConfirmed ? (
+                        <>
+                            <h1>Reserva confirmada!</h1>
+                            <Link to="/" className={styles.cancel}>Voltar para a página inicial</Link>
+                        </>
+                    ) : (
+                        <>
+                            <h1>Confirmação de Reserva!</h1>
+                            <h2>Tem certeza de que deseja confirmar a reserva?</h2>
+                            <section>
+                                <div className={styles.cancel} onClick={handleCancelClick}>
+                                    <h1>CANCELAR</h1>
+                                </div>
+                                <div className={styles.accept} onClick={handleAcceptClick}>
+                                    <h1>CONFIRMAR</h1>
+                                </div>
+                            </section>
+                        </>
+                    )}
                 </div>
             </section>
         </main>
