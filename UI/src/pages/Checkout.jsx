@@ -1,4 +1,5 @@
 import styles from './checkout.module.css';
+import React, { useState } from 'react';
 import { Seats } from "../components/Seats.jsx";
 import '../global.css';
 
@@ -6,13 +7,27 @@ import capa1Image from '../assets/Capa1.png';
 import seatIcon from "../assets/seatIcon.svg";
 
 export function Checkout() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    const handleConfirmClick = () => {
+        setIsVisible(true);
+    };
+
+    const handleCancelClick = () => {
+        setIsVisible(false);
+    };
+
+    const handleAcceptClick = () => {
+        setIsVisible(false);
+    };
+
     return (
         <>
         <main className={styles.checkout}>
-            <section className={styles.mid}>
+            <section className={`${styles.mid} ${isVisible ? styles.midVisible : ''}`}>
                 <div className={styles.chosenSeats}>
                     <div className={styles.chosenSeatsTop}>
-                        <img src={capa1Image}  className={styles.imageURL}></img>
+                        <img src={capa1Image} className={styles.imageURL}></img>
                         <div>
                             <h1 className={styles.title}>Besouro Azul</h1>
                             <div>
@@ -27,14 +42,13 @@ export function Checkout() {
                             <span>Assentos escolhidos</span>
                         </div>
                         <div className={styles.seats}></div>
-                        <button>Confirmar</button>
+                        <button onClick={handleConfirmClick}>Confirmar</button>
                     </div>
                 </div>
                 <div className={styles.map}>
-                  <div className={styles.mapheader} />
+                    <div className={styles.mapheader} />
                     <section className={styles.seatmap}>
                         <Seats />
-
                     </section>
                     <hr/>
                     <h2>LEGENDA</h2>
@@ -45,6 +59,18 @@ export function Checkout() {
                         <h2>Selecionado</h2>
                         <div className={styles.seat3}></div>
                         <h2>Comprado</h2>
+                    </section>
+                </div>
+                <div className={`${styles.confirmation} ${isVisible ? styles.visible : ''}`}>
+                    <h1>Confirmação de Reserva!</h1>
+                    <h2>Tem certeza de que deseja confirmar a reserva?</h2>
+                    <section>
+                        <div className={styles.cancel} onClick={handleCancelClick}>
+                            <h1>CANCELAR</h1>
+                        </div>
+                        <div className={styles.accept} onClick={handleAcceptClick}>
+                            <h1>CONFIRMAR</h1>
+                        </div>
                     </section>
                 </div>
             </section>
