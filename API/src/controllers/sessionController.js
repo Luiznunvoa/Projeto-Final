@@ -3,50 +3,39 @@ const { Session, Movie, Seat } = require("../models/models");
 // criar uma nova sessão
 async function createSession(req, res) {
     try {
-        const { horario, cidade, bairro, tipo, movieId, seats } = req.body;
+        const { time, city, neighborhood, type, title } = req.body;
 
         // --- validações ---
         // verificar formato hh:mm
         const formatoHorario = /^([01]\d|2[0-3]):([0-5]\d)$/; // regex de 24h
-        if (!formatoHorario.test(horario)) {
+        if (!formatoHorario.test(time)) {
             return res.status(400).json({ error: "Horário inválido -- Utilize o formato hh:mm." });
         }
 
+        console.log(type)
         // verificar tipos 0, 1 ou 2
-        if (tipo >= 0 && tipo <= 2) {
+        if (type < 0 || type > 2) {
             return res.status(400).json({ error: "Tipo inválido -- Forneça um valor entre 0 e 2." });
         }
 
         // verificar se filme existe
-        const movie = await Movie.findByPk(movieId);
+        const movie = await Movie.findByPk(title);
         if (!movie) {
             return res.status(404).json({ error: "Filme não encontrado." });
         }
 
         // verificar assentos
-        if (seats) { 
-            const seatInstances = await Seat.findAll({
-                where: { id: seats, MovieId: movieId }
-            });
-
-            if (seatInstances.length !== seats.length) {
-                return res.status(400).json({ error: "Há assentos inválidos." });
-            }
-        }
 
         // criar a sessão de fato
         const session = await Session.create({
-            horario,
-            cidade,
-            bairro,
-            tipo,
-            MovieId: movieId
+            time,
+            city,
+            neighborhood,
+            type,
+            title
         });
 
-        // associar os assentos à sessão
-        if (seats) {
-            await session.addSeats(seatInstances);
-        }
+
 
         return res.status(201).json(session);
     } catch (error) {
