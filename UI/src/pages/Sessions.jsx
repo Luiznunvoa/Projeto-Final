@@ -2,6 +2,7 @@ import { Combos } from "../components/Combos.jsx";
 import { Movie } from "../components/Movie.jsx";
 import { Link } from "react-router-dom";
 import { useState } from "react"
+import { Banner } from "../components/Banner.jsx";
 import styles from './sessions.module.css';
 
 import '../global.css';
@@ -17,7 +18,7 @@ import capa5Image from '../assets/Capa5.svg';
 export function Sessions() {
 
     //Componente banner: 
-    //imagem={capa1Image}, nome='BESOURO AZUL' genero='Ação/Aventura' diretor='Angel Manuel Soto' desc='Quando um escaravelho alienígena se funde com seu corpo, Jaime ganha uma armadura tecnológica que lhe concede superpoderes incríveis.'
+    //imagem={capa1Image}, nome='BESOURO AZUL' genero='Ação/Aventura' 
     //Dentro de banner precisa ter dropdown
     //Componente sessões 
     //Lista de objetos onde cada objeto tem um tipo e sessoes 
@@ -25,7 +26,14 @@ export function Sessions() {
     return (
         <>
             <main>
-                <div className={styles.info}></div>
+                <div className={styles.info}>
+                    <Banner
+                        imagem={capa1Image}
+                        nome='BESOURO AZUL'
+                        genero='Ação/Aventura'
+                        desc='Quando um escaravelho alienígena se funde com seu corpo, Jaime ganha uma armadura tecnológica que lhe concede superpoderes incríveis.'
+                    ></Banner>
+                </div>
                 <div className={styles.horarios}>
                     <div className={styles.tipoDeSessao}>
                         <div className={styles.buttons}>
