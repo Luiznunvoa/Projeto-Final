@@ -1,10 +1,12 @@
 const sequelize = require("../../config/database.js")
 const { DataTypes } = require("sequelize")
+const { v4: uuidv4 } = require("uuid")
 
 const Movie = sequelize.define("Movie", {
     title: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        primaryKey: true
     },
     imageURL: {
         type: DataTypes.TEXT,
@@ -29,6 +31,11 @@ const Movie = sequelize.define("Movie", {
 })
 
 const Session = sequelize.define("Session", {
+    SessionId: {
+        type: DataTypes.UUIDV4,
+        defaultValue: () => uuidv4(),
+        primaryKey: true
+    },
     time: {
         type: DataTypes.STRING,
         allowNull: false
@@ -48,6 +55,11 @@ const Session = sequelize.define("Session", {
 })
 
 const Seat = sequelize.define("Seat", {
+    SeatId: {
+        type: DataTypes.UUIDV4,
+        defaultValue: () => uuidv4(),
+        primaryKey: true
+    },
     number: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -87,7 +99,8 @@ const User = sequelize.define("User", {
     }, 
     username: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        primaryKey: true
     }, 
     email: {
         type: DataTypes.STRING,
@@ -102,10 +115,10 @@ const User = sequelize.define("User", {
 Movie.hasMany(Session, {onDelete: "CASCADE", foreignKey: "title"})
 Session.belongsTo(Movie)
 
-/*
-Session.hasMany(Seat, {onDelete: "CASCADE", foreignKey: "time"})
-Seat.belongsTo(Session)
-*/
+
+Session.hasMany(Seat, {onDelete: "CASCADE", foreignKey: "SessionId"})
+Seat.belongsTo(Session, { foreignKey: "SessionId" });
+
 
 module.exports = {
     Movie,
