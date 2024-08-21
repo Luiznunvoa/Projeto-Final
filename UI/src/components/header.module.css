@@ -11,10 +11,16 @@ header {
    box-shadow: 0px 8px 13px 1px rgba(0,0,0,0.75);
 }
 
-header img {
-   margin-left: 1%;
-   height: 44%;
+.icon {
+   height: 57.64%;
+   width: 17.43%;
+   margin-left: 2.2%;
 
+}
+
+header img {
+   height: 100%;
+   width: 100%;
 }
 
 header section {
@@ -27,7 +33,6 @@ header section {
    justify-content: space-evenly;
 }
 
-header section img {
+header section a{
    height: 30%;
 }
-

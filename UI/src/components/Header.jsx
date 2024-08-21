@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export function Header(){
    return(
       <header>
-         <Link to="/">
+         <Link to="/" className={styles.icon}>
             <img src={Icon} alt="Logo"/>
          </Link>
             <section>
