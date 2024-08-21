@@ -1,5 +1,5 @@
 import styles from './checkout.module.css';
-import { Combos } from "../components/Combos.jsx";
+import { Seats } from "../components/Seats.jsx";
 import '../global.css';
 
 import capa1Image from '../assets/Capa1.png';
@@ -31,10 +31,21 @@ export function Checkout() {
                     </div>
                 </div>
                 <div className={styles.map}>
-                  <div className={styles.mapheader}>
-                     
-                  </div>
-                     
+                  <div className={styles.mapheader} />
+                    <section className={styles.seatmap}>
+                        <Seats />
+
+                    </section>
+                    <hr/>
+                    <h2>LEGENDA</h2>
+                    <section className={styles.seatypes}>
+                        <div className={styles.seat1}></div>
+                        <h2>Disponíveis</h2>
+                        <div className={styles.seat2}></div>
+                        <h2>Selecionado</h2>
+                        <div className={styles.seat3}></div>
+                        <h2>Comprado</h2>
+                    </section>
                 </div>
             </section>
         </main>
