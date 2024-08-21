@@ -31,7 +31,7 @@
     transition: 0.3s;
 }
 
-.buttons > button:active {
+.buttons > button:hover {
     background-color: var(--principal);
     color: black;
     transition: 0.3s;

@@ -1,27 +1,43 @@
-import { Combos } from "../components/Combos.jsx";
-import { Movie } from "../components/Movie.jsx";
-import { Link } from "react-router-dom";
 import { useState } from "react"
 import { Banner } from "../components/Banner.jsx";
+import { Session } from "../components/Session.jsx";
 import styles from './sessions.module.css';
 
 import '../global.css';
 
-import pipocaImage from '../assets/Pipoca.svg';
-import promoImage from '../assets/Promo.svg';
 import capa1Image from '../assets/Capa1.svg';
-import capa2Image from '../assets/Capa2.svg';
-import capa3Image from '../assets/Capa3.svg';
-import capa4Image from '../assets/Capa4.svg';
-import capa5Image from '../assets/Capa5.svg';
+//import capa2Image from '../assets/Capa2.svg';
+//import capa3Image from '../assets/Capa3.svg';
+//import capa4Image from '../assets/Capa4.svg';
+//import capa5Image from '../assets/Capa5.svg';
 
 export function Sessions() {
 
-    //Componente banner: 
-    //imagem={capa1Image}, nome='BESOURO AZUL' genero='Ação/Aventura' 
-    //Dentro de banner precisa ter dropdown
-    //Componente sessões 
-    //Lista de objetos onde cada objeto tem um tipo e sessoes 
+    const sessoes = [
+        {
+            rating: '2D', 
+            list: ['15:20', '17:40', '20:00']
+        }, 
+        {
+            rating: '3D', 
+            list: ['15:30', '20:15']
+        },
+        {
+            rating: 'IMAX', 
+            list: ['16:20', '18:00']
+        }
+    ]
+
+    /*  
+        Questões: 
+        1) Como passar propriedades para a pagina sessao? 
+        2) Constante sessoes: 
+            Tem que estar associada a cada filme 
+            Sessao -> Horario
+                Cidade da sessao
+                Bairro da sessao
+                Tipo da sessao
+    */
 
     return (
         <>
@@ -42,9 +58,15 @@ export function Sessions() {
                             <button>IMAX</button>
                         </div>
                     </div>
-                    <h1>Sessao</h1>
-                    <h1>Sessao</h1>
-                    <h1>Sessao</h1>
+                    {sessoes.map(sessao => {
+                        return (
+                            <Session
+                                key={sessao.rating}
+                                rating={sessao.rating}
+                                sessions={sessao.list}
+                            ></Session>
+                        )
+                    })}
                 </div>
             </main>
         </>
