@@ -19,10 +19,9 @@ export function Header(){
                <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>
                   <img src={Sign} alt="Sign"/>
                </a>
-               <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>
+               <Link to="/Contact">
                   <img src={Help} alt="Help"/>
-               </a>
-
+               </Link>
             </section>
       </header>
 
