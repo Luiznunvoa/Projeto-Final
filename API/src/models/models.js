@@ -28,7 +28,7 @@ const Movie = sequelize.define("Movie", {
     }
 })
 
-const Section = sequelize.define("Section", {
+const Session = sequelize.define("Session", {
     time: {
         type: DataTypes.STRING,
         allowNull: false
@@ -99,17 +99,17 @@ const User = sequelize.define("User", {
     }
 })
 
-Movie.hasMany(Section, {onDelete: "CASCADE", foreignKey: "title"})
-Section.belongsTo(Movie)
+Movie.hasMany(Session, {onDelete: "CASCADE", foreignKey: "title"})
+Session.belongsTo(Movie)
 
 /*
-Section.hasMany(Seat, {onDelete: "CASCADE", foreignKey: "time"})
-Seat.belongsTo(Section)
+Session.hasMany(Seat, {onDelete: "CASCADE", foreignKey: "time"})
+Seat.belongsTo(Session)
 */
 
 module.exports = {
     Movie,
-    Section,
+    Session,
     Seat,
     User
 }
