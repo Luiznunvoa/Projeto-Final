@@ -12,9 +12,9 @@ export function App() {
     <Router>
         <Layout>
             <Routes>
-                <Route path="/" element={<Login />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/SignUp" element={<SignUp />} />
-                <Route path="/Home" element={<Home />} />
+                <Route path="/Login" element={<Login />} />
                 <Route path="/Movies" element={<Movies />} />
                 <Route path="/Checkout" element={<Checkout />} />
                 <Route path="/Contact" element={<Contact />} />

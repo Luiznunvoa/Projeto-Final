@@ -13,12 +13,12 @@ export function Header(){
          </Link>
             <section>
 
-               <Link to='Movies'>
+               <Link to='/Movies'>
                   <img src={Movies} alt="Movies"/>
                </Link>
-               <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>
+               <Link to='/Login'>
                   <img src={Sign} alt="Sign"/>
-               </a>
+               </Link>
                <Link to="/Contact">
                   <img src={Help} alt="Help"/>
                </Link>

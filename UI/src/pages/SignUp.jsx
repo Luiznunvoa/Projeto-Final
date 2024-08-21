@@ -33,7 +33,7 @@ export function SignUp() {
                   <input className={styles.user} type='email' placeholder='E-mail'/>
                   <input className={styles.user} type='password' placeholder='Senha'/>
                   <input className={styles.user} type='password' placeholder='Confirmar Senha'/>
-                  <Link to='/Home' className={styles.enter}>
+                  <Link to='/' className={styles.enter}>
                   <h2>
                      REGISTRAR
                   </h2>

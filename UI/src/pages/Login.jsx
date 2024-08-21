@@ -25,7 +25,7 @@ export function Login() {
                <h2>Faça seu login e garanta o seu lugar na diversão!</h2>
                <input className={styles.user} type='text' placeholder='Usuário ou E-mail'/>
                <input className={styles.user} type='password' placeholder='Senha'/>
-               <Link to='/Home' className={styles.enter}>
+               <Link to='/' className={styles.enter}>
                   <h2>
                      ENTRAR
                   </h2>
