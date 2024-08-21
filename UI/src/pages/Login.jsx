@@ -1,6 +1,7 @@
 import styles from './login.module.css';
 import '../global.css';
 import Icon from '../assets/Logo.svg';
+import { Link } from "react-router-dom";
 export function Login() {
     return (
         <>
@@ -24,7 +25,11 @@ export function Login() {
                <h2>Faça seu login e garanta o seu lugar na diversão!</h2>
                <input className={styles.user} type='text' placeholder='Usuário ou E-mail'/>
                <input className={styles.user} type='password' placeholder='Senha'/>
-               <div className={styles.enter}><h2>ENTRAR</h2></div>
+               <Link to='/Home' className={styles.enter}>
+                  <h2>
+                     ENTRAR
+                  </h2>
+               </Link>
                <hr/>
                <div className={styles.register}>
                   <h2>CADASTRE-SE</h2>
