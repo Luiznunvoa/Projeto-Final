@@ -53,11 +53,14 @@
    width: 23.275%;
    height: 91.33%;
    background: var(--Principal_900);
-   background: linear-gradient(180deg, var(--Principal_900) 30%, var(--Neutro_200) 30%);
+   background: linear-gradient(180deg, var(--Principal_900) 30%, var(--Neutro_100) 30%);
    display: flex;
    flex-flow: wrap column;
    align-items: center;
-   justify-content: center;
+   justify-content: flex-end;
+   box-shadow: 4px 0px 4px 0px #00000080;
+   align-self: self-start;
+   gap: 1.5%;
 }
 
 .chosenSeatsTop {
@@ -67,11 +70,13 @@
    flex-wrap: wrap;
    align-content: flex-end;
    justify-content: center;
+   gap: 3%;
 }
 
 .imageURL {
    height: 100%;
    width: 44.6%;
+   object-fit: cover;
 }
 
 .title {
@@ -89,6 +94,7 @@
    flex-direction: column;
    flex-wrap: wrap;
    align-content: center;
+   gap: 3%;
 }
 
 .chosenSeatsTop > div > div {
@@ -105,9 +111,58 @@
    text-align: center;
    border: solid 1px var(--CallToAction_400);
    border-radius: 0.5rem;
+   font-size: 1.125rem;
+   font-weight: bold;
+   cursor: default;
 }
 
 .chosenSeatsBottom {
-   height: 60%;
+   height: 67%;
    width: 100%;
+   display: flex;
+   flex-flow: wrap column;
+   align-items: center;
+   gap: 5%;
+}
+
+.chosenSeatsBottom div:first-child {
+   height: 5%;
+   width: 100%;
+   display: flex;
+   flex-flow: wrap row;
+   gap: 1.5%;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+
+.chosenSeatsBottom > div > img {
+   height: 50%;
+
+}
+
+.seats {
+   width: 75%;
+   height: 75%;
+   background-color: #CCCCCC;
+   border: solid 0.175rem var(--Neutro_300);
+   border-radius: 0.25rem;
+   overflow: both;
+}
+
+.chosenSeatsBottom button {
+   background: var(--CallToAction_source);
+   font-family: "Poppins", sans-serif;
+   font-weight: 600;
+   font-style: normal;
+   color: #F3F3F3;
+   border: solid 1px var(--CallToAction_source);
+   border-radius: 0.5rem;
+   height: 8%;
+   width: 50%;
+   cursor: pointer;
+}
+
+.chosenSeatsBottom button:hover {
+   background-color: var(--CallToAction_400);
 }

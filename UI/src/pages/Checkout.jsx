@@ -2,6 +2,9 @@ import styles from './checkout.module.css';
 import { Combos } from "../components/Combos.jsx";
 import '../global.css';
 
+import capa1Image from '../assets/Capa1.png';
+import seatIcon from "../assets/seatIcon.svg";
+
 export function Checkout() {
     return (
         <>
@@ -9,7 +12,7 @@ export function Checkout() {
             <section className={styles.mid}>
                 <div className={styles.chosenSeats}>
                     <div className={styles.chosenSeatsTop}>
-                        <img className={styles.imageURL}></img>
+                        <img src={capa1Image}  className={styles.imageURL}></img>
                         <div>
                             <h1 className={styles.title}>Besouro Azul</h1>
                             <div>
@@ -20,11 +23,11 @@ export function Checkout() {
                     </div>
                     <div className={styles.chosenSeatsBottom}>
                         <div>
-                            <img></img>
+                            <img src={seatIcon}></img>
                             <span>Assentos escolhidos</span>
                         </div>
                         <div className={styles.seats}></div>
-                        <button></button>
+                        <button>Confirmar</button>
                     </div>
                 </div>
                 <div className={styles.map}>
