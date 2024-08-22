@@ -55,13 +55,15 @@ footer section {
    align-items: flex-start;
 }
 
-footer h1 {
-   margin-top: 10%;
-}
-
 footer h2 {
    margin-top: 10%;
+   font-weight: 600;
+}
+
+footer h3 {
+   margin-top: 10%;
    font-weight: 200;
+   font-weight: 550;
 }
 
 footer section section {

@@ -5,10 +5,10 @@ import '../global.css';
 
 export function Banner({imagem, genero, nome, desc}) {
     const Cidade = [ 
-        'Rio de Janeiro', 'Niteói', 'São Gonçalo', 'Maricá', 'Nova iguaçu', 'Belford Roxo'
+        'Rio de Janeiro', 'Niterói', 'São Gonçalo', 'Maricá', 'Nova iguaçu', 'Belford Roxo'
      ]
      const Bairro = [ 
-        'Centro', 'Zona Sul', 'Zona Norte', 'Região Oceânica', 'Nona Oeste', 'Região dos Lagos'
+        'Centro', 'Zona Sul', 'Zona Norte', 'Região Oceânica', 'Zona Oeste'
      ]
     return (
         <>
