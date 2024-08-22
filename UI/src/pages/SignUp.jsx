@@ -30,6 +30,8 @@ const handleSubmit = async (evento) => {
         return;
     }
 
+    console.log('Dados do Formulário:', formResponse)
+
     try {
         const response = await fetch('http://localhost:3000/users', {
             method: 'POST',
