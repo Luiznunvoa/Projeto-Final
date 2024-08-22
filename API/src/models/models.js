@@ -113,7 +113,7 @@ const User = sequelize.define("User", {
 })
 
 Movie.hasMany(Session, {onDelete: "CASCADE", foreignKey: "title"})
-Session.belongsTo(Movie)
+Session.belongsTo(Movie, { foreignKey: "title" })
 
 
 Session.hasMany(Seat, {onDelete: "CASCADE", foreignKey: "SessionId"})
