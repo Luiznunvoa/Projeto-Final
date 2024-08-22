@@ -52,6 +52,14 @@ const filmes = [
     
 ];
 
+const Generos = [ 
+   'Ação', 'Comédia', 'Animação', 'Documentário', 'Drama', 'Romance', 'Musical', 'Aventura', 'Suspense', 'Histórico', 'Cotidiano', 'Mistéria', 'Investigação', 'Faroeste', 'Guerra', 'Thriller', 'Fantasia', 'Policial', 'Comédia Romantica', 'Nacional'
+]
+
+const Classificacoes = [ 
+   'Livre', '+10', '+12', '+14', '+16', '+18',
+]
+
 export function Movies() {
     return (
         <main className={styles.movies}>
@@ -61,8 +69,8 @@ export function Movies() {
                     <div />
                 </section>
                 <section className={styles.dropdowns}>
-                    <Dropdown tipo='Gênero' />
-                    <Dropdown tipo='Classificação' />
+                    <Dropdown tipo='Gênero' children={Generos}/>
+                    <Dropdown tipo='Classificação' children={Classificacoes}/>
                 </section>
             </div>
             <section className={styles.mid}>
