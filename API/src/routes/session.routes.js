@@ -22,4 +22,7 @@ sessionRoutes.patch("/:id", findSessionById, (req, res) => sessionController.upd
 // deletar sessão
 sessionRoutes.delete("/:id", findSessionById, (req, res) => sessionController.deleteSession(req, res));
 
+// listar sessões pelo titulo do filme
+sessionRoutes.get("/movie/:title", (req,res) => sessionController.listSessionsByTitle(req, res))
+
 module.exports = sessionRoutes;

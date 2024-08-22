@@ -64,10 +64,27 @@ async function deleteMovie(req, res){
     }
 }
 
+//Modificar url da imagem (pois tava dando problema em algumas imagens)
+async function updateImage(req, res){
+    try {
+        const movie = req.movie
+        const { imageURL } = req.body
+        if(!imageURL){
+            return res.status(400).json({error: "Não foi recebida imageURL" })
+        }
+        movie.imageURL = imageURL
+        await movie.save();
+        return res.status(200).json(req.movie);
+    } catch (error) {
+        return res.status(500).json({ error: "Was not able to update image"})
+    }
+}
+
 module.exports = {
     createMovie,
     listMovies,
     getMovieByTitle,
     getMovieByGenreOrAgeRating,
-    deleteMovie
+    deleteMovie,
+    updateImage
 }
