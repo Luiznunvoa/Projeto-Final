@@ -1,12 +1,20 @@
 import styles from './signup.module.css';
+import { useState } from 'react';
 import { Link } from "react-router-dom";
+import { Confirm} from "../components/Confirm.jsx"
 import '../global.css';
 
 export function SignUp() {
+    const [AccountCreated, CreateAccount] = useState(false);
+
+    const Register = () => {
+      CreateAccount(!AccountCreated);
+    };
+
     return (
         <>
         <main className={styles.signup}>
-            <section className={styles.mid}>
+            <section className={AccountCreated ? styles.mid1 : styles.mid}>
                 <section className={styles.signuptext}>
                   <h1>Junte-se à Comunidade Cinematográfica! Cadastre-se Aqui!</h1>
                   <h2>
@@ -33,16 +41,22 @@ export function SignUp() {
                   <input className={styles.user} type='email' placeholder='E-mail'/>
                   <input className={styles.user} type='password' placeholder='Senha'/>
                   <input className={styles.user} type='password' placeholder='Confirmar Senha'/>
-                  <Link to='/' className={styles.enter}>
+                  <div onClick={Register} className={styles.enter}>
                   <h2>
                      REGISTRAR
                   </h2>
-                  </Link>
+                  </div>
 
                 </div>
-
+                {AccountCreated && (
+                  <Confirm 
+                    title='Cadastro Criado!' 
+                    subtitle='Bem Vindo a Nossa Comunidade Cinematográfica!' 
+                    paragrph1='Obrigado por se juntar a nós na nossa comunidade cinematográfica. Sua jornada para uma experiência cinematográfica única começa agora.'
+                    paragrph2='Você será redirecionado em instantes para página de login em instantes.'
+                  />
+                )}
             </section>
-
         </main>
 
         </>
