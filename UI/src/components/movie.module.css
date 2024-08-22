@@ -30,9 +30,13 @@
    font-weight:800;
    background-color: var(--CallToAction_source);
    cursor: pointer;
+   padding-top: 2%;
+   text-decoration: none;
+   font-style: normal;
 }
 .button h2{
    text-decoration: none;
+   font-style: normal;
    width: 100%;
    margin-top: 0%;
    
