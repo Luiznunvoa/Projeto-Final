@@ -1,6 +1,6 @@
 .wrapperSessions{
-    max-height: 11.75rem;
-    max-width: 57.25rem;
+    height: 13.144%;
+    width: 48.1%;
     background-color: var(--fundo);
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -10,8 +10,8 @@
 .wrapperSessions > div:first-of-type{
     background-color: var(--CallToAction_400);
     border-radius: 4px;
-    width: 5rem;
-    height: 2.25rem;
+    width: 8.73%;
+    height: 26.47%;
     padding: 0px, 20px, 0px, 20px;
     font-family: "Roboto", sans-serif;
     display: flex;
@@ -25,10 +25,10 @@
     gap: 1rem;
 }
 
-button{
+.button{
     display: inline-block;
-    width: 6.625rem;
-    height: 3.25rem;
+    width: 11.57%;
+    height: 38.24%;
     cursor: pointer;
     background-color: transparent;
     color: var(--principal);
@@ -40,6 +40,7 @@ button{
     cursor: pointer;  
     user-select: none;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 button:hover {

@@ -33,14 +33,17 @@
 }
 
 .buttons {
+    width: 98%;
+    margin-left: 2%;
+    height: 6%;
     display: flex;
-    gap: .5rem;
+    gap: 1%;
 }
 
 .buttons > button {
     display: inline-block;
-    width: 6.625rem;
-    height: 3.25rem;
+    width: 5.3125%;
+    height: 100%;
     cursor: pointer;
     background-color: transparent;
     color: var(--principal);

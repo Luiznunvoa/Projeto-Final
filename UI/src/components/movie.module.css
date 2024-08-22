@@ -18,16 +18,22 @@
    letter-spacing: 0.15rem;
 }
 
-.movie div {
+.button {
    height: 7%;
    width: 90%;
    margin-top: 3%;
    border-radius: 0.6rem;
    text-align: center;
-   padding-top: 3%;
+   font-size: -20%;
    color: var(--Neutro_0);
    font-family: "Poppins", sans-serif;
    font-weight:800;
    background-color: var(--CallToAction_source);
    cursor: pointer;
+}
+.button h2{
+   text-decoration: none;
+   width: 100%;
+   margin-top: 0%;
+   
 }

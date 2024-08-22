@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from './session.module.css';
 import '../global.css';
 
@@ -11,9 +11,7 @@ export function Session({rating, sessions}) {
             <div className={styles.sessions}>
                 {sessions.map(sessao => {
                     return (
-                        <NavLink to='/Checkout' style={{textDecoration : 'none'}} key={sessao}>
-                            <button key={sessao}>{sessao}</button>
-                        </NavLink>   
+                        <Link tp='/Checkout' className={styles.button} key={sessao}>{sessao}</Link> 
                     )
                 })}
             </div>

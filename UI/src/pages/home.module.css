@@ -4,9 +4,48 @@
   width: 119rem;
 }
 
+@media screen and (max-width: 1680px) {
+   .home {
+     height: 124.78rem;
+     width: 105rem;
+   }
+ }
+
+ @media screen and (max-width: 1440px) {
+   .home {
+     height: 106.95rem;
+     width: 90rem;
+   }
+ }
+
+ @media screen and (max-width: 1280px) {
+   .home {
+     height: 95.07rem;
+     width: 80rem;
+   }
+ }
+
+ @media screen and (max-width: 1024px) {
+   .home {
+     height: 76.05rem;
+     width: 64rem;
+   }
+ }
+
+ @media screen and (max-width: 854px) {
+   .home {
+     height: 63.43rem;
+     width: 53.375rem;
+   }
+ }
+
+
+
+
 .intro {
    height: 16.5%;
    width: 100%;
+   padding-top: 2%;
    display: flex;
    background-color: var(--Neutro_900);
    color: var(--Neutro_0);
@@ -23,7 +62,7 @@
    width: 60%;
 }
 
-.intro h1, h2 {
+.intro > h1, h2 {
    margin-top: 3%;
 }
 
@@ -68,7 +107,6 @@
    font-family: "Nunito Sans", system-ui;
    color: var(--Neutro_0);
    letter-spacing: 0.2rem;
-   font-size: 4rem;
    font-weight: 700;
 }
 
@@ -78,6 +116,5 @@
    font-family: "Nunito Sans", system-ui;
    color: var(--Neutro_0);
    letter-spacing: 0.2rem;
-   font-size: 2.5rem;
    font-weight: 700;
 }

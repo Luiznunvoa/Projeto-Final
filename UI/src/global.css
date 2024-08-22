@@ -142,13 +142,11 @@
 }
 
 body {
-   display: flex;
-   flex-direction: column; 
-   align-items: center; 
-   justify-content: flex-start;
-   margin: 0; 
-   font-size: 1.25rem;
-
+  margin: 0; 
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main {
@@ -157,10 +155,45 @@ main {
 
 h1 {
   font-family: "Nunito Sans", system-ui;
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.2rem;
   color: var(--Neutro_0);
   font-weight: 600;
+}
+
+@media screen and (max-width: 1680px) {
+  h1 {
+    font-size: 2.21rem; /* (2.5 / 119) * 105 = 2.21rem */
+    letter-spacing: 0.177rem; /* (0.2 / 2.5) * 2.21 = 0.177rem */
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  h1 {
+    font-size: 1.89rem; /* (2.5 / 119) * 90 = 1.89rem */
+    letter-spacing: 0.151rem; /* (0.2 / 2.5) * 1.89 = 0.151rem */
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  h1 {
+    font-size: 1.68rem; /* (2.5 / 119) * 80 = 1.68rem */
+    letter-spacing: 0.135rem; /* (0.2 / 2.5) * 1.68 = 0.135rem */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 1.35rem; /* (2.5 / 119) * 64 = 1.35rem */
+    letter-spacing: 0.108rem; /* (0.2 / 2.5) * 1.35 = 0.108rem */
+  }
+}
+
+@media screen and (max-width: 854px) {
+  h1 {
+    font-size: 1.13rem; /* (2.5 / 119) * 53.375 = 1.13rem */
+    letter-spacing: 0.09rem; /* (0.2 / 2.5) * 1.13 = 0.09rem */
+  }
 }
 
 h2 {
@@ -169,4 +202,84 @@ h2 {
   letter-spacing: 0.1rem;
   color: var(--Neutro_0);
   font-weight: 500;
+}
+
+
+@media screen and (max-width: 1680px) {
+  h2, a {
+    font-size: 1.33rem; /* (1.5 / 119) * 105 = 1.33rem */
+    letter-spacing: 0.088rem; /* (0.1 / 1.5) * 1.33 = 0.088rem */
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  h2, a {
+    font-size: 1.13rem; /* (1.5 / 119) * 90 = 1.13rem */
+    letter-spacing: 0.075rem; /* (0.1 / 1.5) * 1.13 = 0.075rem */
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  h2, a {
+    font-size: 1.01rem; /* (1.5 / 119) * 80 = 1.01rem */
+    letter-spacing: 0.067rem; /* (0.1 / 1.5) * 1.01 = 0.067rem */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h2, a {
+    font-size: 0.81rem; /* (1.5 / 119) * 64 = 0.81rem */
+    letter-spacing: 0.054rem; /* (0.1 / 1.5) * 0.81 = 0.054rem */
+  }
+}
+
+@media screen and (max-width: 854px) {
+  h2, a {
+    font-size: 0.675rem; /* (1.5 / 119) * 53.375 = 0.675rem */
+    letter-spacing: 0.045rem; /* (0.1 / 1.5) * 0.675 = 0.045rem */
+  }
+}
+
+h3 {
+  font-family: "Nunito Sans", system-ui;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+  color: var(--Neutro_0);
+  font-weight: 550;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1680px) {
+  h3 {
+    font-size: 0.88rem; /* (1 / 119) * 105 = 0.88rem */
+    letter-spacing: 0.044rem; /* (0.05 / 1) * 0.88 = 0.044rem */
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  h3 {
+    font-size: 0.76rem; /* (1 / 119) * 90 = 0.76rem */
+    letter-spacing: 0.038rem; /* (0.05 / 1) * 0.76 = 0.038rem */
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  h3 {
+    font-size: 0.67rem; /* (1 / 119) * 80 = 0.67rem */
+    letter-spacing: 0.034rem; /* (0.05 / 1) * 0.67 = 0.034rem */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h3 {
+    font-size: 0.54rem; /* (1 / 119) * 64 = 0.54rem */
+    letter-spacing: 0.027rem; /* (0.05 / 1) * 0.54 = 0.027rem */
+  }
+}
+
+@media screen and (max-width: 854px) {
+  h3 {
+    font-size: 0.45rem; /* (1 / 119) * 53.375 = 0.45rem */
+    letter-spacing: 0.022rem; /* (0.05 / 1) * 0.45 = 0.022rem */
+  }
 }

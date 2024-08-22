@@ -7,9 +7,9 @@ export function Movie(props){
       <section className={styles.movie}>
          <img src={props.imagem}></img>
          <h2>{props.nome}</h2>
-         <div>
-            <Link to='/Sessions'>SESSÔES DISPOÍVEIS</Link>
-         </div>
+         <Link className={styles.button}to='/Sessions'>
+            <h3>SESSÔES DISPOÍVEIS</h3>
+         </Link>
 
       </section>
 
