@@ -1,0 +1,72 @@
+.combo {
+   height: 36.5%;
+   margin-top: 5%;
+   width: 89.1%;
+   background-image: url("../assets/Ticket.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
+.desc {
+   background-color: var( --CallToAction_300);
+   height: 84%;
+   width: 84%;
+   border-radius: 0.25rem;
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.desc img {
+   height: 68.496%;
+   width: 27.522%;
+   border-radius: 0.75rem;
+}
+
+.desc section{
+   width: 52.2%;
+   height: 68.496%;
+   margin-left: 5%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: flex-start;
+}
+
+.desc section h1{
+   color: black;
+}
+
+.desc section h2{
+   margin-top: 5%;
+   color: black;
+}
+
+.arrow1 {
+   height: 15.1%;
+   background-color: var(--Cancel_source);
+   width: 5.7%;
+   margin-left: -8%;
+   border-radius: 50%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-image: url("../assets/Left.svg");
+   cursor: pointer;
+}
+
+.arrow2 {
+   height: 15.1%;
+   background-color: var(--Cancel_source);
+   width: 5.7%;
+   margin-right: -9%;
+   border-radius: 50%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-image: url("../assets/Right.svg");
+   cursor: pointer;
+}

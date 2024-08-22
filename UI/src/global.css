@@ -1,0 +1,172 @@
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.nunito-sans {
+  font-family: "Nunito Sans", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+}
+
+
+:root {
+  /* Principal */
+  --principal: #0066CC;
+  --Principal_900: #00247D;
+  --Principal_800: #0043B8;
+  --Principal_700: #0049E4;
+  --Principal_600: #6379FF;
+  --Principal_500: #ACBEFF;
+  --Principal_400: #C9D7FF;
+  --Principal_300: #9DC8FF;
+  --Principal_200: #B6E6E3;
+  --Principal_100: #DBEBFF;
+
+  /* Complementar */
+  --Complementar : #0BB0E3;
+  --Complementar_900: #003055;
+  --Complementar_800: #005E80;
+  --Complementar_700: #008BAA;
+  --Complementar_600: #00A2D1;
+  --Complementar_500: #00C3F4;
+  --Complementar_400: #4DE8FF;
+  --Complementar_300: #7BE4F9;
+  --Complementar_200: #93EBFD;
+  --Complementar_100: #C6F6FF;
+
+  /* Sombra */
+  --Sombra: #00264D;
+  --Sombra_900: #2B3955;
+  --Sombra_800: #394B70;
+  --Sombra_700: #4A5E89;
+
+  /* Sombra 2 */
+  --Sombra2_source: #004C99;
+  --Sombra2_900: #1A386A;
+  --Sombra2_800: #224A8B;
+  --Sombra2_700: #305DA3;
+
+  /* Call to Action */
+  --CallToAction_source: #CC8000;
+  --CallToAction_500: #BF7600;
+  --CallToAction_400: #D48C29;
+  --CallToAction_300: #E6A352;
+
+  /* Cancel */
+  --Cancel_source: #CC2014;
+  --Cancel_700: #B9180F;
+  --Cancel_600: #DB2F1E;
+
+  /* Confirm */
+  --Confirm_source: #00CC54;
+  --Confirm_600: #008912;
+  --Confirm_400: #03B349;
+
+   --Sombra2: #004C99;
+   --Sombra2_900: #1A386A;
+   --Sombra2_800: #224A8B;
+
+
+  /* Secundário */
+  --Secundario_900: #2B5DA1;
+  --Secundario_800: #2F61AC;
+  --Secundario_700: #446BB8;
+  --Secundario_600: #5875C3;
+  --Secundario_500: #617FCB;
+  --Secundario_400: #798ACF;
+  --Secundario_300: #8798D4;
+  --Secundario_200: #A9B5E0;
+  --Secundario_100: #BFC8E7;
+
+  /* Suporte */
+  --Suporte_900: #A15100;
+  --Suporte_800: #BF5E00;
+  --Suporte_700: #D86900;
+  --Suporte_600: #F07900;
+  --Suporte_500: #F48F00;
+  --Suporte_400: #F69F3A;
+  --Suporte_300: #F9B566;
+  --Suporte_200: #FBC682;
+  --Suporte_100: #FDD7A4;
+
+  /* Crítico */
+  --Critico_900: #A30000;
+  --Critico_800: #D20000;
+  --Critico_700: #E30000;
+  --Critico_600: #F30000;
+  --Critico_500: #FF0000;
+  --Critico_400: #FF4747;
+  --Critico_300: #FF7171;
+  --Critico_200: #FF9595;
+  --Critico_100: #FFBEBE;
+
+  /* Neutro */
+  --Neutro_900: #252525;
+  --Neutro_800: #3B3B3B;
+  --Neutro_700: #525252;
+  --Neutro_600: #6A6A6A;
+  --Neutro_500: #7F7F7F;
+  --Neutro_400: #999999;
+  --Neutro_300: #B3B3B3;
+  --Neutro_200: #CDCDCD;
+  --Neutro_100: #E8E8E8;
+  --Neutro_50: #F5F5F5;
+  --Neutro_0: #FFFFFF;
+
+  /* Fundo */
+  --fundo: #1E1E1E;
+
+  /* Cinza */
+  --Cinza_50: #F3F3F3;
+  --Cinza_100: #DDDDDD;
+  --Cinza_300: #B0B0B0 ;
+  --Cinza_400: #9B9B9B;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+   display: flex;
+   flex-direction: column; 
+   align-items: center; 
+   justify-content: flex-start;
+   margin: 0; 
+   font-size: 1.25rem;
+
+}
+
+main {
+  background-color: var(--fundo);
+}
+
+h1 {
+  font-family: "Nunito Sans", system-ui;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  color: var(--Neutro_0);
+  font-weight: 600;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  color: var(--Neutro_0);
+  font-weight: 500;
+}

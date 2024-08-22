@@ -1,0 +1,312 @@
+.checkout {
+   height: 71.167rem;
+   width: 119rem;
+}
+
+.mid {
+   height: 100%;
+   width: 100%;
+   position: relative;
+   z-index: 0;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;  
+   justify-content: space-between;
+}
+
+.mid::after {
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   content: '';
+   background-color:  black;
+   opacity: 0.5;
+   position: absolute;
+   z-index: 1;
+   visibility: hidden;
+}
+
+.mid::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-image: url("../assets/Vector.svg");
+   background-position: center;
+   opacity: 0.2; 
+   z-index: -1;
+}
+
+.map {
+   height: 81.96%;
+   width: 62.5%;
+   background-color: #141414;
+   margin-right: 7%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: center;
+}
+
+.mapheader {
+   width: 100%;
+   height: 7.14%;
+   background-image: url("../assets/Tela.svg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+
+.seatmap {
+   width: 86.77%;
+   height: 61.85%;
+   margin-top: 6%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: center;
+}
+
+.map hr {
+   width: 86.77%;
+   height: 1%;
+   margin-top: 3%;
+   background-color: var(--Cinza_400);
+}
+
+.map h2 {
+   width: 86.77%;
+   margin-top: 1%;
+   letter-spacing: 0.05rem;
+   color: var(--Cinza_300);
+}
+
+.seatypes {
+   width: 86.77%;
+   height: 3.4%;
+   margin-top: 2%;
+   display: flex;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+}
+
+.seat1 {
+   height: 100%;
+   width: 3.07%;
+   background-image: url("../assets/cadeira3.svg");
+   background-repeat: no-repeat;
+   background-size: 100%;
+   background-position: center;
+}
+
+.seat2 {
+   height: 100%;
+   width: 3.07%;
+   background-image: url("../assets/cadeira2.svg");
+   background-repeat: no-repeat;
+   background-size: 100%;
+   background-position: center;
+}
+
+.seat3 {
+   height: 100%;
+   width: 3.07%;
+   background-image: url("../assets/cadeira1.svg");
+   background-repeat: no-repeat;
+   background-size: 100%;
+   background-position: center;
+}
+
+.seatypes h2 {
+   margin-bottom: 1%;
+   margin-left: 2%;
+   width: 17%;
+}
+
+.confirmation {
+   position: absolute;
+   height: 41%;
+   width: 55%;
+   background-color: var(--CallToAction_source);
+   border-radius: 2rem;
+   top: 25%;
+   left: 25%;
+   z-index: 2;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   visibility: hidden;
+}
+
+.confirmation > h1{
+   width: 80%;
+}
+
+.confirmation h2{
+   margin-top: 2%;
+   width: 80%;
+   font-weight: 550;
+}
+
+.confirmation section{
+   margin-top: 5%;
+   width: 71.21%;
+   height: 29.85%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.confirmation section div {
+   height: 100%;
+   width: 45.98%;
+   border-radius: 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+}
+
+.cancel {
+   background-color: var(--Cancel_700);
+}
+
+.accept {
+   background-color: var(--Confirm_400);
+}
+
+
+.confirmation.visible {
+   visibility: visible;
+}
+
+.midVisible:after {
+   visibility: visible;
+}
+
+
+
+/************************************** CHOSEN SEATS ****************************************/
+.chosenSeats {
+   width: 23.275%;
+   height: 91.33%;
+   background: var(--Principal_900);
+   background: linear-gradient(180deg, var(--Principal_900) 30%, var(--Neutro_100) 30%);
+   display: flex;
+   flex-flow: wrap column;
+   align-items: center;
+   justify-content: flex-end;
+   box-shadow: 4px 0px 4px 0px #00000080;
+   align-self: self-start;
+   gap: 1.5%;
+}
+
+.chosenSeatsTop {
+   width: 75%;
+   height: 25%;
+   display: flex;
+   flex-wrap: wrap;
+   align-content: flex-end;
+   justify-content: center;
+   gap: 3%;
+}
+
+.imageURL {
+   height: 100%;
+   width: 44.6%;
+   object-fit: cover;
+}
+
+.title {
+   font-family: "Roboto", sans-serif;
+   font-weight: 200;
+   font-style: normal;
+   color: var(--Neutro_100);
+   text-align: center;
+   font-size: 1.25rem;
+}
+
+.chosenSeatsTop > div {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-content: center;
+   gap: 3%;
+}
+
+.chosenSeatsTop > div > div {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   justify-content: space-around;
+}
+
+.chosenSeatsTop > div > div > h2 {
+   width: 45%;
+   background-color: var(--CallToAction_400);
+   color: var(--Neutro_900);
+   text-align: center;
+   border: solid 1px var(--CallToAction_400);
+   border-radius: 0.5rem;
+   font-size: 1.125rem;
+   font-weight: bold;
+   cursor: default;
+}
+
+.chosenSeatsBottom {
+   height: 67%;
+   width: 100%;
+   display: flex;
+   flex-flow: wrap column;
+   align-items: center;
+   gap: 5%;
+}
+
+.chosenSeatsBottom div:first-child {
+   height: 5%;
+   width: 100%;
+   display: flex;
+   flex-flow: wrap row;
+   gap: 1.5%;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+
+.chosenSeatsBottom > div > img {
+   height: 50%;
+
+}
+
+.seats {
+   width: 75%;
+   height: 75%;
+   background-color: #CCCCCC;
+   border: solid 0.175rem var(--Neutro_300);
+   border-radius: 0.25rem;
+   overflow: both;
+}
+
+.chosenSeatsBottom button {
+   background: var(--CallToAction_source);
+   font-family: "Poppins", sans-serif;
+   font-weight: 600;
+   font-style: normal;
+   color: #F3F3F3;
+   border: solid 1px var(--CallToAction_source);
+   border-radius: 0.5rem;
+   height: 8%;
+   width: 50%;
+   cursor: pointer;
+}
+
+.chosenSeatsBottom button:hover {
+   background-color: var(--CallToAction_400);
+}
