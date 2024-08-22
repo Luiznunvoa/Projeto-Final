@@ -4,6 +4,7 @@ import { Checkout } from "./pages/Checkout";
 import { Contact } from "./pages/Contact";
 import { Login } from "./pages/Login";
 import { SignUp } from "./pages/SignUp";
+import { Sessions } from "./pages/Sessions";
 import Layout from './Layout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ export function App() {
                 <Route path="/Movies" element={<Movies />} />
                 <Route path="/Checkout" element={<Checkout />} />
                 <Route path="/Contact" element={<Contact />} />
+                <Route path="/Sessions" element={<Sessions />} />
             </Routes>
         </Layout>
     </Router>

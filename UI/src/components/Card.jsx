@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import styles from './card.module.css';
 import '../global.css';
 
@@ -16,7 +18,9 @@ export function Card(props) {
                <h2>{props.desc}</h2>
             </section>  
             <div className={styles.button}>
-               <h1>Ver Sessões</h1>
+               <NavLink to='/Sessions' style={{textDecoration : 'none'}}>
+                  <h1>Ver Sessões</h1>
+               </NavLink>
             </div>          
          </div>
         </>

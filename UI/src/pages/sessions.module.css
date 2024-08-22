@@ -1,0 +1,58 @@
+.fundo{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+
+}
+
+.fundo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/Vector.svg");
+    background-position: center;
+    opacity: 0.2; 
+    z-index: -1; 
+}
+
+.info{
+    height: 24rem;
+    background-color: var(--Complementar_900);
+    background: linear-gradient(to bottom, var(--Complementar_900) 90%, transparent );
+}
+
+.horarios{
+    padding: 2rem;
+}
+
+.buttons {
+    display: flex;
+    gap: .5rem;
+}
+
+.buttons > button {
+    display: inline-block;
+    width: 6.625rem;
+    height: 3.25rem;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--principal);
+    border: 3px solid var(--principal);
+    border-radius: 26px;
+    font-size: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;  
+    user-select: none;
+    transition: 0.3s;
+}
+
+.buttons > button:hover {
+    background-color: var(--principal);
+    color: black;
+    transition: 0.3s;
+}
