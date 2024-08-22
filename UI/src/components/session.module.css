@@ -1,0 +1,51 @@
+.wrapperSessions{
+    height: 13.144%;
+    width: 48.1%;
+    background-color: var(--fundo);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+.wrapperSessions > div:first-of-type{
+    background-color: var(--CallToAction_400);
+    border-radius: 4px;
+    width: 8.73%;
+    height: 26.47%;
+    padding: 0px, 20px, 0px, 20px;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sessions{
+    display: flex;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.button{
+    display: inline-block;
+    width: 11.57%;
+    height: 38.24%;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--principal);
+    border: 3px solid var(--principal);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;  
+    user-select: none;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: var(--principal);
+    color: black;
+    transition: 0.3s;
+}
+

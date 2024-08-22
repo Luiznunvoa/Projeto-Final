@@ -4,9 +4,48 @@
   width: 119rem;
 }
 
-.top {
+@media screen and (max-width: 1680px) {
+   .home {
+     height: 124.78rem;
+     width: 105rem;
+   }
+ }
+
+ @media screen and (max-width: 1440px) {
+   .home {
+     height: 106.95rem;
+     width: 90rem;
+   }
+ }
+
+ @media screen and (max-width: 1280px) {
+   .home {
+     height: 95.07rem;
+     width: 80rem;
+   }
+ }
+
+ @media screen and (max-width: 1024px) {
+   .home {
+     height: 76.05rem;
+     width: 64rem;
+   }
+ }
+
+ @media screen and (max-width: 854px) {
+   .home {
+     height: 63.43rem;
+     width: 53.375rem;
+   }
+ }
+
+
+
+
+.intro {
    height: 16.5%;
    width: 100%;
+   padding-top: 2%;
    display: flex;
    background-color: var(--Neutro_900);
    color: var(--Neutro_0);
@@ -18,26 +57,17 @@
    box-shadow: 0px 8px 6px 0px rgba(0,0,0,0.75);
 }
 
-.top section {
+.intro section {
    margin-left: 5%;
    width: 60%;
 }
 
-.top h1 {
-   margin-top: 3%;
-}
-
-.top h2 {
+.intro > h1, h2 {
    margin-top: 3%;
 }
 
 .mid {
    height: 83.4%;
-   width: 100%;
-}
-
-.back {
-   height: 100%;
    width: 100%;
    position: relative;
    z-index: 0;
@@ -47,7 +77,7 @@
    align-items: center;
 }
 
-.back::before {
+.mid::before {
    content: '';
    position: absolute;
    top: 0;
@@ -60,16 +90,6 @@
    z-index: -1; 
 }
 
-.title{
-   margin-top: 3%;
-   margin-left: -70%;
-   font-family: "Nunito Sans", system-ui;
-   color: var(--Neutro_0);
-   letter-spacing: 0.2rem;
-   font-size: 4rem;
-   font-weight: 700;
-}
-
 .movies {
    height: 36%;
    width: 90%;
@@ -80,15 +100,21 @@
    justify-content: space-between;
 }
 
-.vermais {
-   margin-left: 80%;
-   margin-top: -4%;
+
+.mid > h1{
+   margin-top: 3%;
+   margin-left: -70%;
    font-family: "Nunito Sans", system-ui;
    color: var(--Neutro_0);
    letter-spacing: 0.2rem;
-   font-size: 2rem;
-   text-decoration: underline;
    font-weight: 700;
-   cursor: pointer;
+}
 
+.mid > a{
+   margin-top: -5%;
+   margin-left: 70%;
+   font-family: "Nunito Sans", system-ui;
+   color: var(--Neutro_0);
+   letter-spacing: 0.2rem;
+   font-weight: 700;
 }

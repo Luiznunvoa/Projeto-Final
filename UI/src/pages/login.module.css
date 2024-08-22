@@ -3,6 +3,41 @@
    width: 119rem;
 }
 
+@media screen and (max-width: 1680px) {
+   .login {
+     width: 105rem; 
+     height: 62.407rem; /* (70.833 / 119) * 105 = 62.407rem */
+   }
+}
+
+@media screen and (max-width: 1440px) {
+   .login {
+     width: 90rem; 
+     height: 53.579rem; /* (70.833 / 119) * 90 = 53.579rem */
+   }
+}
+
+@media screen and (max-width: 1280px) {
+   .login {
+     width: 80rem; 
+     height: 47.611rem; /* (70.833 / 119) * 80 = 47.611rem */
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   .login {
+     width: 64rem; 
+     height: 38.089rem; /* (70.833 / 119) * 64 = 38.089rem */
+   }
+}
+
+@media screen and (max-width: 854px) {
+   .login {
+     width: 53.375rem; 
+     height: 31.795rem; /* (70.833 / 119) * 53.375 = 31.795rem */
+   }
+}
+
 .mid {
    height: 100%;
    width: 100%;
@@ -43,7 +78,6 @@
 
 .intro h2 {
    width: 74.22%;
-   font-size: 1.75rem;
    margin-left: 32%;
    font-weight: 550;
 }
@@ -62,11 +96,9 @@
 
 .form h1{
    margin-bottom: 7%;
-   font-size: 4rem;
 }
 
 .form h2{
-   font-size: 1.75rem;
    font-weight: 550;
    margin-top: 2%;
    width: 90%;

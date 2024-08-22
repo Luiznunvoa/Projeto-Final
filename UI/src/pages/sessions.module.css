@@ -1,0 +1,98 @@
+.fundo{
+    height: 107.417rem;
+    width: 119rem;
+    position: relative;
+    z-index: 0;
+}
+
+@media screen and (max-width: 1680px) {
+    .fundo {
+      width: 105rem; 
+      height: 94.726rem; /* (107.417 / 119) * 105 = 94.726rem */
+    }
+ }
+ 
+ @media screen and (max-width: 1440px) {
+    .fundo {
+      width: 90rem; 
+      height: 81.248rem; /* (107.417 / 119) * 90 = 81.248rem */
+    }
+ }
+ 
+ @media screen and (max-width: 1280px) {
+    .fundo {
+      width: 80rem; 
+      height: 72.191rem; /* (107.417 / 119) * 80 = 72.191rem */
+    }
+ }
+ 
+ @media screen and (max-width: 1024px) {
+    .fundo {
+      width: 64rem; 
+      height: 57.753rem; /* (107.417 / 119) * 64 = 57.753rem */
+    }
+ }
+ 
+ @media screen and (max-width: 854px) {
+    .fundo {
+      width: 53.375rem; 
+      height: 48.174rem; /* (107.417 / 119) * 53.375 = 48.174rem */
+    }
+ }
+
+.fundo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/Vector.svg");
+    background-position: center;
+    opacity: 0.2; 
+    z-index: -1; 
+}
+
+.info{
+    width: 100%;
+    height: 29.86%;
+    background-color: var(--Complementar_900);
+    background: linear-gradient(to bottom, var(--Complementar_900) 90%, transparent );
+    display: flex;
+}
+
+.horarios{
+    height: 60.2%;
+    width: 100%;
+}
+
+.buttons {
+    width: 98%;
+    margin-left: 2%;
+    height: 6%;
+    display: flex;
+    gap: 1%;
+}
+
+.buttons > button {
+    display: inline-block;
+    width: 5.3125%;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--principal);
+    border: 3px solid var(--principal);
+    border-radius: 26px;
+    font-size: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;  
+    user-select: none;
+    transition: 0.3s;
+}
+
+.buttons > button:hover {
+    background-color: var(--principal);
+    color: black;
+    transition: 0.3s;
+}

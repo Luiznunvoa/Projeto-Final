@@ -11,6 +11,42 @@ header {
    box-shadow: 0px 8px 13px 1px rgba(0,0,0,0.75);
 }
 
+
+@media screen and (max-width: 1680px) {
+   header {
+     width: 105rem;
+     height: 12.5rem; /* (14.167 / 119) * 105 = 12.5rem */
+   }
+}
+
+@media screen and (max-width: 1440px) {
+   header {
+     width: 90rem;
+     height: 10.7rem; /* (14.167 / 119) * 90 = 10.7rem */
+   }
+}
+
+@media screen and (max-width: 1280px) {
+   header {
+     width: 80rem;
+     height: 9.52rem; /* (14.167 / 119) * 80 = 9.52rem */
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   header {
+     width: 64rem;
+     height: 7.62rem; /* (14.167 / 119) * 64 = 7.62rem */
+   }
+}
+
+@media screen and (max-width: 854px) {
+   header {
+     width: 53.375rem;
+     height: 6.36rem; /* (14.167 / 119) * 53.375 = 6.36rem */
+   }
+}
+
 .icon {
    height: 57.64%;
    width: 17.43%;

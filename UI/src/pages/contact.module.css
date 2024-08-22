@@ -3,6 +3,40 @@
    width: 119rem;
  }
 
+ @media screen and (max-width: 1680px) {
+   .contact {
+     width: 105rem; 
+     height: 63.382rem; /* (71.833 / 119) * 105 = 63.382rem */
+   }
+}
+
+@media screen and (max-width: 1440px) {
+   .contact {
+     width: 90rem; 
+     height: 54.359rem; /* (71.833 / 119) * 90 = 54.359rem */
+   }
+}
+
+@media screen and (max-width: 1280px) {
+   .contact {
+     width: 80rem; 
+     height: 48.319rem; /* (71.833 / 119) * 80 = 48.319rem */
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   .contact {
+     width: 64rem; 
+     height: 38.655rem; /* (71.833 / 119) * 64 = 38.655rem */
+   }
+}
+
+@media screen and (max-width: 854px) {
+   .contact {
+     width: 53.375rem; 
+     height: 32.242rem; /* (71.833 / 119) * 53.375 = 32.242rem */
+   }
+}
  .mid {
    height: 100%;
    width: 100%;
@@ -13,6 +47,30 @@
    flex-wrap: nowrap;
    align-items: center;
 
+}
+
+.mid1 {
+   height: 100%;
+   width: 100%;
+   position: relative;
+   z-index: 0;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: center;
+
+}
+
+.mid1::after {
+   height: 100%;
+   width: 100%;
+   top: 0;
+   left: 0;
+   content: '';
+   background-color:  black;
+   opacity: 0.5;
+   position: absolute;
+   z-index: 1;
 }
 
 .mid::before {
@@ -41,15 +99,10 @@
    justify-content: center;
 }
 
-.formbox h1{
-   font-size: 4rem;
-}
-
 .formbox h2{
    width: 65.98%;
    font-weight: 550;
    margin-top: 5%;
-   font-size: 1.75rem;
    text-align: center;
 }
 
