@@ -1,6 +1,5 @@
 import styles from './signup.module.css';
 import { useState } from 'react';
-import { Link } from "react-router-dom";
 import { Confirm} from "../components/Confirm.jsx"
 import '../global.css';
 
