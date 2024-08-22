@@ -11,7 +11,7 @@ export function Session({rating, sessions}) {
             <div className={styles.sessions}>
                 {sessions.map(sessao => {
                     return (
-                        <Link tp='/Checkout' className={styles.button} key={sessao}>{sessao}</Link> 
+                        <Link to='/Checkout' className={styles.button} key={sessao}>{sessao}</Link> 
                     )
                 })}
             </div>
