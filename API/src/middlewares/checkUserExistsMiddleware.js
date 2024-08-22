@@ -9,6 +9,7 @@ async function checkUserExists(req, res, next) {
                }
           })
           if (user) {
+               console.log('Usuário ja existe')
                return res.status(400).json({ error: 'Usuário ja existe!'})
           }
 

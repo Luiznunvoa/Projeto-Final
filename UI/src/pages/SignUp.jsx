@@ -53,7 +53,7 @@ const handleSubmit = async (evento) => {
             alert('Usuário registrado com sucesso!')
         } else {
             const errorData = await response.json()
-            alert(errorData)
+            alert(errorData.error)
         }
     } catch (error) {
         console.error('Erro ao registrar:', error)
