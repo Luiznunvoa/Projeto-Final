@@ -3,8 +3,42 @@
     width: 119rem;
     position: relative;
     z-index: 0;
-
 }
+
+@media screen and (max-width: 1680px) {
+    .fundo {
+      width: 105rem; 
+      height: 94.726rem; /* (107.417 / 119) * 105 = 94.726rem */
+    }
+ }
+ 
+ @media screen and (max-width: 1440px) {
+    .fundo {
+      width: 90rem; 
+      height: 81.248rem; /* (107.417 / 119) * 90 = 81.248rem */
+    }
+ }
+ 
+ @media screen and (max-width: 1280px) {
+    .fundo {
+      width: 80rem; 
+      height: 72.191rem; /* (107.417 / 119) * 80 = 72.191rem */
+    }
+ }
+ 
+ @media screen and (max-width: 1024px) {
+    .fundo {
+      width: 64rem; 
+      height: 57.753rem; /* (107.417 / 119) * 64 = 57.753rem */
+    }
+ }
+ 
+ @media screen and (max-width: 854px) {
+    .fundo {
+      width: 53.375rem; 
+      height: 48.174rem; /* (107.417 / 119) * 53.375 = 48.174rem */
+    }
+ }
 
 .fundo::before {
     content: '';

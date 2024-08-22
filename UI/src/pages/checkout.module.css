@@ -3,6 +3,41 @@
    width: 119rem;
 }
 
+@media screen and (max-width: 1680px) {
+   .checkout {
+     width: 105rem; 
+     height: 62.772rem; /* (71.167 / 119) * 105 = 62.772rem */
+   }
+}
+
+@media screen and (max-width: 1440px) {
+   .checkout {
+     width: 90rem; 
+     height: 53.824rem; /* (71.167 / 119) * 90 = 53.824rem */
+   }
+}
+
+@media screen and (max-width: 1280px) {
+   .checkout {
+     width: 80rem; 
+     height: 47.857rem; /* (71.167 / 119) * 80 = 47.857rem */
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   .checkout {
+     width: 64rem; 
+     height: 38.285rem; /* (71.167 / 119) * 64 = 38.285rem */
+   }
+}
+
+@media screen and (max-width: 854px) {
+   .checkout {
+     width: 53.375rem; 
+     height: 31.931rem; /* (71.167 / 119) * 53.375 = 31.931rem */
+   }
+}
+
 .mid {
    height: 100%;
    width: 100%;
@@ -200,10 +235,6 @@
    text-align: center;
 }
 
-.confirmation.confirmed h1 {
-   font-size: 24px;
-}
-
 .confirmation.confirmed section {
    display: none;
 }
@@ -219,7 +250,6 @@
 }
 
 .confirmation.confirmed .cancel {
-   font-size: 18px;
    margin-top: 20px;
    display: inline-block;
    color: white;
@@ -262,7 +292,6 @@
    font-style: normal;
    color: var(--Neutro_100);
    text-align: center;
-   font-size: 1.25rem;
 }
 
 .chosenSeatsTop > div {
@@ -288,7 +317,6 @@
    text-align: center;
    border: solid 1px var(--CallToAction_400);
    border-radius: 0.5rem;
-   font-size: 1.125rem;
    font-weight: bold;
    cursor: default;
 }

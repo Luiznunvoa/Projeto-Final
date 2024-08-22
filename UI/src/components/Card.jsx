@@ -19,7 +19,7 @@ export function Card(props) {
             </section>  
             <div className={styles.button}>
                <NavLink to='/Sessions' style={{textDecoration : 'none'}}>
-                  <h1>Ver Sessões</h1>
+                  <h3>Ver Sessões</h3>
                </NavLink>
             </div>          
          </div>

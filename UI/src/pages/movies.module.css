@@ -3,6 +3,41 @@
    width: 119rem;
 }
 
+@media screen and (max-width: 1680px) {
+   .movies {
+     width: 105rem; 
+     height: 307.855rem; /* (349.417 / 119) * 105 = 307.855rem */
+   }
+}
+
+@media screen and (max-width: 1440px) {
+   .movies {
+     width: 90rem; 
+     height: 264.921rem; /* (349.417 / 119) * 90 = 264.921rem */
+   }
+}
+
+@media screen and (max-width: 1280px) {
+   .movies {
+     width: 80rem; 
+     height: 235.306rem; /* (349.417 / 119) * 80 = 235.306rem */
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   .movies {
+     width: 64rem; 
+     height: 188.245rem; /* (349.417 / 119) * 64 = 188.245rem */
+   }
+}
+
+@media screen and (max-width: 854px) {
+   .movies {
+     width: 53.375rem; 
+     height: 157.054rem; /* (349.417 / 119) * 53.375 = 157.054rem */
+   }
+}
+
 .search {
    height: 6.7%;
    width: 100%;

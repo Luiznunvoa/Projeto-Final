@@ -3,6 +3,42 @@
    width: 119rem;
 }
 
+
+@media screen and (max-width: 1680px) {
+   .signup {
+     width: 105rem; 
+     height: 110.57rem; /* (125.25 / 119) * 105 = 110.57rem */
+   }
+}
+
+@media screen and (max-width: 1440px) {
+   .signup {
+     width: 90rem; 
+     height: 94.722rem; /* (125.25 / 119) * 90 = 94.722rem */
+   }
+}
+
+@media screen and (max-width: 1280px) {
+   .signup {
+     width: 80rem; 
+     height: 84.148rem; /* (125.25 / 119) * 80 = 84.148rem */
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   .signup {
+     width: 64rem; 
+     height: 67.319rem; /* (125.25 / 119) * 64 = 67.319rem */
+   }
+}
+
+@media screen and (max-width: 854px) {
+   .signup {
+     width: 53.375rem; 
+     height: 56.137rem; /* (125.25 / 119) * 53.375 = 56.137rem */
+   }
+}
+
 .mid {
    height: 100%;
    width: 100%;
@@ -64,7 +100,6 @@
 
 .signuptext  h1{
    width: 100%;
-   font-size: 4rem;
    font-weight: 700;
    margin-bottom: 5%;
    letter-spacing: 0.01rem;
@@ -72,7 +107,6 @@
 
 .signuptext  h2{
    width: 100%;
-   font-size: 2rem;
    font-weight: 550;
    letter-spacing: 0.01rem;
 }
@@ -90,7 +124,6 @@
 }
 
 .signupform h1 {
-   font-size: 4rem;
    margin-bottom: 2%;
 }
 

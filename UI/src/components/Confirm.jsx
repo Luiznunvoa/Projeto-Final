@@ -8,8 +8,8 @@ export function Confirm(props) {
       <div className={styles.confirmation}>
          <h1>{props.title}</h1>
          <h2>{props.subtitle}</h2>
-         <p>{props.paragrph1}</p>
-         <p>{props.paragrph2}</p>
+         <h3>{props.paragrph1}</h3>
+         <h3>{props.paragrph2}</h3>
          <Link to='/'className={styles.goback}/>
 
       </div>
