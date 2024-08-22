@@ -1,6 +1,6 @@
 .fundo{
-    height: 100%;
-    width: 100%;
+    height: 107.417rem;
+    width: 119rem;
     position: relative;
     z-index: 0;
 
@@ -20,13 +20,16 @@
 }
 
 .info{
-    height: 24rem;
+    width: 100%;
+    height: 29.86%;
     background-color: var(--Complementar_900);
     background: linear-gradient(to bottom, var(--Complementar_900) 90%, transparent );
+    display: flex;
 }
 
 .horarios{
-    padding: 2rem;
+    height: 60.2%;
+    width: 100%;
 }
 
 .buttons {

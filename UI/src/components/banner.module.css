@@ -1,61 +1,67 @@
 .banner{
-    padding: 2rem;
+    height: 100%;
+    width: 66.25%;
     display: flex;
-    gap: 2rem;
 }
 
 .section{
-    width: 1000%;
+    width: 66.9%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
 }
 
-.img{
-    width: 14rem;
-    height: 21.25rem;
+.banner img{
+    width: 24.10%;
+    height: 100%;
 }
 
 .info{
-    max-width: 26.375rem;
+    height: 65%;
+    width: 100%;
 }
 
 .title{
+    width: 55%;
+    height: 25%;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
-.title > div{
-    width: 3.125rem;
-    height: 3.125rem;
-    border-radius: 0.5rem;
-    font-family: "Roboto", sans-serif;
+.title div {
+    height: 80%;
+    width: 14.38%;
     background-color: #FBC115;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
     color: var(--Neutro_0);
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+    border-radius: 0.5rem;
 }
 
-.desc{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.desc {
+    width: 55%;
+    height: 45%;
 }
 
-.desc > h2:first-of-type{
-    color: var(--Neutro_200);
+.desc h2 {
+    margin-top: 6%;
 }
 
-.desc > h2:last-of-type{
-    color: var(--Neutro_50);
-}
 
 .dropdowns{
-    height: 20.8%;
+    height: 15.8%;
+    margin-top: 2%;
+    width: 200%;
     display: flex;
-    align-items: center;
-    margin-top: 1rem;
-    margin-left: 0rem;
-    width: 100%;
-    gap: 4rem;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
