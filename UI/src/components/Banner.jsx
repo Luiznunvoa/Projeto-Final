@@ -4,6 +4,12 @@ import styles from './banner.module.css';
 import '../global.css';
 
 export function Banner({imagem, genero, nome, desc}) {
+    const Cidade = [ 
+        'Rio de Janeiro', 'Niteói', 'São Gonçalo', 'Maricá', 'Nova iguaçu', 'BElford Roxo'
+     ]
+     const Bairro = [ 
+        'Centro', 'Zona Sul', 'Zona Norte', 'Região Oceânica', 'Baixada', 'Região dos Lagos'
+     ]
     return (
         <>
         <div className={styles.banner}>
@@ -20,8 +26,8 @@ export function Banner({imagem, genero, nome, desc}) {
                     </div>  
                 </div>
                 <div className={styles.dropdowns}>
-                    <Dropdown tipo='Cidade'></Dropdown>
-                    <Dropdown tipo='Bairro'></Dropdown>
+                    <Dropdown tipo='Cidade' children={Cidade}></Dropdown>
+                    <Dropdown tipo='Bairro' children={Bairro}></Dropdown>
                 </div>
             </section>
         </div>

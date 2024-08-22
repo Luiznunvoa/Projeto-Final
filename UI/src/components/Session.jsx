@@ -11,7 +11,7 @@ export function Session({rating, sessions}) {
             <div className={styles.sessions}>
                 {sessions.map(sessao => {
                     return (
-                        <NavLink to='/' style={{textDecoration : 'none'}} key={sessao}>
+                        <NavLink to='/Checkout' style={{textDecoration : 'none'}} key={sessao}>
                             <button key={sessao}>{sessao}</button>
                         </NavLink>   
                     )

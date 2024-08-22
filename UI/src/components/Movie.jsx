@@ -8,7 +8,7 @@ export function Movie(props){
          <img src={props.imagem}></img>
          <h2>{props.nome}</h2>
          <div>
-            <Link to='/Checkout'>SESSÔES DISPOÍVEIS</Link>
+            <Link to='/Sessions'>SESSÔES DISPOÍVEIS</Link>
          </div>
 
       </section>
