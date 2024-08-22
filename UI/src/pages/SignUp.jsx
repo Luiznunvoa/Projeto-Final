@@ -1,8 +1,64 @@
 import styles from './signup.module.css';
-import { Link } from "react-router-dom";
 import '../global.css';
+import { useState } from 'react';
 
 export function SignUp() {
+
+  const [formResponse, setformResponse] = useState({
+    name: '',
+    lastName: '',
+    cpf: '',
+    birthday: '',
+    username: '',
+    email: '',
+    senha: '',
+    confirmSenha: ''
+});
+
+const handleChange = (evento) => {
+    setformResponse({
+        ...formResponse,
+        [evento.target.name]: evento.target.value
+    });
+};
+
+const handleSubmit = async (evento) => {
+    evento.preventDefault()
+
+    if (formResponse.senha !== formResponse.confirmSenha) {
+        alert('As senhas não conferem')
+        return;
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: formResponse.name,
+                lastName: formResponse.lastName,
+                cpf: formResponse.cpf,
+                birthday: formResponse.birthday,
+                username: formResponse.username,
+                email: formResponse.email,
+                senha: formResponse.senha
+            })
+        })
+
+        if (response.ok) {
+            alert('Usuário registrado com sucesso!')
+        } else {
+            const errorData = await response.json()
+            alert(errorData)
+        }
+    } catch (error) {
+        console.error('Erro ao registrar:', error)
+        alert('Erro ao registrar usuário')
+    }
+}
+
     return (
         <>
         <main className={styles.signup}>
@@ -25,20 +81,18 @@ export function SignUp() {
                 </section>
                 <div className={styles.signupform}>
                   <h1>Registre-se</h1>
-                  <input className={styles.user} type='text' placeholder='Nome'/>
-                  <input className={styles.user} type='text' placeholder='Sobrenome'/>
-                  <input className={styles.user} type='text' placeholder='CPF'/>
-                  <input className={styles.user} type='date' placeholder='Data de Nascimento'/>
-                  <input className={styles.user} type='text' placeholder='Nome de Usuário'/>
-                  <input className={styles.user} type='email' placeholder='E-mail'/>
-                  <input className={styles.user} type='password' placeholder='Senha'/>
-                  <input className={styles.user} type='password' placeholder='Confirmar Senha'/>
-                  <Link to='/' className={styles.enter}>
-                  <h2>
-                     REGISTRAR
-                  </h2>
-                  </Link>
+                  <form onSubmit={handleSubmit}>
+                  <input className={styles.user} name='name' type='text' placeholder='Nome' required onChange={handleChange} />
+                  <input className={styles.user} name='lastName' type='text' placeholder='Sobrenome' required onChange={handleChange} />
+                  <input className={styles.user} name='cpf' type='text' placeholder='CPF' required onChange={handleChange} />
+                  <input className={styles.user} name='birthday' type='date' placeholder='Data de Nascimento' required onChange={handleChange} />
+                  <input className={styles.user} name='username' type='text' placeholder='Nome de Usuário' required onChange={handleChange} />
+                  <input className={styles.user} name='email' type='email' placeholder='E-mail' required onChange={handleChange} />
+                  <input className={styles.user} name='senha' type='password' placeholder='Senha' required onChange={handleChange} />
+                  <input className={styles.user} name='confirmSenha' type='password' placeholder='Confirmar Senha' required onChange={handleChange} />
 
+                    <button type='submit' className={styles.enter}>REGISTRAR</button>
+                  </form>
                 </div>
 
             </section>
