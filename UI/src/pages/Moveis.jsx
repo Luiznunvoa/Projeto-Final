@@ -14,23 +14,33 @@ const Classificacoes = [
 
 export function Movies() {
     const [filmes, setFilmes] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         fetch('http://localhost:3000/movies')
             .then(response => response.json())
             .then(data => {
-                // Considerando que os dados vêm como um array de filmes
-                const filmesFormatados = data.slice(0, 6).map(filme => ({
-                    imagem: filme.imageURL,
-                    nome: filme.title,
-                    genero: filme.genre,
-                    diretor: filme.director,
-                    desc: filme.synopse,
-                }));
-                setFilmes(filmesFormatados);
+                setFilmes(data);
             })
-            .catch(error => console.error('Erro ao buscar filmes:', error));
+            .catch(error => {
+                console.error('Erro ao buscar filmes:', error);
+            });
     }, []);
+
+    const handleNext = () => {
+        if (currentIndex + 6 < filmes.length) {
+            setCurrentIndex(currentIndex + 6);
+        }
+    };
+
+    const handlePrevious = () => {
+        if (currentIndex - 6 >= 0) {
+            setCurrentIndex(currentIndex - 6);
+        }
+    };
+
+    // Certifica-se de que ao final, sejam exibidos os filmes restantes mesmo que sejam menos que 6
+    const filmesAtuais = filmes.slice(currentIndex, currentIndex + 6);
 
     return (
         <main className={styles.movies}>
@@ -47,22 +57,22 @@ export function Movies() {
             <section className={styles.mid}>
                 <h1>Filmes</h1>
                 <section className={styles.list}>
-                    {filmes.map((filme, index) => (
+                    {filmesAtuais.map((filme, index) => (
                         <Card
                             key={index}
-                            imagem={filme.imagem}
-                            nome={filme.nome}
-                            genero={filme.genero}
-                            diretor={filme.diretor}
-                            desc={filme.desc}
+                            imagem={filme.imageURL}
+                            nome={filme.title}
+                            genero={filme.genre}
+                            diretor={filme.director}
+                            desc={filme.synopse}
                         />
                     ))}
                 </section>
                 <section className={styles.pages}>
-                    <div className={styles.arrowL}>
+                    <div className={styles.arrowL} onClick={handlePrevious}>
                         <div />
                     </div>
-                    <div className={styles.arrowR}>
+                    <div className={styles.arrowR} onClick={handleNext}>
                         <div />
                     </div>
                 </section>
