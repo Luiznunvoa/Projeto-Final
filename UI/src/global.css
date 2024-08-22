@@ -170,3 +170,7 @@ h2 {
   color: var(--Neutro_0);
   font-weight: 500;
 }
+
+a {
+  text-decoration: none;
+}
