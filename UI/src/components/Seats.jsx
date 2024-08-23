@@ -1,5 +1,6 @@
 import styles from './seats.module.css';
-import React, { useState } from 'react';
+import React, { useContext, useState, useEffect } from "react"
+//import { ApplicationContext } from "../contexts/ApplicationContextProvider.jsx";
 import '../global.css';
 
 export function Seats() {
@@ -29,6 +30,19 @@ export function Seats() {
             <h2>{letter}</h2>
         </div>
     ));
+/* 
+    const {sessionId, setSessionId} = useContext(ApplicationContext);
 
+    useEffect(() => {
+        fetch('http://localhost:3000/seats/' + sessionId)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+                console.error('Erro ao buscar assentos:', error);
+            });
+    }, [selectedSeats]);
+*/
     return <>{seatRows}</>;
 }

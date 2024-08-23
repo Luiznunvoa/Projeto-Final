@@ -7,6 +7,7 @@ import '../global.css';
 
 import capa1Image from '../assets/Capa1.png';
 import seatIcon from "../assets/seatIcon.svg";
+import { Session } from '../components/Session.jsx';
 
 export function Checkout() {
     const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +19,12 @@ export function Checkout() {
     //Link API
     const [movie, setMovie] = useState({
         title: "Besouro Azul",
-        imageURL: capa1Image
+        imageURL: capa1Image,
+    })
+
+    const [session, setSession] = useState({
+        type:0,
+        time:"15:00"
     })
 
     const {sessionId, setSessionId} = useContext(ApplicationContext)
@@ -49,6 +55,17 @@ export function Checkout() {
             });
     }, [title]);
 
+    useEffect(() => {
+        fetch('http://localhost:3000/sessions/' + sessionId)
+            .then(response => response.json())
+            .then(data => {
+                setSession(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar sessões:', error);
+            });
+    }, [sessionId]);
+
     const Confirmation = () => (
         <div className={`${styles.confirmation} ${isVisible ? styles.visible : ''} ${isConfirmed ? styles.confirmed : ''}`}>
             {isConfirmed ? (
@@ -73,6 +90,10 @@ export function Checkout() {
         </div>
     );
 
+    if (session.type == 0) session.type = "2D"
+    else if (session.type == 1) session.type = "3D"
+    else if (session.type == 2) session.type = "IMAX"
+
     return (
         <main className={styles.checkout}>
             <section className={`${styles.mid} ${isVisible ? styles.midVisible : ''}`}>
@@ -82,8 +103,8 @@ export function Checkout() {
                         <div>
                             <h1 className={styles.title}>{movie.title}</h1>
                             <div>
-                                <h2 className={styles.type}>2D</h2>
-                                <h2 className={styles.time}>15:20</h2>
+                                <h2 className={styles.type}>{session.type}</h2>
+                                <h2 className={styles.time}>{session.time}</h2>
                             </div>
                         </div>
                     </div>
