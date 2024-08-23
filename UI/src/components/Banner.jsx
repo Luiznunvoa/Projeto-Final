@@ -3,7 +3,7 @@ import { Dropdown } from "../components/Dropdown.jsx";
 import styles from './banner.module.css';
 import '../global.css';
 
-export function Banner({imagem, genero, nome, desc}) {
+export function Banner({imagem, genero, nome, desc, rating}) {
     const Cidade = [ 
         'Rio de Janeiro', 'Niterói', 'São Gonçalo', 'Maricá', 'Nova iguaçu', 'Belford Roxo'
      ]
@@ -18,7 +18,7 @@ export function Banner({imagem, genero, nome, desc}) {
                 <div className={styles.info}>
                     <div className={styles.title}>
                         <h1>{nome}</h1>
-                        <div>12</div>
+                        <div>{rating}</div>
                     </div>
                     <div className={styles.desc}>
                         <h2>{genero}</h2>
