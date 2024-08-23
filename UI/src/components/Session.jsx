@@ -18,7 +18,6 @@ export function Session({rating, sessions, sessionsId}) {
             <div>{rating}</div>
             <div className={styles.sessions}>
                 {sessoes.map(sessao => {
-                    console.log(sessao.SessionId)
                     return (
                         <Link to='/Checkout' className={styles.button} onClick={() => setSessionId(sessao.SessionId)} key={sessao.SessionId}>{sessao.time}</Link> 
                     )

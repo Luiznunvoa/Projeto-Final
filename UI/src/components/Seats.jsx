@@ -1,12 +1,25 @@
 import styles from './seats.module.css';
 import React, { useContext, useState, useEffect } from "react"
-//import { ApplicationContext } from "../contexts/ApplicationContextProvider.jsx";
+import { ApplicationContext } from "../contexts/ApplicationContextProvider.jsx";
 import '../global.css';
 
-export function Seats() {
+export function Seats({onSelectSeats}) {
     const [selectedSeats, setSelectedSeats] = useState(Array(10).fill(Array(18).fill(false)));
     const Alfa = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
     const totalSeats = 18;
+/*
+    const {sessionId, setSessionId} = useContext(ApplicationContext);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/seats/' + sessionId)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+                console.error('Erro ao buscar assentos:', error);
+            });
+    }, [selectedSeats]);*/
 
     const toggleSeat = (rowIndex, seatIndex) => {
         setSelectedSeats(prevState => {
@@ -16,6 +29,22 @@ export function Seats() {
             return newSeats;
         });
     };
+
+    const getSelectedSeats = () => {
+        let selected = [];
+        selectedSeats.forEach((row, rowIndex) => {
+            row.forEach((seat, seatIndex) => {
+                if (seat) {
+                    selected.push(`${Alfa[rowIndex]}${seatIndex + 1}`);
+                }
+            });
+        });
+        return selected;
+    };
+
+    useEffect(() => {
+        onSelectSeats(getSelectedSeats()); // Atualiza a lista de assentos selecionados no componente pai
+    }, [selectedSeats]);
 
     const seatRows = Alfa.map((letter, rowIndex) => (
         <div key={rowIndex} className={styles.row}>
@@ -30,19 +59,6 @@ export function Seats() {
             <h2>{letter}</h2>
         </div>
     ));
-/* 
-    const {sessionId, setSessionId} = useContext(ApplicationContext);
 
-    useEffect(() => {
-        fetch('http://localhost:3000/seats/' + sessionId)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-            })
-            .catch(error => {
-                console.error('Erro ao buscar assentos:', error);
-            });
-    }, [selectedSeats]);
-*/
     return <>{seatRows}</>;
 }

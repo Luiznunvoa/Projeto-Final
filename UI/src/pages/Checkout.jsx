@@ -12,6 +12,11 @@ import { Session } from '../components/Session.jsx';
 export function Checkout() {
     const [isVisible, setIsVisible] = useState(false);
     const [isConfirmed, setIsConfirmed] = useState(false);
+    const [selectedSeats, setSelectedSeats] = useState([]);//chat
+
+    const handleSelectSeats = (seats) => {
+        setSelectedSeats(seats);
+    };
 
     const toggleVisibility = () => setIsVisible(!isVisible);
     const confirmReservation = () => setIsConfirmed(true);
@@ -19,7 +24,7 @@ export function Checkout() {
     //Link API
     const [movie, setMovie] = useState({
         title: "Besouro Azul",
-        imageURL: capa1Image,
+        imageURL: capa1Image
     })
 
     const [session, setSession] = useState({
@@ -41,7 +46,7 @@ export function Checkout() {
             .catch(error => {
                 console.error('Erro ao buscar assentos:', error);
             });
-    }, [seats]);
+    }, [sessionId]);
 
     //Faz aparecer a imagem e o titulo do filme 
     useEffect(() => {
@@ -113,14 +118,16 @@ export function Checkout() {
                             <img src={seatIcon} alt="Ícone de assento" />
                             <span>Assentos escolhidos</span>
                         </div>
-                        <div className={styles.seats}></div>
+                        <div className={styles.seats}>
+                            {selectedSeats.join(', ')} {/* Exibe os números dos assentos */}    
+                        </div>
                         <button onClick={toggleVisibility}>Confirmar</button>
                     </div>
                 </div>
                 <div className={styles.map}>
                     <div className={styles.mapheader} />
                     <section className={styles.seatmap}>
-                        <Seats />
+                        <Seats onSelectSeats={handleSelectSeats}/>
                     </section>
                     <hr/>
                     <h2>LEGENDA</h2>

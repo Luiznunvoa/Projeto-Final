@@ -79,9 +79,7 @@ export function Sessions() {
                 lista[2].listSessionId.push(session.SessionId)
             }
         })
-        console.log(lista)
         setSessoes(lista)
-        console.log(lista)
     }, [sessions])
 
     useEffect(() => {
