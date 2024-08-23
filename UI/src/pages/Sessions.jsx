@@ -95,17 +95,6 @@ export function Sessions() {
             });
     }, [title]);
 
-    /*  
-        Questões: 
-        1) Como passar propriedades para a pagina sessao? 
-        2) Constante sessoes: 
-            Tem que estar associada a cada filme 
-            Sessao -> Horario
-                Cidade da sessao
-                Bairro da sessao
-                Tipo da sessao
-    */
-
     return (
         <>
             <main className={styles.fundo}>

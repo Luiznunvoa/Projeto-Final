@@ -23,19 +23,19 @@ export function Checkout() {
 
     const {sessionId, setSessionId} = useContext(ApplicationContext)
     const {title, setTitle} = useContext(ApplicationContext)
-    const [sessions, setSessions] = useState([])
+    const [seats, setSeats] = useState([])
     
     //ainda to pensando...
     useEffect(() => {
         fetch('http://localhost:3000/seats/' + sessionId)
             .then(response => response.json())
             .then(data => {
-                setSessionId(data);
+                setSeats(data);
             })
             .catch(error => {
                 console.error('Erro ao buscar assentos:', error);
             });
-    }, [movie]);
+    }, [seats]);
 
     //Faz aparecer a imagem e o titulo do filme 
     useEffect(() => {
