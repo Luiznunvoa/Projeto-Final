@@ -21,6 +21,7 @@ export function Sessions() {
         synopse: "In New York City in 1987, a handsome, young urban professional, Patrick Bateman (Christian Bale), lives a second life as a gruesome serial killer by night. The cast is filled by the detective (Willem Dafoe), the fiance (Reese Witherspoon), the mistress (Samantha Mathis), the coworker (Jared Leto), and the secretary (Chloë Sevigny). This is a biting, wry comedy examining the elements that make a man a monster.",
         genre: "Horror",
         ageRating: 18})
+
     const [sessoes, setSessoes] = useState([
         {
             rating: '2D', 
@@ -83,6 +84,16 @@ export function Sessions() {
         console.log(lista)
     }, [sessions])
 
+    useEffect(() => {
+        fetch('http://localhost:3000/movies/' + title)
+            .then(response => response.json())
+            .then(data => {
+                setMovie(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar sessões:', error);
+            });
+    }, [title]);
 
     /*  
         Questões: 
