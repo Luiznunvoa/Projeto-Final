@@ -51,6 +51,7 @@ const handleSubmit = async (evento) => {
 
         if (response.ok) {
             alert('Usuário registrado com sucesso!')
+            
         } else {
             const errorData = await response.json()
             alert(errorData.error)
@@ -95,10 +96,16 @@ const handleSubmit = async (evento) => {
 
                     <button type='submit' className={styles.enter}>REGISTRAR</button>
                   </form>
+                  <section className={styles.cadastrado}>
+                    <button>X</button>
+                    <div>
+                      <h1 className={styles.created}>Cadastro Criado!</h1>
+                      <h2 className={styles.welcome}>Bem-vindo à Nossa Comunidade Cinematográfica!</h2>
+                      <p className={styles.description}>Obrigado por se juntar a nós na nossa comunidade cinematográfica.<br></br>Sua jornada para uma experiência cinematográfica única começa agora. <br /><br /> Você será redirecionado em instantes para página de login.</p>
+                    </div>
+                  </section>
                 </div>
-
             </section>
-
         </main>
 
         </>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+* {
+   font-family: "Poppins", sans-serif;
+}
+
 .signup {
    height: 125.25rem;
    width: 119rem;
@@ -103,7 +107,38 @@
 
    font-size: 1.5rem;
    font-weight: 600;
-   font-family: "Poppins", sans-serif;
    line-height: 2.25rem;
+   color: white;
+}
+
+.cadastrado {
+   position: absolute;
+   min-width: 800px;
+   min-height: 355px;
+   z-index: 1;
+   background-color: #008d88;
+   border: none;
+   border-radius: 16px;
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%)
+}
+
+.cadastrado > div {
+   display: flex;
+   flex-direction: column;
+   padding: 0 50px 50px;
+}
+
+.created {
+
+}
+
+.welcome {
+
+}
+
+.description {
+   margin-top: 20px;
    color: white;
 }

@@ -73,13 +73,14 @@
 }
 
 .user {
-   width: 79%;
-   height: 7.3%;
-   margin-top: 5%;
+   border: none;
+   width: 32.5rem;
+   min-height: 2.5rem;
    background-color: var(--Principal_100);
    border-radius: 1rem;
    padding-left: 5%;
    box-shadow: 0px 5px 3px 0px var( --Principal_900);
+   font-size: 1.25rem;
 }
 
 .enter {
