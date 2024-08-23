@@ -2,8 +2,11 @@ import { NavLink } from "react-router-dom";
 
 import styles from './card.module.css';
 import '../global.css';
+import { ApplicationContext } from "../contexts/ApplicationContextProvider";
+import { useContext } from "react"
 
 export function Card(props) {
+   const { title , setTitle} = useContext(ApplicationContext)
     return (
         <>
         <div className={styles.card}>
@@ -29,7 +32,7 @@ export function Card(props) {
                <h2>{props.desc}</h2>
             </section>  
             <div className={styles.button}>
-               <NavLink to='/Sessions' style={{textDecoration : 'none'}}>
+               <NavLink to='/Sessions' style={{textDecoration : 'none'}}  onClick={() => setTitle(props.nome)}>
                   <h3>Ver Sessões</h3>
                </NavLink>
             </div>          
