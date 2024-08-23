@@ -3,13 +3,26 @@ import { Dropdown } from "../components/Dropdown.jsx";
 import styles from './banner.module.css';
 import '../global.css';
 
-export function Banner({imagem, genero, nome, desc, rating}) {
-    const Cidade = [ 
-        'Rio de Janeiro', 'Niterói', 'São Gonçalo', 'Maricá', 'Nova iguaçu', 'Belford Roxo'
-     ]
-     const Bairro = [ 
-        'Centro', 'Zona Sul', 'Zona Norte', 'Região Oceânica', 'Zona Oeste'
-     ]
+export function Banner({imagem, genero, nome, desc, rating, city, bairro}) {
+    const Cidade = [
+        'Todos', 
+        'Rio de Janeiro', 'Niterói'
+    ]
+    const Bairro = [
+        'Todos',
+        'Centro', 'Zona Sul', 'Zona Norte', 'Zona Oeste', 'Zona Leste', 'Região Oceânica'
+    ]
+
+    const handleCitySelect = (Cidade) => {
+        city(Cidade === 'Todos' ? '' : Cidade);
+        console.log(Cidade)
+    };
+
+    const handleBairro = (Bairro) => {
+        bairro(Bairro === 'Todos' ? '' : Bairro);
+        console.log(Bairro)
+    };
+
     return (
         <>
         <div className={styles.banner}>
@@ -35,8 +48,8 @@ export function Banner({imagem, genero, nome, desc, rating}) {
                     </div>  
                 </div>
                 <div className={styles.dropdowns}>
-                    <Dropdown tipo='Cidade' children={Cidade}></Dropdown>
-                    <Dropdown tipo='Bairro' children={Bairro}></Dropdown>
+                    <Dropdown tipo='Cidade' children={Cidade}  onSelect={handleCitySelect}></Dropdown>
+                    <Dropdown tipo='Bairro' children={Bairro} onSelect={handleBairro}></Dropdown>
                 </div>
             </section>
         </div>

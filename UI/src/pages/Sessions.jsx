@@ -19,6 +19,8 @@ export function Sessions() {
 
     const [sessoes, setSessoes] = useState([]);
     const [selectedRating, setSelectedRating] = useState(''); // Estado para o filtro
+    const [selectedCity, setSelectedCity] = useState('');
+    const [selectedBairro, setSelectedBairro] = useState('');
 
     useEffect(() => {
         fetch('http://localhost:3000/sessions/movie/' + title)
@@ -47,20 +49,25 @@ export function Sessions() {
         }];
 
         sessions.forEach((session) => {
-            if (session.type === 0) {
-                lista[0].list.push(session.time);
-                lista[0].listSessionId.push(session.SessionId);
-            } else if (session.type === 1) {
-                lista[1].list.push(session.time);
-                lista[1].listSessionId.push(session.SessionId);
-            } else if (session.type === 2) {
-                lista[2].list.push(session.time);
-                lista[2].listSessionId.push(session.SessionId);
+            if (
+                (selectedCity === '' || session.city === selectedCity) &&
+                (selectedBairro === '' || session.neighborhood === selectedBairro)
+            ) {
+                if (session.type === 0) {
+                    lista[0].list.push(session.time);
+                    lista[0].listSessionId.push(session.SessionId);
+                } else if (session.type === 1) {
+                    lista[1].list.push(session.time);
+                    lista[1].listSessionId.push(session.SessionId);
+                } else if (session.type === 2) {
+                    lista[2].list.push(session.time);
+                    lista[2].listSessionId.push(session.SessionId);
+                }
             }
         });
 
         setSessoes(lista);
-    }, [sessions]);
+    }, [sessions, selectedCity, selectedBairro]);
 
     useEffect(() => {
         fetch('http://localhost:3000/movies/' + title)
@@ -94,6 +101,8 @@ export function Sessions() {
                         genero={movie.genre}
                         desc={movie.synopse}
                         rating={movie.ageRating}
+                        city={setSelectedCity}
+                        bairro={setSelectedBairro}
                     ></Banner>
                 </div>
                 <div className={styles.horarios}>
