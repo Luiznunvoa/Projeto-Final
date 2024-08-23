@@ -1,6 +1,7 @@
 import styles from './signup.module.css';
 import '../global.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link, X } from 'phosphor-react'
 
 export function SignUp() {
 
@@ -19,8 +20,10 @@ const handleChange = (evento) => {
     setformResponse({
         ...formResponse,
         [evento.target.name]: evento.target.value
-    });
-};
+    })
+}
+
+const [isRegistered, setIsRegistered] = useState(false)
 
 const handleSubmit = async (evento) => {
     evento.preventDefault()
@@ -29,8 +32,6 @@ const handleSubmit = async (evento) => {
         alert('As senhas não conferem')
         return;
     }
-
-    console.log('Dados do Formulário:', formResponse)
 
     try {
         const response = await fetch('http://localhost:3000/users', {
@@ -50,8 +51,7 @@ const handleSubmit = async (evento) => {
         })
 
         if (response.ok) {
-            alert('Usuário registrado com sucesso!')
-            
+            setIsRegistered(true)     
         } else {
             const errorData = await response.json()
             alert(errorData.error)
@@ -60,7 +60,7 @@ const handleSubmit = async (evento) => {
         console.error('Erro ao registrar:', error)
         alert('Erro ao registrar usuário')
     }
-}
+}  
 
     return (
         <>
@@ -96,14 +96,19 @@ const handleSubmit = async (evento) => {
 
                     <button type='submit' className={styles.enter}>REGISTRAR</button>
                   </form>
-                  <section className={styles.cadastrado}>
-                    <button>X</button>
+                  {isRegistered && (
+                    <section className={styles.cadastrado}>
+                    <button className={styles.buttonFechar} onClick={() => window.location.href = '/Login'}><X size={32}/></button>
                     <div>
                       <h1 className={styles.created}>Cadastro Criado!</h1>
                       <h2 className={styles.welcome}>Bem-vindo à Nossa Comunidade Cinematográfica!</h2>
-                      <p className={styles.description}>Obrigado por se juntar a nós na nossa comunidade cinematográfica.<br></br>Sua jornada para uma experiência cinematográfica única começa agora. <br /><br /> Você será redirecionado em instantes para página de login.</p>
+                      <p className={styles.description}>Obrigado por se juntar a nós na nossa comunidade cinematográfica.<br></br>Sua jornada para uma experiência cinematográfica única começa agora. <br /><br /> Você será redirecionado ao clicar no X para a página de Login.</p>
                     </div>
                   </section>
+                  )}
+                  {isRegistered && (
+                    <div className={styles.overlay}></div>
+                  )}
                 </div>
             </section>
         </main>
