@@ -1,7 +1,8 @@
 import styles from './checkout.module.css';
-import React, { useState } from 'react';
+import { useContext, useState, useEffect } from "react"
 import { Seats } from "../components/Seats.jsx";
 import { Link } from "react-router-dom";
+import { ApplicationContext } from "../contexts/ApplicationContextProvider.jsx";
 import '../global.css';
 
 import capa1Image from '../assets/Capa1.png';
@@ -13,6 +14,20 @@ export function Checkout() {
 
     const toggleVisibility = () => setIsVisible(!isVisible);
     const confirmReservation = () => setIsConfirmed(true);
+
+    const {sessionId, setSessionId} = useContext(ApplicationContext)
+    const [sessions, setSessions] = useState([])
+    
+    useEffect(() => {
+        fetch('http://localhost:3000/seats/' + sessionId)
+            .then(response => response.json())
+            .then(data => {
+                setSessions(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar assentos:', error);
+            });
+    }, []);
 
     const Confirmation = () => (
         <div className={`${styles.confirmation} ${isVisible ? styles.visible : ''} ${isConfirmed ? styles.confirmed : ''}`}>
