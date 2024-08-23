@@ -283,3 +283,6 @@ h3 {
     letter-spacing: 0.022rem; /* (0.05 / 1) * 0.45 = 0.022rem */
   }
 }
+a {
+  text-decoration: none;
+}

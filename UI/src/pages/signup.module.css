@@ -1,42 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+   font-family: "Poppins", sans-serif;
+}
+
 .signup {
    height: 125.25rem;
    width: 119rem;
-}
-
-
-@media screen and (max-width: 1680px) {
-   .signup {
-     width: 105rem; 
-     height: 110.57rem; /* (125.25 / 119) * 105 = 110.57rem */
-   }
-}
-
-@media screen and (max-width: 1440px) {
-   .signup {
-     width: 90rem; 
-     height: 94.722rem; /* (125.25 / 119) * 90 = 94.722rem */
-   }
-}
-
-@media screen and (max-width: 1280px) {
-   .signup {
-     width: 80rem; 
-     height: 84.148rem; /* (125.25 / 119) * 80 = 84.148rem */
-   }
-}
-
-@media screen and (max-width: 1024px) {
-   .signup {
-     width: 64rem; 
-     height: 67.319rem; /* (125.25 / 119) * 64 = 67.319rem */
-   }
-}
-
-@media screen and (max-width: 854px) {
-   .signup {
-     width: 53.375rem; 
-     height: 56.137rem; /* (125.25 / 119) * 53.375 = 56.137rem */
-   }
 }
 
 .mid {
@@ -49,30 +19,6 @@
    flex-wrap: nowrap;
    align-items: center;
 
-}
-
-.mid1 {
-   height: 100%;
-   width: 100%;
-   position: relative;
-   z-index: 0;
-   display: flex;
-   flex-direction: column;
-   flex-wrap: nowrap;
-   align-items: center;
-
-}
-
-.mid1::after {
-   height: 100%;
-   width: 100%;
-   top: 0;
-   left: 0;
-   content: '';
-   background-color:  black;
-   opacity: 0.5;
-   position: absolute;
-   z-index: 1;
 }
 
 .mid::before {
@@ -100,6 +46,7 @@
 
 .signuptext  h1{
    width: 100%;
+   font-size: 4rem;
    font-weight: 700;
    margin-bottom: 5%;
    letter-spacing: 0.01rem;
@@ -107,50 +54,109 @@
 
 .signuptext  h2{
    width: 100%;
+   font-size: 2rem;
    font-weight: 550;
    letter-spacing: 0.01rem;
 }
 
 .signupform {
    margin-top: 5%;
-   height: 53.22%;
-   width: 66.18%;
+   min-height: 50rem;
+   width: 900px;
    border-radius: 1.5rem;
    background-color: #004A9B;
    display: flex;
+   flex-direction: column;
    align-items: center;
-   justify-content: center;
-   flex-direction: column
 }
 
+
 .signupform h1 {
-   margin-bottom: 2%;
+   font-size: 4rem;
+   margin: 4rem 0 2rem;
+}
+
+.signupform > form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   gap: 1rem;
 }
 
 .user {
-   width: 54.56%;
-   height: 5.5%;
-   margin-top: 2%;
+   border: none;
+   width: 32.5rem;
+   min-height: 3.1rem;
    background-color: var(--Principal_100);
    border-radius: 1rem;
    padding-left: 5%;
    box-shadow: 0px 5px 3px 0px var( --Principal_900);
+   font-size: 1.25rem;
 }
 
 .enter {
-   width: 17.7%;
-   height: 5.5%;
-   margin-top: 5%;
-   padding-top: 1%;
-   border-radius: 1rem;
+   margin: 5% 0;
+   padding: 5px 25px 5px;
+   border: none;
+   border-radius: 0.75rem;
    background-color: #6D98FB;
    box-shadow: 0px 5px 3px 0px var( --Principal_900);
-   display: flex;
+   cursor: pointer;
+   text-align: center;
+
+   font-size: 1.5rem;
+   font-weight: 600;
+   line-height: 2.25rem;
+   color: white;
+}
+
+.overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+   z-index: 1000;
+}
+
+.cadastrado {
+   position: fixed;
+   min-width: 800px;
+   min-height: 355px;
+   z-index: 1;
+   background-color: #008d88;
+   border: none;
+   border-radius: 16px;
+   z-index: 1100;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+   display: block;
+}
+
+.buttonFechar {
+   border: none;
+   border-radius: 50%;
+   opacity: 65%;
+   width: 2.25rem;
+   height: 2.25rem;
+   text-align: center;
+   background-color: #004442;
+   margin: 1rem 1rem 0 95%;
    cursor: pointer;
 }
 
-.enter h2{
-   width: 100%;
-   text-decoration: none;
-   text-align: center;
+.cadastrado > div {
+   display: flex;
+   flex-direction: column;
+   padding: 0 50px 50px;
+   margin-top: -5rem;
+}
+
+.description {
+   margin-top: 20px;
+   color: white;
 }
