@@ -10,7 +10,18 @@ export function Card(props) {
             <img src={props.imagem} />
             <section className={styles.title}>
                <h2>{props.nome}</h2>
-               <div>12</div>
+               <div className={
+                  props.class < 10 ? styles.classificacaoL : 
+                  {
+                     10: styles.classificacao10,
+                     12: styles.classificacao12,
+                     14: styles.classificacao14,
+                     16: styles.classificacao16,
+                     18: styles.classificacao18
+                  }[props.class]
+                  }>
+                  {props.class < 10 ? 'L' : props.class}
+               </div>
             </section>
             <section className={styles.desc}>
                <h2>{props.genero}</h2>
