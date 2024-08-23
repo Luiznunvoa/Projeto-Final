@@ -6,7 +6,7 @@ export function Movie(props){
       <>
       <section className={styles.movie}>
          <img src={props.imagem}></img>
-         <h2>{props.nome}</h2>
+         <h3>{props.nome}</h3>
          <Link className={styles.button}to='/Sessions'>
             <h3>SESSÔES DISPOÍVEIS</h3>
          </Link>

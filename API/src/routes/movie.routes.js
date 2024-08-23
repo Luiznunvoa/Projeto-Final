@@ -25,4 +25,7 @@ movieRoutes.get("/search/:genreOrAgeRate", findMovies, (req, res)=> movieControl
 //Deletar filme (deve ser deletado pelo titulo
 movieRoutes.delete("/:title", findMovie, (req, res)=> movieController.deleteMovie(req, res))
 
+//Modificar url da imagem (pois tava dando problema em algumas imagens)
+movieRoutes.patch("/updateImg/:title", findMovie, (req, res)=> movieController.updateImage(req, res))
+
 module.exports = movieRoutes

@@ -90,6 +90,24 @@ async function getSeatsByPosition(req, res){
     }
 }
 
+//Retorna todos os assentos
+async function getSeatsOfSession(req, res){
+    try{
+        const { SessionId } = req.params
+        const seat = await Seat.findAll({
+            where: {
+                SessionId: SessionId
+            }
+        });
+        if(!seat){
+            return res.status(404).json({error: "Não existe assentos"});
+        }
+        return res.status(201).json(seat);
+    }catch(error){
+        return res.status(400).json({error: "Não foi possivel acessar"});
+    }
+}
+
 async function alterSeatStatus(req, res){
     try {
         const { ocupierCPF, ocupierName } = req.body;
@@ -114,4 +132,5 @@ module.exports = {
     getSeatsById,
     alterSeatStatus,
     getSeatsByPosition,
+    getSeatsOfSession
 }

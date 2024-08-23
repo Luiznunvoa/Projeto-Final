@@ -49,6 +49,8 @@
 .desc {
     width: 55%;
     height: 45%;
+    overflow: auto;
+    scrollbar-color: var(--Complementar) var(--Complementar_900)
 }
 
 .desc h2 {

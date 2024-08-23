@@ -55,7 +55,7 @@ async function getSessionById(req, res) {
 // listar sessões
 async function listSessions(req, res) {
     try {
-        const sessions = await Session.findAll({ include: Movie });
+        const sessions = await Session.findAll();
         return res.status(200).json(sessions);
     } catch (error) {
         return res.status(500).json({ error: "Não foi possível listar as sessões." });
@@ -90,10 +90,27 @@ async function deleteSession(req, res) {
     }
 }
 
+// listar sessões pelo titulo do filme
+async function listSessionsByTitle(req, res) {
+    try {
+        const { title } = req.params
+        const sessions = await Session.findAll({
+            where: {
+                title: title
+            }
+        });
+        return res.status(200).json(sessions);
+    } catch (error) {
+        return res.status(500).json({ error: "Não foi possível listar as sessões." });
+    }
+}
+
+
 module.exports = {
     listSessions,
     getSessionById,
     createSession,
     deleteSession,
     updateSession,
+    listSessionsByTitle
 };

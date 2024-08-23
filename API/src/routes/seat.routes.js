@@ -24,5 +24,8 @@ seatRoutes.get('/position/', (req, res)=>{seatControllers.getSeatsByPosition(req
 //Alterar CPF e Nome do aseento
 seatRoutes.patch('/', findSeatByPosition, (req, res)=>{seatControllers.alterSeatStatus(req,res)})
 
+//Recuperar todos assentos de uma sessão específica
+seatRoutes.get("/:SessionId", (req, res)=> seatControllers.getSeatsOfSession(req, res))
+
 
 module.exports = seatRoutes;

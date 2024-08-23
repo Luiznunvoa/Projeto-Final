@@ -85,7 +85,6 @@
    background-repeat: no-repeat;
    background-size: 75%;
    background-position: center;
-   cursor: pointer;
 }
 
 .dropdowns {
@@ -154,6 +153,7 @@
    height: 100%;
    width: 13.2%;
    border-radius: 50%;
+   cursor: pointer;
 }
 
 .arrowL div{
@@ -166,12 +166,14 @@
    width: 60%;
    border-radius: 1rem;
    margin-left: 40%;
+   cursor: pointer;
 }
 .arrowR {
    background-color: var(--Sombra2_source);
    height: 100%;
    width: 13.2%;
    border-radius: 50%;
+   cursor: pointer;
 }
 
 .arrowR div{
@@ -184,4 +186,25 @@
    width: 60%;
    border-radius: 1rem;
    margin-right: 40%;
+   cursor: pointer;
+}
+
+.tyle {
+   height: 100%;
+   width: 13.17%;
+   border-radius: 1rem;
+   background-color: var(--Sombra2_source);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.tyle2{
+   height: 100%;
+   width: 13.17%;
+   border-radius: 1rem;
+   background-color: var(--Complementar_500);
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
