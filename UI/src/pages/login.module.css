@@ -70,27 +70,45 @@
    font-weight: 550;
    margin-top: 2%;
    width: 90%;
+   margin-left: 7%;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
 }
 
 .user {
    border: none;
    width: 32.5rem;
-   min-height: 2.5rem;
+   min-height: 3rem;
    background-color: var(--Principal_100);
-   border-radius: 1rem;
+   border-radius: .8rem;
    padding-left: 5%;
+   margin-top: 1.5rem;
    box-shadow: 0px 5px 3px 0px var( --Principal_900);
    font-size: 1.25rem;
 }
 
+.forgotPassword {
+   margin-top: 1.5%;
+   margin-right: 50%;
+   font-size: 1rem;
+   color: white;
+   text-decoration: underline;
+}
+
 .enter {
-   width: 79%;
-   height: 7.3%;
+   cursor: pointer;
+   min-width: 79%;
+   min-height: 3rem;
    margin-top: 5%;
    border-radius: 1rem;
    background-color: #6D98FB;
    box-shadow: 0px 5px 3px 0px var( --Principal_900);
-   display: flex;
+   font-size: 1.5rem;
+   color: white;
+   border: none;
 }
 
 .enter h2{

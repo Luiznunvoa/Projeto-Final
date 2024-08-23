@@ -2,7 +2,44 @@ import styles from './login.module.css';
 import '../global.css';
 import Icon from '../assets/Logo.svg';
 import { Link } from "react-router-dom";
+import { useState } from 'react';
+
 export function Login() {
+
+   const [formResponse, setformResponse] = useState({
+      user: '',
+      senha: '',
+  })
+
+   const handleChange = (evento) => {
+      setformResponse({
+          ...formResponse,
+          [evento.target.name]: evento.target.value
+      })
+  }
+
+  const handleSubmit = async (evento) => {
+   evento.preventDefault()
+
+   try {
+      const response = await fetch(`http://localhost:3000/users/${formResponse.user}`, {
+         method: 'GET'
+      })
+
+      if (response.ok) {
+         const user = await response.json()
+         if (user.senha === formResponse.senha) {
+            
+            console.log('Login realizado com sucesso!')
+         } else {
+            alert('Senha incorreta')
+         }
+      }
+   } catch (error) {
+      console.error('Erro ao realizar o login:', error)
+   }
+  }
+  
     return (
         <>
         <main className={styles.login}>
@@ -23,13 +60,24 @@ export function Login() {
             <div className={styles.form}>
                <h1>Login</h1>
                <h2>Faça seu login e garanta o seu lugar na diversão!</h2>
-               <input className={styles.user} type='text' placeholder='Usuário ou E-mail'/>
-               <input className={styles.user} type='password' placeholder='Senha'/>
-               <Link to='/' className={styles.enter}>
-                  <h2>
-                     ENTRAR
-                  </h2>
-               </Link>
+               <form onSubmit={handleSubmit}>
+                  <input 
+                     className={styles.user} 
+                     type='text' 
+                     placeholder='Usuário ou E-mail'
+                     name='user' 
+                     required 
+                     onChange={handleChange}/>
+                  <input 
+                     className={styles.user}   
+                     type='password' 
+                     placeholder='Senha'
+                     name='senha'
+                     required 
+                     onChange={handleChange}/>
+                  <button type='submit' className={styles.enter}>Entrar</button>
+               </form>
+               <a href="#" className={styles.forgotPassword}>Esqueci minha senha</a>       
                <hr/>
                <Link to='/SignUp'  className={styles.register}>
                   <h2>CADASTRE-SE</h2>

@@ -15,9 +15,9 @@ userRoutes.post('/', checkUserExists, (req ,res)=> userController.createUser(req
 userRoutes.get('/', (req, res) => userController.listUsers(req, res))
 
 //Pegar usuário específico
-userRoutes.get('/:username', findUser, (req, res) => userController.getUser(req, res))
+userRoutes.get('/:usernameOrEmail', findUser, (req, res) => userController.getUser(req, res))
 
 //Deletar usuário
-userRoutes.delete('/:username', findUser, (req, res) => userController.deleteUser(req, res))
+userRoutes.delete('/:usernameOrEmail', findUser, (req, res) => userController.deleteUser(req, res))
 
 module.exports = userRoutes

@@ -1,7 +1,7 @@
 import styles from './signup.module.css';
 import '../global.css';
-import { useEffect, useState } from 'react';
-import { Link, X } from 'phosphor-react'
+import { useState } from 'react';
+import { X } from 'phosphor-react'
 
 export function SignUp() {
 
@@ -98,11 +98,11 @@ const handleSubmit = async (evento) => {
                   </form>
                   {isRegistered && (
                     <section className={styles.cadastrado}>
-                    <button className={styles.buttonFechar} onClick={() => window.location.href = '/Login'}><X size={32}/></button>
+                    <button className={styles.buttonFechar} onClick={() => window.location.href = '/'}><X size={32}/></button>
                     <div>
                       <h1 className={styles.created}>Cadastro Criado!</h1>
                       <h2 className={styles.welcome}>Bem-vindo à Nossa Comunidade Cinematográfica!</h2>
-                      <p className={styles.description}>Obrigado por se juntar a nós na nossa comunidade cinematográfica.<br></br>Sua jornada para uma experiência cinematográfica única começa agora. <br /><br /> Você será redirecionado ao clicar no X para a página de Login.</p>
+                      <p className={styles.description}>Obrigado por se juntar a nós na nossa comunidade cinematográfica.<br></br>Sua jornada para uma experiência cinematográfica única começa agora. <br /><br /> Você será redirecionado para a página inicial ao fechar o pop-up.</p>
                     </div>
                   </section>
                   )}
