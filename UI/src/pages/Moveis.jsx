@@ -11,7 +11,7 @@ const Generos = [
 
 const Classificacoes = [
     'Todas',  
-    'Livre', '+10', '+12', '+14', '+16', '+18',
+    '+6', '+10', '+12', '+14', '+16', '+18',
 ];
 
 export function Movies() {
