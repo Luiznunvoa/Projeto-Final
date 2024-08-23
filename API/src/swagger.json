@@ -100,7 +100,7 @@
       },
       "/sessions/{id}": {
         "get": {
-          "summary": "Obter uma sessão específica",
+          "summary": "Obter uma sessão específica pela ID",
           "tags": ["Sessions"],
           "parameters": [
             {
@@ -156,6 +156,24 @@
           "responses": {
             "204": { "description": "Sessão deletada com sucesso." },
             "404": { "description": "Sessão não encontrada." }
+          }
+        }
+      },
+      "/movie/{title}": {
+        "get": {
+          "summary": "Listar sessões pelo titulo do filme",
+          "tags": ["Sessions"],
+          "parameters": [
+            {
+              "name": "title",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Detalhes da sessão retornados com sucesso." },
+            "500": { "description": "Não foi possível listar as sessões." }
           }
         }
       },
@@ -222,6 +240,25 @@
           "responses": {
             "200": { "description": "Detalhes do assento retornados com sucesso." },
             "404": { "description": "Assento não encontrado." }
+          }
+        }
+      },
+      "/seats/{SessionId}": {
+        "get": {
+          "summary": "Obter assento por Sessão",
+          "tags": ["Seats"],
+          "parameters": [
+            {
+              "name": "SessionId",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "uuid" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Todos os assentos da SessionID" },
+            "400": { "description": "Não foi possivel acessar" },
+            "404": { "description": "Não existe assentos" }
           }
         }
       },
@@ -308,6 +345,54 @@
           ],
           "responses": {
             "204": { "description": "Filme deletado com sucesso." },
+            "404": { "description": "Filme não encontrado." }
+          }
+        }
+      },
+      "/search/:genreOrAgeRate": {
+        "get": {
+          "summary": "Obter um filme por título",
+          "tags": ["Movies"],
+          "parameters": [
+          {
+            "name": "genre",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "O gênero do filme a ser pesquisado"
+          },
+          {
+            "name": "ageRating",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "A classificação etária do filme a ser pesquisado"
+          }
+        ],
+          "responses": {
+            "200": { "description": "Detalhes do filme retornados com sucesso." },
+            "404": { "description": "Filme não encontrado." }
+          }
+        }
+      },
+      "/updateImg/:title": {
+        "patch": {
+          "summary": "Obter um filme por título",
+          "tags": ["Movies"],
+          "parameters": [
+            {
+              "name": "title",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Detalhes do filme retornados com sucesso." },
             "404": { "description": "Filme não encontrado." }
           }
         }
