@@ -10,7 +10,7 @@ const swaggerFile = require("./swagger.json")
 
 app.use(express.json())
 
-app.use("/api-docs");
+app.use("/api-docs", swaggerUI.serve,swaggerUI.setup(swaggerFile));
 
 app.use(cors({
      origin: 'http://localhost:5173',

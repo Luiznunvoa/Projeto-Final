@@ -318,45 +318,59 @@
         "User": {
           "type": "object",
           "properties": {
+            "name": { "type": "string" },
+            "lastName": { "type": "string" },
+            "cpf": { "type": "string" },
+            "birthday": { "type": "string" },
             "username": { "type": "string" },
-            "email": { "type": "string" }
+            "email": { "type": "string" },
+            "senha": { "type": "string" }
           },
-          "required": ["username", "email"]
+          "required": ["name","lastName","cpf","birthday","username","email","senha"]
         },
         "Session": {
           "type": "object",
           "properties": {
-            "title": { "type": "string" },
-            "room": { "type": "string" },
-            "date": { "type": "string", "format": "date" }
+            "SessionId": {"type": "uuid"},
+            "time": {"type":"string"},
+            "city": {"type": "string"},
+            "neighborhood": {"type": "string"},
+            "type": {"type": "integer"},
+            "title": { "type": "string" }
           },
-          "required": ["title", "room", "date"]
+          "required": ["SessionId","time","city","neighborhood","type","title"]
         },
         "Seat": {
           "type": "object",
           "properties": {
-            "column": { "type": "integer" },
-            "row": { "type": "string" },
-            "price": { "type": "number", "format": "float" }
+            "SeatId": {"type": "uuid"},
+            "number": {"type": "integer"},
+            "row": {"type": "string"},
+            "price": {"type": "float"},
+            "ocupierCPF": {"type": "string"},
+            "ocupierName": {"type": "string"}
           },
-          "required": ["column", "row", "price"]
+          "required": ["SeatId","number","row","price","ocupierCPF","ocupierName"]
         },
         "SeatUpdate": {
           "type": "object",
           "properties": {
-            "cpf": { "type": "string" },
-            "user_name": { "type": "string" }
+            "ocupierCPF": {"type": "string"},
+            "ocupierName": {"type": "string"}
           },
-          "required": ["cpf", "user_name"]
+          "required": ["ocupierCPF", "ocupierName"]
         },
         "Movie": {
           "type": "object",
           "properties": {
-            "title": { "type": "string" },
-            "director": { "type": "string" },
-            "releaseYear": { "type": "integer" }
+            "title": {"type": "string"},
+            "imageURL": {"type": "text"},
+            "synopse": {"type": "text"},
+            "genre": {"type": "string"},
+            "ageRating": {"type": "integer"},
+            "director": {"type": "string"}
           },
-          "required": ["title", "director", "releaseYear"]
+          "required": ["title","imageURL","synopse","genre","ageRating","director"]
         }
       }
     }
