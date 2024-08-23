@@ -7,10 +7,12 @@ import { SignUp } from "./pages/SignUp";
 import { Sessions } from "./pages/Sessions";
 import Layout from './Layout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ApplicationContextProvider } from "./contexts/ApplicationContextProvider";
 
 export function App() {
   return (
     <Router>
+      <ApplicationContextProvider>
         <Layout>
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -22,6 +24,7 @@ export function App() {
                 <Route path="/Sessions" element={<Sessions />} />
             </Routes>
         </Layout>
+      </ApplicationContextProvider>
     </Router>
   );
 }
