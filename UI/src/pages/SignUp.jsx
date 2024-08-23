@@ -25,11 +25,22 @@ const handleChange = (evento) => {
 
 const [isRegistered, setIsRegistered] = useState(false)
 
+const validatePassword = (password) => {
+    const minLength = 7;
+    const hasSymbol = /[!@_#$%¨&*]/.test(password)
+    return password.length >= minLength && hasSymbol
+  }
+
 const handleSubmit = async (evento) => {
     evento.preventDefault()
 
     if (formResponse.senha !== formResponse.confirmSenha) {
         alert('As senhas não conferem')
+        return;
+    }
+
+    if (!validatePassword(formResponse.senha)) {
+        alert('A senha deve ter pelo menos 7 caracteres e conter pelo menos um símbolo (!, @, _, #, etc.)');
         return;
     }
 

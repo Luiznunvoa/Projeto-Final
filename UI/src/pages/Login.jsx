@@ -1,7 +1,7 @@
 import styles from './login.module.css';
 import '../global.css';
 import Icon from '../assets/Logo.svg';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
 export function Login() {
@@ -18,6 +18,8 @@ export function Login() {
       })
   }
 
+  const navigate = useNavigate()
+
   const handleSubmit = async (evento) => {
    evento.preventDefault()
 
@@ -29,8 +31,8 @@ export function Login() {
       if (response.ok) {
          const user = await response.json()
          if (user.senha === formResponse.senha) {
-            
-            console.log('Login realizado com sucesso!')
+            alert('Login realizado com sucesso!')
+            navigate('/')
          } else {
             alert('Senha incorreta')
          }
@@ -39,7 +41,7 @@ export function Login() {
       console.error('Erro ao realizar o login:', error)
    }
   }
-  
+
     return (
         <>
         <main className={styles.login}>
