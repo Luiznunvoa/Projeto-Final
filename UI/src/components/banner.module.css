@@ -1,6 +1,7 @@
 .banner{
     height: 100%;
     width: 66.25%;
+    margin-left: 2%;
     display: flex;
 }
 
@@ -33,17 +34,12 @@
     flex-wrap: nowrap;
 }
 
-.title div {
-    height: 80%;
-    width: 14.38%;
-    background-color: #FBC115;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--Neutro_0);
-    font-size: 2rem;
-    font-family: "Roboto", sans-serif;
-    border-radius: 0.5rem;
+.titlename {
+    height: 100%;
+    width: 40%;
+    text-align: initial;
+    display: contents;
+    overflow-y: scroll;    
 }
 
 .desc {
@@ -67,3 +63,82 @@
     flex-direction: row;
     flex-wrap: nowrap;
 }
+
+.classificacaoL {
+    height: 100%;
+    width: 6.9%;
+    border-radius: 0.5rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #15fb38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Neutro_0);
+    margin-right: 5%;
+ }
+ 
+ .classificacao10 {
+    height: 100%;
+    width: 17.96%;
+    border-radius: 0.5rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #15aefb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Neutro_0);
+    margin-right: 5%;
+ }
+ 
+ .classificacao12 {
+    height: 100%;
+    width: 17.96%;
+    border-radius: 0.5rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #FBC115;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Neutro_0);
+    margin-right: 5%;
+ }
+ 
+ .classificacao14 {
+    height: 100%;
+    width: 17.96%;
+    border-radius: 0.5rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #b46f08;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Neutro_0);
+    margin-right: 5%;
+ }
+ 
+ 
+ .classificacao16 {
+    height: 100%;
+    width: 17.96%;
+    border-radius: 0.5rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #e44e04;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Neutro_0);
+    margin-right: 5%;
+ }
+ 
+ .classificacao18 {
+    height: 100%;
+    width: 17.96%;
+    border-radius: 0.5rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #f80101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--Neutro_0);
+    margin-right: 5%;
+ }

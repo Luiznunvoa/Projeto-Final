@@ -18,8 +18,17 @@ export function Banner({imagem, genero, nome, desc, rating}) {
                 <div className={styles.info}>
                     <div className={styles.title}>
                         <h1>{nome}</h1>
-                        <div>{rating}</div>
-                    </div>
+                        <div className={
+                    rating < 10 ? styles.classificacaoL : 
+                    {
+                        10: styles.classificacao10,
+                        12: styles.classificacao12,
+                        14: styles.classificacao14,
+                        16: styles.classificacao16,
+                        18: styles.classificacao18
+                    }[rating]
+                    }>{rating}</div>
+                  </div>
                     <div className={styles.desc}>
                         <h2>{genero}</h2>
                         <h2>{desc}</h2>

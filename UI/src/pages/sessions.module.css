@@ -75,7 +75,24 @@
     gap: 1%;
 }
 
-.buttons > button {
+.sessiontype {
+    display: inline-block;
+    width: 5.3125%;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--principal);
+    border: 3px solid var(--principal);
+    border-radius: 26px;
+    font-size: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;  
+    user-select: none;
+    transition: 0.3s;
+  }
+
+  .sessiontype2 {
     display: inline-block;
     width: 5.3125%;
     height: 100%;
@@ -92,7 +109,7 @@
     transition: 0.3s;
 }
 
-.buttons > button:hover {
+.sessiontype {
     background-color: var(--principal);
     color: black;
     transition: 0.3s;
