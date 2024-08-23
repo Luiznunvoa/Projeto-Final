@@ -1,7 +1,6 @@
 import styles from './signup.module.css';
 import '../global.css';
 import { useState } from 'react';
-import { X } from 'phosphor-react'
 
 export function SignUp() {
 
