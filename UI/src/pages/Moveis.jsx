@@ -5,7 +5,7 @@ import styles from './movies.module.css';
 import '../global.css';
 
 const Generos = [ 
-    'Ação', 'Comédia', 'Animação', 'Documentário', 'Drama', 'Romance', 'Musical', 'Aventura', 'Suspense', 'Histórico', 'Cotidiano', 'Mistéria', 'Investigação', 'Faroeste', 'Guerra', 'Thriller', 'Fantasia', 'Policial', 'Comédia Romantica', 'Nacional'
+    'Action', 'Comedy', 'Animation', 'Horror', 'Drama', 'Romance', 'Music', 'Adventure', 'Sci-Fi', 'Fantasy', 'Thriller', 'History', 'Mystery', 'War', 'Biography', 'Western'
 ];
 
 const Classificacoes = [ 
@@ -16,6 +16,8 @@ export function Movies() {
     const [filmes, setFilmes] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [searchTerm, setSearchTerm] = useState('');
+    const [selectedGenre, setSelectedGenre] = useState('');
+    const [selectedRating, setSelectedRating] = useState('');
 
     useEffect(() => {
         fetch('http://localhost:3000/movies')
@@ -40,9 +42,22 @@ export function Movies() {
         }
     };
 
-    // Filtra os filmes com base no termo de pesquisa
+    // Funções para selecionar gênero e classificação
+    const handleGenreSelect = (genre) => {
+        setSelectedGenre(genre);
+        setCurrentIndex(0); // Reinicia o índice ao aplicar o filtro
+    };
+
+    const handleRatingSelect = (rating) => {
+        setSelectedRating(rating);
+        setCurrentIndex(0); // Reinicia o índice ao aplicar o filtro
+    };
+
+    // Filtra os filmes com base no termo de pesquisa, gênero e classificação
     const filmesFiltrados = filmes.filter(filme => 
-        filme.title.toLowerCase().includes(searchTerm.toLowerCase())
+        filme.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        (selectedGenre === '' || filme.genre === selectedGenre) &&
+        (selectedRating === '' || filme.rating === selectedRating)
     );
 
     // Certifica-se de que ao final, sejam exibidos os filmes restantes mesmo que sejam menos que 6
@@ -61,8 +76,8 @@ export function Movies() {
                     <div />
                 </section>
                 <section className={styles.dropdowns}>
-                    <Dropdown tipo='Gênero' children={Generos} />
-                    <Dropdown tipo='Classificação' children={Classificacoes} />
+                    <Dropdown tipo='Gênero' children={Generos} onSelect={handleGenreSelect} />
+                    <Dropdown tipo='Classificação' children={Classificacoes} onSelect={handleRatingSelect} />
                 </section>
             </div>
             <section className={styles.mid}>
