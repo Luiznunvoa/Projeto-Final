@@ -59,6 +59,7 @@
     background-color: var(--Complementar_900);
     background: linear-gradient(to bottom, var(--Complementar_900) 90%, transparent );
     display: flex;
+    margin-bottom: 2%;
 }
 
 .horarios{
