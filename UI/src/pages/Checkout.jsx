@@ -15,19 +15,39 @@ export function Checkout() {
     const toggleVisibility = () => setIsVisible(!isVisible);
     const confirmReservation = () => setIsConfirmed(true);
 
+    //Link API
+    const [movie, setMovie] = useState({
+        title: "Besouro Azul",
+        imageURL: capa1Image
+    })
+
     const {sessionId, setSessionId} = useContext(ApplicationContext)
+    const {title, setTitle} = useContext(ApplicationContext)
     const [sessions, setSessions] = useState([])
     
+    //ainda to pensando...
     useEffect(() => {
         fetch('http://localhost:3000/seats/' + sessionId)
             .then(response => response.json())
             .then(data => {
-                setSessions(data);
+                setSessionId(data);
             })
             .catch(error => {
                 console.error('Erro ao buscar assentos:', error);
             });
-    }, []);
+    }, [movie]);
+
+    //Faz aparecer a imagem e o titulo do filme 
+    useEffect(() => {
+        fetch('http://localhost:3000/movies/' + title)
+            .then(response => response.json())
+            .then(data => {
+                setMovie(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar sessões:', error);
+            });
+    }, [title]);
 
     const Confirmation = () => (
         <div className={`${styles.confirmation} ${isVisible ? styles.visible : ''} ${isConfirmed ? styles.confirmed : ''}`}>
@@ -58,9 +78,9 @@ export function Checkout() {
             <section className={`${styles.mid} ${isVisible ? styles.midVisible : ''}`}>
                 <div className={styles.chosenSeats}>
                     <div className={styles.chosenSeatsTop}>
-                        <img src={capa1Image} className={styles.imageURL} alt="Capa do filme" />
+                        <img src={movie.imageURL} className={styles.imageURL} alt="Capa do filme" />
                         <div>
-                            <h1 className={styles.title}>Besouro Azul</h1>
+                            <h1 className={styles.title}>{movie.title}</h1>
                             <div>
                                 <h2 className={styles.type}>2D</h2>
                                 <h2 className={styles.time}>15:20</h2>
