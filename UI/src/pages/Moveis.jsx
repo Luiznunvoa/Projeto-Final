@@ -15,6 +15,7 @@ const Classificacoes = [
 export function Movies() {
     const [filmes, setFilmes] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         fetch('http://localhost:3000/movies')
@@ -39,14 +40,24 @@ export function Movies() {
         }
     };
 
+    // Filtra os filmes com base no termo de pesquisa
+    const filmesFiltrados = filmes.filter(filme => 
+        filme.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     // Certifica-se de que ao final, sejam exibidos os filmes restantes mesmo que sejam menos que 6
-    const filmesAtuais = filmes.slice(currentIndex, currentIndex + 6);
+    const filmesAtuais = filmesFiltrados.slice(currentIndex, currentIndex + 6);
 
     return (
         <main className={styles.movies}>
             <div className={styles.search}>
                 <section className={styles.searchbar}>
-                    <input type="text" placeholder="Pesquisar filmes" />
+                    <input 
+                        type="text" 
+                        placeholder="Pesquisar filmes" 
+                        value={searchTerm} 
+                        onChange={(e) => setSearchTerm(e.target.value)} 
+                    />
                     <div />
                 </section>
                 <section className={styles.dropdowns}>
