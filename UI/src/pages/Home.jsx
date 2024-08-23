@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Combos } from "../components/Combos.jsx";
 import { Movie } from "../components/Movie.jsx";
 import { Link } from "react-router-dom";
@@ -6,11 +7,6 @@ import '../global.css';
 
 import pipocaImage from '../assets/Pipoca.svg';
 import promoImage from '../assets/Promo.svg';
-import capa1Image from '../assets/Capa1.svg';
-import capa2Image from '../assets/Capa2.svg';
-import capa3Image from '../assets/Capa3.svg';
-import capa4Image from '../assets/Capa4.svg';
-import capa5Image from '../assets/Capa5.svg';
 
 const comboData = [
     {
@@ -33,15 +29,28 @@ const comboData = [
     }
 ];
 
-const movieData = [
-    { imagem: capa1Image, nome: "Besouro Azul" },
-    { imagem: capa2Image, nome: "Barbie" },
-    { imagem: capa3Image, nome: "Missão Impossível" },
-    { imagem: capa4Image, nome: "Oppenheimer" },
-    { imagem: capa5Image, nome: "Elementos" }
-];
-
 export function Home() {
+    const [movieData, setMovieData] = useState([]);
+
+    useEffect(() => {
+        const fetchMovies = async () => {
+            try {
+                const response = await fetch("http://localhost:3000/movies");
+                const data = await response.json();
+                const randomMovies = data.sort(() => 0.5 - Math.random()).slice(0, 5);
+                const movies = randomMovies.map(movie => ({
+                    imagem: movie.imageURL,
+                    nome: movie.title
+                }));
+                setMovieData(movies);
+            } catch (error) {
+                console.error("Erro ao buscar filmes:", error);
+            }
+        };
+
+        fetchMovies();
+    }, []);
+
     return (
         <main className={styles.home}>
             <div className={styles.intro}>
@@ -57,8 +66,8 @@ export function Home() {
                     {movieData.map((movie, index) => (
                         <Movie key={index} imagem={movie.imagem} nome={movie.nome} />
                     ))}
-                    </section>
-                    <Link to='/Movies'>Ver Mais</Link>
+                </section>
+                <Link to='/Movies'>Ver Mais</Link>
             </section>
         </main>
     );
