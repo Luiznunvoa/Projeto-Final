@@ -1,6 +1,7 @@
 import styles from './checkout.module.css';
 import { useContext, useState, useEffect } from "react"
 import { Seats } from "../components/Seats.jsx";
+import { Seat } from "../components/Seat.jsx";
 import { Link } from "react-router-dom";
 import { ApplicationContext } from "../contexts/ApplicationContextProvider.jsx";
 import '../global.css';
@@ -12,7 +13,7 @@ import { Session } from '../components/Session.jsx';
 export function Checkout() {
     const [isVisible, setIsVisible] = useState(false);
     const [isConfirmed, setIsConfirmed] = useState(false);
-    const [selectedSeats, setSelectedSeats] = useState([]);//chat
+    const [selectedSeats, setSelectedSeats] = useState([]);
 
     const handleSelectSeats = (seats) => {
         setSelectedSeats(seats);
@@ -21,22 +22,20 @@ export function Checkout() {
     const toggleVisibility = () => setIsVisible(!isVisible);
     const confirmReservation = () => setIsConfirmed(true);
 
-    //Link API
     const [movie, setMovie] = useState({
         title: "Besouro Azul",
         imageURL: capa1Image
-    })
+    });
 
     const [session, setSession] = useState({
-        type:0,
-        time:"15:00"
-    })
+        type: 0,
+        time: "15:00"
+    });
 
-    const {sessionId, setSessionId} = useContext(ApplicationContext)
-    const {title, setTitle} = useContext(ApplicationContext)
-    const [seats, setSeats] = useState([])
-    
-    //ainda to pensando...
+    const { sessionId, setSessionId } = useContext(ApplicationContext);
+    const { title, setTitle } = useContext(ApplicationContext);
+    const [seats, setSeats] = useState([]);
+
     useEffect(() => {
         fetch('http://localhost:3000/seats/' + sessionId)
             .then(response => response.json())
@@ -48,7 +47,6 @@ export function Checkout() {
             });
     }, [sessionId]);
 
-    //Faz aparecer a imagem e o titulo do filme 
     useEffect(() => {
         fetch('http://localhost:3000/movies/' + title)
             .then(response => response.json())
@@ -95,9 +93,9 @@ export function Checkout() {
         </div>
     );
 
-    if (session.type == 0) session.type = "2D"
-    else if (session.type == 1) session.type = "3D"
-    else if (session.type == 2) session.type = "IMAX"
+    if (session.type === 0) session.type = "2D";
+    else if (session.type === 1) session.type = "3D";
+    else if (session.type === 2) session.type = "IMAX";
 
     return (
         <main className={styles.checkout}>
@@ -119,7 +117,9 @@ export function Checkout() {
                             <span>Assentos escolhidos</span>
                         </div>
                         <div className={styles.seats}>
-                            {selectedSeats.join(', ')} {/* Exibe os números dos assentos */}    
+                            {selectedSeats.map((seat, index) => (
+                                <Seat key={index} seatName={`${seat.row}${seat.number}`} />
+                            ))}
                         </div>
                         <button onClick={toggleVisibility}>Confirmar</button>
                     </div>
