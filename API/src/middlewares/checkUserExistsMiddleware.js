@@ -1,16 +1,17 @@
 const { User } = require('../models/models')
+const { Op } = require('sequelize')
 
 async function checkUserExists(req, res, next) {
      try {
-          const { username } = req.body
+          const { username,email, cpf } = req.body
           const user = await User.findOne({
                where: {
-                    username
+                    [Op.or]: [{username}, {email}, {cpf}]
                }
           })
           if (user) {
-               console.log('Usuário ja existe')
-               return res.status(400).json({ error: 'Usuário ja existe!'})
+               console.log('Usuário ou email ja existentes')
+               return res.status(400).json({ error: 'Usuário ou email ja existente!'})
           }
 
           return next()
