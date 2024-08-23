@@ -1,9 +1,9 @@
 {
     "openapi": "3.0.0",
     "info": {
-      "title": "Cinema API",
+      "title": "Wolf Vision - API",
       "version": "1.0.0",
-      "description": "API para gerenciar usuários, sessões, assentos e filmes."
+      "description": "API do projeto final do processo seletivo Injunior para o cinema WOLF VISION. Esta API é projetada para gerenciar todos os aspectos operacionais do cinema, incluindo a administração de usuários, sessões de filmes, assentos e a catalogação de filmes."
     },
     "paths": {
       "/users": {
@@ -349,9 +349,9 @@
           }
         }
       },
-      "/search/:genreOrAgeRate": {
+      "/search/{genre}OR{AgeRate}": {
         "get": {
-          "summary": "Obter um filme por título",
+          "summary": "SwaggerUI não suporta 2 ou mais parametros, POR FAVOR não usar",
           "tags": ["Movies"],
           "parameters": [
           {
@@ -361,7 +361,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "O gênero do filme a ser pesquisado"
+            "description": "SwaggerUI não suporta 2 ou mais parametros, POR FAVOR não usar"
           },
           {
             "name": "ageRating",
@@ -379,7 +379,7 @@
           }
         }
       },
-      "/updateImg/:title": {
+      "/updateImg/{title}": {
         "patch": {
           "summary": "Obter um filme por título",
           "tags": ["Movies"],
