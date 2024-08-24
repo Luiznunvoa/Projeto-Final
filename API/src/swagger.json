@@ -1,0 +1,463 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Wolf Vision - API",
+      "version": "1.0.0",
+      "description": "API do projeto final do processo seletivo Injunior para o cinema WOLF VISION. Esta API é projetada para gerenciar todos os aspectos operacionais do cinema, incluindo a administração de usuários, sessões de filmes, assentos e a catalogação de filmes."
+    },
+    "paths": {
+      "/users": {
+        "post": {
+          "summary": "Criar um novo usuário",
+          "tags": ["Users"],
+          "requestBody": {
+            "description": "Dados do novo usuário",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": { "description": "Usuário criado com sucesso." },
+            "400": { "description": "Erro ao criar usuário: JSON inválido ou dados incompletos." }
+          }
+        },
+        "get": {
+          "summary": "Listar todos os usuários",
+          "tags": ["Users"],
+          "responses": {
+            "200": { "description": "Lista de usuários retornada com sucesso." },
+            "500": { "description": "Erro no servidor ao buscar usuários." }
+          }
+        }
+      },
+      "/users/{username}": {
+        "get": {
+          "summary": "Obter um usuário específico",
+          "tags": ["Users"],
+          "parameters": [
+            {
+              "name": "username",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Detalhes do usuário retornados com sucesso." },
+            "404": { "description": "Usuário não encontrado." }
+          }
+        },
+        "delete": {
+          "summary": "Deletar um usuário específico",
+          "tags": ["Users"],
+          "parameters": [
+            {
+              "name": "username",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "204": { "description": "Usuário deletado com sucesso." },
+            "404": { "description": "Usuário não encontrado." }
+          }
+        }
+      },
+      "/sessions": {
+        "post": {
+          "summary": "Criar uma nova sessão",
+          "tags": ["Sessions"],
+          "requestBody": {
+            "description": "Dados da nova sessão",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Session"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": { "description": "Sessão criada com sucesso." },
+            "400": { "description": "Erro ao criar sessão: JSON inválido ou dados incompletos." }
+          }
+        },
+        "get": {
+          "summary": "Listar todas as sessões",
+          "tags": ["Sessions"],
+          "responses": {
+            "200": { "description": "Lista de sessões retornada com sucesso." },
+            "500": { "description": "Erro no servidor ao buscar sessões." }
+          }
+        }
+      },
+      "/sessions/{id}": {
+        "get": {
+          "summary": "Obter uma sessão específica pela ID",
+          "tags": ["Sessions"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Detalhes da sessão retornados com sucesso." },
+            "404": { "description": "Sessão não encontrada." }
+          }
+        },
+        "patch": {
+          "summary": "Editar uma sessão específica",
+          "tags": ["Sessions"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "requestBody": {
+            "description": "Dados para atualização da sessão",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Session"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": { "description": "Sessão atualizada com sucesso." },
+            "404": { "description": "Sessão não encontrada." }
+          }
+        },
+        "delete": {
+          "summary": "Deletar uma sessão específica",
+          "tags": ["Sessions"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "204": { "description": "Sessão deletada com sucesso." },
+            "404": { "description": "Sessão não encontrada." }
+          }
+        }
+      },
+      "/movie/{title}": {
+        "get": {
+          "summary": "Listar sessões pelo titulo do filme",
+          "tags": ["Sessions"],
+          "parameters": [
+            {
+              "name": "title",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Detalhes da sessão retornados com sucesso." },
+            "500": { "description": "Não foi possível listar as sessões." }
+          }
+        }
+      },
+      "/seats": {
+        "post": {
+          "summary": "Criar todos os assentos",
+          "tags": ["Seats"],
+          "requestBody": {
+            "description": "Dados dos assentos",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Seat"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": { "description": "Assentos criados com sucesso." },
+            "400": { "description": "Erro ao criar assentos: JSON inválido ou dados incompletos." }
+          }
+        },
+        "get": {
+          "summary": "Listar todos os assentos",
+          "tags": ["Seats"],
+          "responses": {
+            "200": { "description": "Lista de assentos retornada com sucesso." },
+            "500": { "description": "Erro no servidor ao buscar assentos." }
+          }
+        },
+        "patch": {
+          "summary": "Atualizar CPF e nome de um assento",
+          "tags": ["Seats"],
+          "requestBody": {
+            "description": "Dados de CPF e nome para atualização",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SeatUpdate"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": { "description": "Assento atualizado com sucesso." },
+            "404": { "description": "Assento não encontrado." }
+          }
+        }
+      },
+      "/seats/positionID/{id}": {
+        "get": {
+          "summary": "Obter assento por ID",
+          "tags": ["Seats"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Detalhes do assento retornados com sucesso." },
+            "404": { "description": "Assento não encontrado." }
+          }
+        }
+      },
+      "/seats/{SessionId}": {
+        "get": {
+          "summary": "Obter assento por Sessão",
+          "tags": ["Seats"],
+          "parameters": [
+            {
+              "name": "SessionId",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "uuid" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Todos os assentos da SessionID" },
+            "400": { "description": "Não foi possivel acessar" },
+            "404": { "description": "Não existe assentos" }
+          }
+        }
+      },
+      "/seats/position": {
+        "get": {
+          "summary": "Obter assento por posição",
+          "tags": ["Seats"],
+          "parameters": [
+            {
+              "name": "column",
+              "in": "query",
+              "required": true,
+              "schema": { "type": "string" }
+            },
+            {
+              "name": "row",
+              "in": "query",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Detalhes do assento retornados com sucesso." },
+            "404": { "description": "Assento não encontrado." }
+          }
+        }
+      },
+      "/movies": {
+        "post": {
+          "summary": "Criar um novo filme",
+          "tags": ["Movies"],
+          "requestBody": {
+            "description": "Dados do novo filme",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Movie"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": { "description": "Filme criado com sucesso." },
+            "400": { "description": "Erro ao criar filme: JSON inválido ou dados incompletos." }
+          }
+        },
+        "get": {
+          "summary": "Listar todos os filmes",
+          "tags": ["Movies"],
+          "responses": {
+            "200": { "description": "Lista de filmes retornada com sucesso." },
+            "500": { "description": "Erro no servidor ao buscar filmes." }
+          }
+        }
+      },
+      "/movies/{title}": {
+        "get": {
+          "summary": "Obter um filme por título",
+          "tags": ["Movies"],
+          "parameters": [
+            {
+              "name": "title",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Detalhes do filme retornados com sucesso." },
+            "404": { "description": "Filme não encontrado." }
+          }
+        },
+        "delete": {
+          "summary": "Deletar um filme por título",
+          "tags": ["Movies"],
+          "parameters": [
+            {
+              "name": "title",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "204": { "description": "Filme deletado com sucesso." },
+            "404": { "description": "Filme não encontrado." }
+          }
+        }
+      },
+      "/search/{genre}OR{AgeRate}": {
+        "get": {
+          "summary": "SwaggerUI não suporta 2 ou mais parametros, POR FAVOR não usar",
+          "tags": ["Movies"],
+          "parameters": [
+          {
+            "name": "genre",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "SwaggerUI não suporta 2 ou mais parametros, POR FAVOR não usar"
+          },
+          {
+            "name": "ageRating",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "A classificação etária do filme a ser pesquisado"
+          }
+        ],
+          "responses": {
+            "200": { "description": "Detalhes do filme retornados com sucesso." },
+            "404": { "description": "Filme não encontrado." }
+          }
+        }
+      },
+      "/updateImg/{title}": {
+        "patch": {
+          "summary": "Obter um filme por título",
+          "tags": ["Movies"],
+          "parameters": [
+            {
+              "name": "title",
+              "in": "path",
+              "required": true,
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Detalhes do filme retornados com sucesso." },
+            "404": { "description": "Filme não encontrado." }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "User": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "lastName": { "type": "string" },
+            "cpf": { "type": "string" },
+            "birthday": { "type": "string" },
+            "username": { "type": "string" },
+            "email": { "type": "string" },
+            "senha": { "type": "string" }
+          },
+          "required": ["name","lastName","cpf","birthday","username","email","senha"]
+        },
+        "Session": {
+          "type": "object",
+          "properties": {
+            "SessionId": {"type": "uuid"},
+            "time": {"type":"string"},
+            "city": {"type": "string"},
+            "neighborhood": {"type": "string"},
+            "type": {"type": "integer"},
+            "title": { "type": "string" }
+          },
+          "required": ["SessionId","time","city","neighborhood","type","title"]
+        },
+        "Seat": {
+          "type": "object",
+          "properties": {
+            "SeatId": {"type": "uuid"},
+            "number": {"type": "integer"},
+            "row": {"type": "string"},
+            "price": {"type": "float"},
+            "ocupierCPF": {"type": "string"},
+            "ocupierName": {"type": "string"}
+          },
+          "required": ["SeatId","number","row","price","ocupierCPF","ocupierName"]
+        },
+        "SeatUpdate": {
+          "type": "object",
+          "properties": {
+            "ocupierCPF": {"type": "string"},
+            "ocupierName": {"type": "string"}
+          },
+          "required": ["ocupierCPF", "ocupierName"]
+        },
+        "Movie": {
+          "type": "object",
+          "properties": {
+            "title": {"type": "string"},
+            "imageURL": {"type": "text"},
+            "synopse": {"type": "text"},
+            "genre": {"type": "string"},
+            "ageRating": {"type": "integer"},
+            "director": {"type": "string"}
+          },
+          "required": ["title","imageURL","synopse","genre","ageRating","director"]
+        }
+      }
+    }
+  }
+  
