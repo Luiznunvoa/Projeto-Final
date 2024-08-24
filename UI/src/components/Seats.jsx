@@ -3,7 +3,7 @@ import React, { useContext, useState, useEffect } from "react"
 import { ApplicationContext } from "../contexts/ApplicationContextProvider.jsx";
 import '../global.css';
 
-export function Seats({ onSelectSeats, setSelectedSeats, selectedSeats }) {
+export function Seats({ onSelectSeats, setSelectedSeats, selectedSeats, setSelectedRow, setSelectedNumber }) {
     const Alfa = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
     const [totalSeats, setTotalSeats] = useState(0);
     const [userSelectedSeats, setUserSelectedSeats] = useState([]); // Estado para rastrear os assentos selecionados pelo usuário
@@ -27,6 +27,9 @@ export function Seats({ onSelectSeats, setSelectedSeats, selectedSeats }) {
 
     const handleSeatClick = (rowIndex, seatIndex) => {
         const seatId = rowIndex * totalSeats + seatIndex; // Calcula o ID único do assento com base na linha e coluna
+
+        setSelectedRow(Alfa[rowIndex]); // Armazena a linha (letra)
+        setSelectedNumber(seatIndex + 1); // Armazena o número do assento
 
         if (userSelectedSeats.includes(seatId)) {
             // Se o assento já foi selecionado, remova-o da seleção

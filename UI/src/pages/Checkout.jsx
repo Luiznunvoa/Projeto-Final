@@ -14,6 +14,18 @@ export function Checkout() {
     const [isVisible, setIsVisible] = useState(false);
     const [isConfirmed, setIsConfirmed] = useState(false);
     const [selectedSeats, setSelectedSeats] = useState([]);
+    const [selectedRow, setSelectedRow] = useState('')
+    const [selectedSeatNumber, setSelectedNumber] = useState(0)
+
+
+    useEffect(() => {
+        console.log(selectedRow + selectedSeatNumber)
+    },
+    [
+        selectedRow, selectedSeatNumber
+    ]
+
+    )
 
 
     const handleSelectSeats = (seats) => {
@@ -119,7 +131,7 @@ export function Checkout() {
                         </div>
                         <div className={styles.seats}>
                             {selectedSeats.map((seat, index) => (
-                                <Seat key={index} seatName={`${seat.row}${seat.number}`} />
+                                <Seat key={index} seatName={selectedRow + selectedSeatNumber} />
                             ))}
                         </div>
                         <button onClick={toggleVisibility}>Confirmar</button>
@@ -128,7 +140,13 @@ export function Checkout() {
                 <div className={styles.map}>
                     <div className={styles.mapheader} />
                     <section className={styles.seatmap}>
-                        <Seats onSelectSeats={handleSelectSeats} setSelectedSeats={setSelectedSeats} selectedSeats={selectedSeats}/>
+                        <Seats 
+                            onSelectSeats={handleSelectSeats} 
+                            setSelectedSeats={setSelectedSeats} 
+                            selectedSeats={selectedSeats}
+                            setSelectedRow={setSelectedRow}
+                            setSelectedNumber={setSelectedNumber}
+                        />
                     </section>
                     <hr/>
                     <h2>LEGENDA</h2>

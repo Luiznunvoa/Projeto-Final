@@ -8,7 +8,7 @@ export function Seat(props) {
 
     return (
    <>
-      <p className={styles.seatstattype}>{props.row + props.number}</p>
+      <p className={styles.seatstattype}>{props.seatName}</p>
       <hr className={styles.separetion}/>
       <p className={styles.seatstattype}>Nome</p>
       <div className={styles.seatstats}>
