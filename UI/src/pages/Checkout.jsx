@@ -131,7 +131,7 @@ export function Checkout() {
                         </div>
                         <div className={styles.seats}>
                             {selectedSeats.map((seat, index) => (
-                                <Seat key={index} seatName={selectedRow + selectedSeatNumber} />
+                                <Seat key={index} seatName={seat.row + seat.number} />
                             ))}
                         </div>
                         <button onClick={toggleVisibility}>Confirmar</button>
@@ -142,8 +142,8 @@ export function Checkout() {
                     <section className={styles.seatmap}>
                         <Seats 
                             onSelectSeats={handleSelectSeats} 
-                            setSelectedSeats={setSelectedSeats} 
-                            selectedSeats={selectedSeats}
+                            setSelectedSeats={setSeats} 
+                            seats={seats}
                             setSelectedRow={setSelectedRow}
                             setSelectedNumber={setSelectedNumber}
                         />
