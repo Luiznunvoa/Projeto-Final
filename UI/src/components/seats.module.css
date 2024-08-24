@@ -42,3 +42,13 @@
    background-position: center;
    cursor: pointer;
 }
+
+.seat3 {
+   height: 100%;
+   width: 3.07%;
+   background-image: url("../assets/cadeira2.svg");
+   background-repeat: no-repeat;
+   background-size: 100%;
+   background-position: center;
+   cursor: pointer;
+}

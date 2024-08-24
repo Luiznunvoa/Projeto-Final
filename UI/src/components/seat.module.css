@@ -1,0 +1,32 @@
+.seatstats {
+   height: 10%;
+   width: 90%;
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   border-radius: 1rem;
+}
+
+.separetion{
+   background-color: var(--Neutro_900);
+   margin-left: 5%;
+   height: 1%;
+   width: 90%;
+}
+
+.seatstats div {
+   height: 100%;
+   width: 5%;
+   background-color: var(--principal);
+}
+
+.seatstats section {
+   width: 95%;
+   height: 100%;
+}
+
+.seatstats section input {
+   width: 100%;
+   height: 100%;
+}
+

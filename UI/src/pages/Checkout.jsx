@@ -1,18 +1,86 @@
 import styles from './checkout.module.css';
-import React, { useState } from 'react';
+import { useContext, useState, useEffect } from "react"
 import { Seats } from "../components/Seats.jsx";
+import { Seat } from "../components/Seat.jsx";
 import { Link } from "react-router-dom";
+import { ApplicationContext } from "../contexts/ApplicationContextProvider.jsx";
 import '../global.css';
 
 import capa1Image from '../assets/Capa1.png';
 import seatIcon from "../assets/seatIcon.svg";
+import { Session } from '../components/Session.jsx';
 
 export function Checkout() {
     const [isVisible, setIsVisible] = useState(false);
     const [isConfirmed, setIsConfirmed] = useState(false);
+    const [selectedSeats, setSelectedSeats] = useState([]);
+    const [selectedRow, setSelectedRow] = useState('')
+    const [selectedSeatNumber, setSelectedNumber] = useState(0)
+
+
+    useEffect(() => {
+        console.log(selectedRow + selectedSeatNumber)
+    },
+    [
+        selectedRow, selectedSeatNumber
+    ]
+
+    )
+
+
+    const handleSelectSeats = (seats) => {
+        setSelectedSeats(seats);
+    };
 
     const toggleVisibility = () => setIsVisible(!isVisible);
     const confirmReservation = () => setIsConfirmed(true);
+
+    const [movie, setMovie] = useState({
+        title: "Besouro Azul",
+        imageURL: capa1Image
+    });
+
+    const [session, setSession] = useState({
+        type: 0,
+        time: "15:00"
+    });
+
+    const { sessionId, setSessionId } = useContext(ApplicationContext);
+    const { title, setTitle } = useContext(ApplicationContext);
+    const [seats, setSeats] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/seats/' + sessionId)
+            .then(response => response.json())
+            .then(data => {
+                setSeats(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar assentos:', error);
+            });
+    }, [sessionId]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/movies/' + title)
+            .then(response => response.json())
+            .then(data => {
+                setMovie(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar sessões:', error);
+            });
+    }, [title]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/sessions/' + sessionId)
+            .then(response => response.json())
+            .then(data => {
+                setSession(data);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar sessões:', error);
+            });
+    }, [sessionId]);
 
     const Confirmation = () => (
         <div className={`${styles.confirmation} ${isVisible ? styles.visible : ''} ${isConfirmed ? styles.confirmed : ''}`}>
@@ -38,17 +106,21 @@ export function Checkout() {
         </div>
     );
 
+    if (session.type === 0) session.type = "2D";
+    else if (session.type === 1) session.type = "3D";
+    else if (session.type === 2) session.type = "IMAX";
+
     return (
         <main className={styles.checkout}>
             <section className={`${styles.mid} ${isVisible ? styles.midVisible : ''}`}>
                 <div className={styles.chosenSeats}>
                     <div className={styles.chosenSeatsTop}>
-                        <img src={capa1Image} className={styles.imageURL} alt="Capa do filme" />
+                        <img src={movie.imageURL} className={styles.imageURL} alt="Capa do filme" />
                         <div>
-                            <h1 className={styles.title}>Besouro Azul</h1>
+                            <h1 className={styles.title}>{movie.title}</h1>
                             <div>
-                                <h2 className={styles.type}>2D</h2>
-                                <h2 className={styles.time}>15:20</h2>
+                                <h2 className={styles.type}>{session.type}</h2>
+                                <h2 className={styles.time}>{session.time}</h2>
                             </div>
                         </div>
                     </div>
@@ -57,14 +129,24 @@ export function Checkout() {
                             <img src={seatIcon} alt="Ícone de assento" />
                             <span>Assentos escolhidos</span>
                         </div>
-                        <div className={styles.seats}></div>
+                        <div className={styles.seats}>
+                            {selectedSeats.map((seat, index) => (
+                                <Seat key={index} seatName={seat.row + seat.number} />
+                            ))}
+                        </div>
                         <button onClick={toggleVisibility}>Confirmar</button>
                     </div>
                 </div>
                 <div className={styles.map}>
                     <div className={styles.mapheader} />
                     <section className={styles.seatmap}>
-                        <Seats />
+                        <Seats 
+                            onSelectSeats={handleSelectSeats} 
+                            setSelectedSeats={setSeats} 
+                            seats={seats}
+                            setSelectedRow={setSelectedRow}
+                            setSelectedNumber={setSelectedNumber}
+                        />
                     </section>
                     <hr/>
                     <h2>LEGENDA</h2>
