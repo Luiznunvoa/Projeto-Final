@@ -15,6 +15,7 @@ export function Checkout() {
     const [isConfirmed, setIsConfirmed] = useState(false);
     const [selectedSeats, setSelectedSeats] = useState([]);
 
+
     const handleSelectSeats = (seats) => {
         setSelectedSeats(seats);
     };
@@ -127,7 +128,7 @@ export function Checkout() {
                 <div className={styles.map}>
                     <div className={styles.mapheader} />
                     <section className={styles.seatmap}>
-                        <Seats onSelectSeats={handleSelectSeats}/>
+                        <Seats onSelectSeats={handleSelectSeats} setSelectedSeats={setSelectedSeats} selectedSeats={selectedSeats}/>
                     </section>
                     <hr/>
                     <h2>LEGENDA</h2>

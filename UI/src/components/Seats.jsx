@@ -3,59 +3,58 @@ import React, { useContext, useState, useEffect } from "react"
 import { ApplicationContext } from "../contexts/ApplicationContextProvider.jsx";
 import '../global.css';
 
-export function Seats({onSelectSeats}) {
-    const [selectedSeats, setSelectedSeats] = useState(Array(10).fill(Array(18).fill(false)));
+export function Seats({ onSelectSeats, setSelectedSeats, selectedSeats }) {
     const Alfa = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-    const totalSeats = 18;
-/*
-    const {sessionId, setSessionId} = useContext(ApplicationContext);
+    const [totalSeats, setTotalSeats] = useState(0);
+    const [userSelectedSeats, setUserSelectedSeats] = useState([]); // Estado para rastrear os assentos selecionados pelo usuário
+    const { sessionId } = useContext(ApplicationContext);
 
     useEffect(() => {
         fetch('http://localhost:3000/seats/' + sessionId)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+                setSelectedSeats(data);
+                setTotalSeats(18); // Defina o número total de assentos conforme necessário
             })
             .catch(error => {
                 console.error('Erro ao buscar assentos:', error);
             });
-    }, [selectedSeats]);*/
-
-    const toggleSeat = (rowIndex, seatIndex) => {
-        setSelectedSeats(prevState => {
-            const newSeats = prevState.map((row, rIdx) => 
-                rIdx === rowIndex ? row.map((seat, sIdx) => sIdx === seatIndex ? !seat : seat) : row
-            );
-            return newSeats;
-        });
-    };
-
-    const getSelectedSeats = () => {
-        let selected = [];
-        selectedSeats.forEach((row, rowIndex) => {
-            row.forEach((seat, seatIndex) => {
-                if (seat) {
-                    selected.push(`${Alfa[rowIndex]}${seatIndex + 1}`);
-                }
-            });
-        });
-        return selected;
-    };
+    }, [sessionId, setSelectedSeats]);
 
     useEffect(() => {
-        onSelectSeats(getSelectedSeats()); // Atualiza a lista de assentos selecionados no componente pai
-    }, [selectedSeats]);
+        onSelectSeats(userSelectedSeats); // Atualiza a lista de assentos selecionados no componente pai
+    }, [userSelectedSeats, onSelectSeats]);
+
+    const handleSeatClick = (rowIndex, seatIndex) => {
+        const seatId = rowIndex * totalSeats + seatIndex; // Calcula o ID único do assento com base na linha e coluna
+
+        if (userSelectedSeats.includes(seatId)) {
+            // Se o assento já foi selecionado, remova-o da seleção
+            setUserSelectedSeats(userSelectedSeats.filter(id => id !== seatId));
+        } else {
+            // Caso contrário, adicione-o à seleção
+            setUserSelectedSeats([...userSelectedSeats, seatId]);
+        }
+    };
 
     const seatRows = Alfa.map((letter, rowIndex) => (
         <div key={rowIndex} className={styles.row}>
             <h2>{letter}</h2>
-            {Array.from({ length: totalSeats }).map((_, seatIndex) => (
-                <div 
-                    key={seatIndex} 
-                    className={selectedSeats[rowIndex][seatIndex] ? styles.seat2 : styles.seat}
-                    onClick={() => toggleSeat(rowIndex, seatIndex)}
-                ></div>
-            ))}
+            {Array.from({ length: totalSeats }).map((_, seatIndex) => {
+                const seatId = rowIndex * totalSeats + seatIndex;
+                const isSelected = userSelectedSeats.includes(seatId);
+                const isOccupied = selectedSeats[rowIndex + seatIndex * 10]?.ocupierCPF; // Verifica se o assento está ocupado
+                return (
+                    <div
+                        key={seatIndex}
+                        className={
+                            isOccupied ? styles.seat2 :
+                            isSelected ? styles.seat3 : styles.seat
+                        }
+                        onClick={() => !isOccupied && handleSeatClick(rowIndex, seatIndex)} // Permite seleção somente se o assento não estiver ocupado
+                    ></div>
+                );
+            })}
             <h2>{letter}</h2>
         </div>
     ));
